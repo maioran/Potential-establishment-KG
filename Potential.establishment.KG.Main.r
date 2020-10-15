@@ -39,8 +39,17 @@ for(pest.name in pest.list)
   # download EPPO tables
   source(paste(r.script.dir,"PEST.PROFILE.web.EPPO.tables.r", sep=""))
   
+  # Setup Köppen–Geiger raster file (including climates and related colors)
+  source(paste(r.script.dir,"PEST.PROFILE.KG.map.setup.R", sep=""))
+  
+  # Load EU27 Climate list
+  source(paste(r.script.dir,"PEST.PROFILE.EU27.Climate.list.R", sep=""))
+  
+  # Extract the list of climates relevant for the pest
+  source(paste(r.script.dir,"PEST.PROFILE.extract.list.pest.climates.r", sep=""))
+  
   # climate list based on KG
-  source(paste(r.script.dir,"_KOPPEN-GEIGER_Climate_list.r", sep=""))
+  #source(paste(r.script.dir,"_KOPPEN-GEIGER_Climate_list.r", sep=""))
   
   # KG map
   source(paste(r.script.dir,"PEST.PROFILE.KG.map.R", sep=""))
