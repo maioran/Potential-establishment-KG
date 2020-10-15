@@ -1,0 +1,8 @@
+EPPO.admin.layer    <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EPPOadm_Borders_ms_simplified.shp", sep=""), "EPPOadm_Borders_ms_simplified")
+EPPO.admin.layer    <- spTransform(EPPO.admin.layer, CRS("+proj=longlat +ellps=WGS84 +datum=WGS84"))
+EU.NUTS3.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\NUTS_RG_01M_2016_4326_LEVL_3.shp", sep=""), "NUTS_RG_01M_2016_4326_LEVL_3")
+EU.NUTS3.layer      <- spTransform(EU.NUTS3.layer, CRS("+proj=longlat +ellps=WGS84 +datum=WGS84"))
+EU.NUTS2.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\NUTS_RG_01M_2016_4326_LEVL_2.shp", sep=""), "NUTS_RG_01M_2016_4326_LEVL_2")
+EU.NUTS2.layer      <- spTransform(EU.NUTS2.layer, CRS("+proj=longlat +ellps=WGS84 +datum=WGS84"))
+EU.NUTS0.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\NUTS_RG_01M_2016_4326_LEVL_0.shp", sep=""), "NUTS_RG_01M_2016_4326_LEVL_0")
+EU.NUTS0.layer      <- spTransform(EU.NUTS0.layer, CRS("+proj=longlat +ellps=WGS84 +datum=WGS84"))

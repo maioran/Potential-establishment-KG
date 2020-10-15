@@ -1,0 +1,8 @@
+if (!require("dplyr"))      install.packages("dplyr")
+if (!require("httr"))       install.packages("httr")
+if (!require("rlist"))      install.packages("rlist")
+if (!require("XML"))        install.packages("XML")
+if (!require("readxl"))     install.packages("readxl")
+if (!require("rgdal"))      install.packages("rgdal")
+if (!require("raster"))     install.packages("raster")
+if (!require("rasterVis"))  install.packages("rasterVis")
