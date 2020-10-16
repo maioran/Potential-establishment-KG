@@ -1,4 +1,15 @@
+climate.colors.pest <- climate.colors
+climate.colors.pest[which(!rat$climate %in% pest.climates.list)] <- "#00000000"
 
+# map coordinate range (x1, x2, y1, y2) and grid extent (xat, yat)
+x1  <- map.coord.reg$x1
+x2  <- map.coord.reg$x2
+y1  <- map.coord.reg$y1
+y2  <- map.coord.reg$y2
+xat <- map.coord.reg$xat
+yat <- map.coord.reg$yat
+
+r <- crop(r, extent(x1, x2, y1, y2))
 
 # protected zones at different NUTS levels
 if(3 %in% protected.zones$nuts)
@@ -33,8 +44,14 @@ if(region.to.plot != "Global")
   cex.legend <- 0.7
 }
 
+x.Petroskoi <- c(34.333333)
+y.Petroskoi <- c(61.783333)
+name <- c("Petroskoi")
+petroskoi.table <- data.frame(x.Petroskoi, y.Petroskoi, name)
+coordinates(petroskoi.table) <- ~ x.Petroskoi + y.Petroskoi
+
 # setup file
-jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = 28, height = 15, units="cm", res=800)
+jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = 16, height = 15, units="cm", res=800)
 #detach("package:ggplot2", unload=TRUE)
 print(rasterVis::levelplot(r, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r),
                 scales=list(x=list(limits=c(xmin(r), xmax(r)), at=seq(xmin(r), xmax(r), xat)),
@@ -45,7 +62,9 @@ print(rasterVis::levelplot(r, col.regions=climate.colors.pest, xlab="", ylab="",
       + latticeExtra::layer(sp.polygons(pz3, lwd=1, col="red"))
       + latticeExtra::layer(sp.polygons(pz2, lwd=1, col="red"))
       + latticeExtra::layer(sp.polygons(pz0, lwd=1, col="red"))
-      + latticeExtra::layer(sp.polygons(sardinia, lwd=0.5, col="grey")))
+      + latticeExtra::layer(sp.polygons(sardinia, lwd=0.5, col="grey"))
+      + latticeExtra::layer(sp.points(petroskoi.table, cex=2, col="black", pch=19))
+      + latticeExtra::layer(sp.points(petroskoi.table, cex=1, col="white", pch="P.")))
 
 dev.off()
 # out=paste(kg.output.dir,pest.name,'_KG_', period,'_5m.pdf', sep='')

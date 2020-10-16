@@ -50,7 +50,7 @@ rat$climate <- c('Af', 'Am', 'As', 'Aw', 'BSh', 'BSk', 'BWh', 'BWk', 'Cfa', 'Cfb
 # climate.colors.pest <- climate.colors
 # climate.colors.pest[which(!rat$climate %in% climates.list)] <- "#00000000"
 
-rat$colors  <- climate.colors.pest
+rat$colors  <- climate.colors
 # Remove the placeholders
 r[1:32] <- r0; 
 levels(r) <- rat
