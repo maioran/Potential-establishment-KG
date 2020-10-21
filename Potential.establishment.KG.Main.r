@@ -17,32 +17,32 @@
 rm(list=ls())
 gc()
 start_time <- Sys.time()
-r.script.dir  <- "R_scripts\\" 
+
 # install packages if needed
-source(paste(r.script.dir,"PEST.PROFILE.install.required.packages.r", sep=""))
+source("R_scripts\\PEST.PROFILE.install.required.packages.r")
 # load inputs from configuration file
-source(paste(r.script.dir,"PEST.PROFILE.load.input.from.configuration.file.r", sep=""))
+source("R_scripts\\PEST.PROFILE.load.input.from.configuration.file.r")
 # set main directories
-source(paste(r.script.dir,"PEST.PROFILE.main.directories.r", sep=""))
+source("R_scripts\\PEST.PROFILE.main.directories.r")
 # Setup Köppen–Geiger raster file (including climates and related colors)
-source(paste(r.script.dir,"PEST.PROFILE.KG.map.setup.R", sep=""))
+source("R_scripts\\PEST.PROFILE.KG.map.setup.R")
 # Load EU27 Climate list
-source(paste(r.script.dir,"PEST.PROFILE.EU27.Climate.list.R", sep=""))
+source("R_scripts\\PEST.PROFILE.EU27.Climate.list.R")
 
 for(pest.name in pest.list)
 {#TEST: pest.name <- pest.list[1]
   
   # create and check directories
-  source(paste(r.script.dir,"PEST.PROFILE.check.pest.directories.r", sep=""))
+  source("R_scripts\\PEST.PROFILE.check.pest.directories.r")
   
   # load GIS layers
-  source(paste(r.script.dir,"PEST.PROFILE.load.admin.boundary.layers.r", sep=""))
+  source("R_scripts\\PEST.PROFILE.load.admin.boundary.layers.r")
   
   # download EPPO tables
-  source(paste(r.script.dir,"PEST.PROFILE.web.EPPO.tables.r", sep=""))
+  source("R_scripts\\PEST.PROFILE.web.EPPO.tables.r")
   
   # Extract the list of climates relevant for the pest
-  source(paste(r.script.dir,"PEST.PROFILE.extract.list.pest.climates.r", sep=""))
+  source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r")
   
   # KG pest ap
   source(paste(r.script.dir,"PEST.PROFILE.KG.pest.map.R", sep=""))
