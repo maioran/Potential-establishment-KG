@@ -16,15 +16,17 @@
 # ------------------
 rm(list=ls())
 gc()
-start_time <- Sys.time()
+
+actual.date       <- format(Sys.time(), "%Y-%m-%d")
 
 # install packages if needed
 source("R_scripts\\PEST.PROFILE.install.required.packages.r")
-# load inputs from configuration file
+# load inputs from configuration file (Pest list, EPPO pest status to be included, EPPO host status to be excluded,
+#                                      List of protected zones, Climates to remove, other settings)
 source("R_scripts\\PEST.PROFILE.load.input.from.configuration.file.r")
 # set main directories
 source("R_scripts\\PEST.PROFILE.main.directories.r")
-# Setup Köppen–Geiger raster file (including climates and related colors)
+# Setup Köppen–Geiger raster file (load raster and setup color palette for climates)
 source("R_scripts\\PEST.PROFILE.KG.map.setup.R")
 # Load EU27 Climate list
 source("R_scripts\\PEST.PROFILE.EU27.Climate.list.R")
@@ -45,9 +47,6 @@ for(pest.name in pest.list)
   source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r")
   
   # KG pest ap
-  source(paste(r.script.dir,"PEST.PROFILE.KG.pest.map.R", sep=""))
+  source("R_scripts\\PEST.PROFILE.KG.pest.map.R")
   
 }
-
-end_time <- Sys.time()
-time.script <- end_time - start_time

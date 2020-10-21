@@ -1,16 +1,16 @@
-#library(httr)
-library(XML)
-library(rlist)
-library(dplyr)
-#library(RCurl)
+####################################################################################################
+# EFSA Koppen-Geiger climate suitability tool
+# This script connect to the EPPO REST-API to download pest host and distribution tables
+# If a file is present in the REVIEW.Distribution table, then the file is used
+
 
 # test if any file is present in the REVIEW.distribution folder. If any file is present then connect to EPPO Global db
 if(length(list.files(paste(output.dir, "Pests\\", pest.name,"\\REVIEW.Distribution\\", sep="")))==0)
 {
   # Connect to EPPO server and retrieve EPPO pest code
-  path.eppo.code <- "https://data.eppo.int/api/rest/1.0/tools/names2codes"
-  response <- httr::POST(path.eppo.code, body=list(authtoken="61b2d7f23653e1f2e9815f14ef7bfd80",intext=pest.name))
-  pest.eppo.code <- strsplit(httr::content(response)[[1]], ";")[[1]][2]
+  path.eppo.code    <- "https://data.eppo.int/api/rest/1.0/tools/names2codes"
+  response          <- httr::POST(path.eppo.code, body=list(authtoken="61b2d7f23653e1f2e9815f14ef7bfd80",intext=pest.name))
+  pest.eppo.code    <- strsplit(httr::content(response)[[1]], ";")[[1]][2]
   
   ########### DISTRIBUTION ################
   # retrieve EPPO pest distribution table
@@ -20,9 +20,11 @@ if(length(list.files(paste(output.dir, "Pests\\", pest.name,"\\REVIEW.Distributi
   
   # clean EPPO table
   # select according to Status
-  actual.date <- format(Sys.time(), "%Y-%m-%d")
+  
+  # save full table from EPPO
   write.csv(tables$dttable, row.names = FALSE, paste(output.dir, pest.name, "\\Distribution\\Full.distribution.table_",actual.date,".csv", sep=""))
-  pest.kg.table     <- tables$dttable[which(tables$dttable$Status %in% c("Present, no details", "Present, widespread", "Present, restricted distribution", "Present, few occurrences")),]
+  # keep only records including only relevant EPPO pest status 
+  pest.kg.table     <- tables$dttable[which(tables$dttable$Status %in% pest.status),]
   pest.kg.table     <- data.frame(lapply(pest.kg.table, as.character), stringsAsFactors=FALSE)[,1:4]
   
   # add supporting column for countries/states
@@ -35,8 +37,10 @@ if(length(list.files(paste(output.dir, "Pests\\", pest.name,"\\REVIEW.Distributi
   {
     pest.kg.table     <- pest.kg.table[-which(pest.kg.table$KG.EPPO %in% big.countries),]
   }
+  # save table including list of filtered distribution
   write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, pest.name, "\\Distribution\\Filtered.distribution.table_",actual.date,".csv", sep=""))
   
+  rm(path.eppo.code, response, eppo.pest.distr.url, tables, big.countries)
   
 }else
 {
@@ -62,8 +66,7 @@ if(any(pest.hosts$Type %in% host.remove))
 {
   pest.hosts <- pest.hosts[-which(pest.hosts$Type %in% host.remove),]
 }
-  
 write.csv(pest.hosts, row.names = FALSE, paste(output.dir, pest.name, "\\Hosts\\Host.table_",actual.date,".csv", sep=""))
+rm(eppo.pest.host.url, tables.host)
 
-#n.rows <- unlist(lapply(tables, function(t) dim(t)[1]))
 

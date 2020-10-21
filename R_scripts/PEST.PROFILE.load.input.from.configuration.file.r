@@ -1,3 +1,8 @@
+####################################################################################################
+# EFSA Koppen-Geiger climate suitability tool
+# This script load input from configuration file
+####################################################################################################
+
 pest.list                      <- readxl::read_xlsx("Potential.establishment.KG_Configuration.xlsx", sheet = "Pest_list")[[1]]
 pest.status                    <- readxl::read_xlsx("Potential.establishment.KG_Configuration.xlsx", sheet = "Pest_status_to_be_included")[[1]]
 host.remove                    <- readxl::read_xlsx("Potential.establishment.KG_Configuration.xlsx", sheet = "Host_status_to_be_removed")[[1]]

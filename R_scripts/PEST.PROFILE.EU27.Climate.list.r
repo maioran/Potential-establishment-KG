@@ -1,9 +1,13 @@
+####################################################################################################
+# EFSA Koppen-Geiger climate suitability tool
+# This script extracts the list of KG climates present in Europe
+# Information from the configuration file is used to remove specific climates from the analysis
+####################################################################################################
 
 if(recalculate.EU27.climate.list == "yes")
 {
   EU27.layer          <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EU27_Eurostat_NUTS_RG_01M_2021_4326.shp", sep=""), "EU27_Eurostat_NUTS_RG_01M_2021_4326")
   EU27.layer          <- sp::spTransform(EU27.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
-  
   
   # Extract KG raster of EU27
   EU.climates.extract <- extract(x=r, y=EU27.layer)
@@ -14,7 +18,7 @@ if(recalculate.EU27.climate.list == "yes")
   
   # write file
   write.table(EU.climates, paste(input.dir, "EU27.Climate.list.csv", sep=""), row.names=FALSE, col.names = c("EU27Clim"), sep=",")
-  rm(EU27.layer)
+  rm(EU27.layer, EU.climates.extract)
 }else
 {
   EU.climates <- read.csv(paste(input.dir, "EU27.Climate.list.csv", sep=""), stringsAsFactors = FALSE, header = TRUE)[,1]
