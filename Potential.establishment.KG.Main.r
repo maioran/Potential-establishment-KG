@@ -44,11 +44,13 @@ for(pest.name in i.pest.list)
     source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r")
   }
   
+  # load GIS layers
+  source("R_scripts\\PEST.PROFILE.load.admin.boundary.layers.r")
+  
   # Extract the list of climates relevant for the pest
   source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r")
   
-  # load GIS layers
-  source("R_scripts\\PEST.PROFILE.load.admin.boundary.layers.r")
+  
   
   # KG pest ap
   source("R_scripts\\PEST.PROFILE.KG.pest.map.R")
