@@ -12,22 +12,22 @@ yat <- map.coord.reg$yat
 r <- crop(r, extent(x1, x2, y1, y2))
 
 # protected zones at different NUTS levels
-if(3 %in% protected.zones$nuts)
+if(3 %in% i.protected.zones$nuts)
 {
   # Protected zone areas NUTS3
-  pz3 <- subset(EU.NUTS3.layer, NUTS_ID %in% protected.zones$NUTS_CODE)
+  pz3 <- subset(EU.NUTS3.layer, NUTS_ID %in% i.protected.zones$NUTS_CODE)
 
 }
-if(2 %in% protected.zones$nuts)
+if(2 %in% i.protected.zones$nuts)
 {
   # Protected zone areas NUTS3
-  pz2 <- subset(EU.NUTS2.layer, NUTS_ID %in% protected.zones$NUTS_CODE)
+  pz2 <- subset(EU.NUTS2.layer, NUTS_ID %in% i.protected.zones$NUTS_CODE)
   
 }
-if(0 %in% protected.zones$nuts)
+if(0 %in% i.protected.zones$nuts)
 {
   # Protected zone areas NUTS3
-  pz0 <- subset(EU.NUTS0.layer, NUTS_ID %in% protected.zones$NUTS_CODE)
+  pz0 <- subset(EU.NUTS0.layer, NUTS_ID %in% i.protected.zones$NUTS_CODE)
   
 }
 
@@ -35,7 +35,7 @@ if(0 %in% protected.zones$nuts)
 sardinia <- subset(EU.NUTS2.layer, NUTS_ID == "ITG2")
 
 # modifying legend dimension if region is not global
-if(region.to.plot != "Global")
+if(i.region.to.plot != "Global")
 {
   cex.legend <- 0.4
   
@@ -53,8 +53,6 @@ coordinates(petroskoi.table) <- ~ x.Petroskoi + y.Petroskoi
 # setup file
 jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = 16, height = 15, units="cm", res=800)
 #detach("package:ggplot2", unload=TRUE)
-test1 = TRUE
-test2 = TRUE
 
 print(rasterVis::levelplot(r, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r),
                 scales=list(x=list(limits=c(xmin(r), xmax(r)), at=seq(xmin(r), xmax(r), xat)),
