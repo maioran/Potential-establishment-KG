@@ -52,8 +52,11 @@ for(pest.name in i.pest.list)
   }
   
   # load list of protected zones
-  source("R_scripts\\PEST.PROFILE.load.protected.zones.r")
-  
+  if(i.include.protected.zones == "yes")
+  {
+    source("R_scripts\\PEST.PROFILE.load.protected.zones.r")
+  }
+ 
   # load GIS layers
   source("R_scripts\\PEST.PROFILE.load.admin.boundary.layers.r")
   

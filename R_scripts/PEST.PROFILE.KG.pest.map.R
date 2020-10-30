@@ -1,40 +1,36 @@
+####################################################################################################
+# EFSA Koppen-Geiger climate suitability tool
+# This script print the KG map
+####################################################################################################
+
+# set the kg map colors according to the climates that are relevant for the pest by setting the remaining as "white" i.e."#00000000"
 climate.colors.pest <- climate.colors
 climate.colors.pest[which(!rat$climate %in% pest.climates.list)] <- "#00000000"
 
-# map coordinate range (x1, x2, y1, y2) and grid extent (xat, yat)
-x1  <- map.coord.reg$x1
-x2  <- map.coord.reg$x2
-y1  <- map.coord.reg$y1
-y2  <- map.coord.reg$y2
-xat <- map.coord.reg$xat
-yat <- map.coord.reg$yat
-
-r <- crop(r, extent(x1, x2, y1, y2))
-
-# protected zones at different NUTS levels
-if(3 %in% i.protected.zones$nuts)
-{
-  # Protected zone areas NUTS3
-  pz3 <- subset(EU.NUTS3.layer, NUTS_ID %in% i.protected.zones$NUTS_CODE)
-
-}
-if(2 %in% i.protected.zones$nuts)
-{
-  # Protected zone areas NUTS3
-  pz2 <- subset(EU.NUTS2.layer, NUTS_ID %in% i.protected.zones$NUTS_CODE)
-  
-}
-if(0 %in% i.protected.zones$nuts)
-{
-  # Protected zone areas NUTS3
-  pz0 <- subset(EU.NUTS0.layer, NUTS_ID %in% i.protected.zones$NUTS_CODE)
-  
-}
-
-# regions to remove (sardinia)
-sardinia <- subset(EU.NUTS2.layer, NUTS_ID == "ITG2")
+# map coordinate range (x1, x2, y1, y2). Grid extent (xat, yat) is set directly in the levelplot function below
+r <- crop(r, extent(map.coord.reg$x1,map.coord.reg$x2, map.coord.reg$y1, map.coord.reg$y2))
 
 # modifying legend dimension if region is not global
+if(i.region.to.plot != "Global")
+{
+  cex.legend <- 0.4
+  kg.print.width = 16
+  kg.print.heigth = 15
+  
+}else
+{
+  cex.legend <- 0.7
+  kg.print.width = 30
+  kg.print.heigth = 24
+}
+# 
+# x.Petroskoi <- c(34.333333)
+# y.Petroskoi <- c(61.783333)
+# name <- c("Petroskoi")
+# petroskoi.table <- data.frame(x.Petroskoi, y.Petroskoi, name)
+# coordinates(petroskoi.table) <- ~ x.Petroskoi + y.Petroskoi
+# 
+
 if(i.region.to.plot != "Global")
 {
   cex.legend <- 0.4
@@ -44,19 +40,13 @@ if(i.region.to.plot != "Global")
   cex.legend <- 0.7
 }
 
-x.Petroskoi <- c(34.333333)
-y.Petroskoi <- c(61.783333)
-name <- c("Petroskoi")
-petroskoi.table <- data.frame(x.Petroskoi, y.Petroskoi, name)
-coordinates(petroskoi.table) <- ~ x.Petroskoi + y.Petroskoi
-
 # setup file
-jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = 16, height = 15, units="cm", res=800)
+jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = kg.print.width, height = kg.print.heigth, units="cm", res=800)
 #detach("package:ggplot2", unload=TRUE)
 
 print(rasterVis::levelplot(r, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r),
-                scales=list(x=list(limits=c(xmin(r), xmax(r)), at=seq(xmin(r), xmax(r), xat)),
-                            y=list(limits=c(ymin(r), ymax(r)), at=seq(ymin(r), ymax(r), yat)), cex=0.6), 
+                scales=list(x=list(limits=c(xmin(r), xmax(r)), at=seq(xmin(r), xmax(r), map.coord.reg$xat)),
+                            y=list(limits=c(ymin(r), ymax(r)), at=seq(ymin(r), ymax(r), map.coord.reg$yat)), cex=0.6), 
                 colorkey=list(space="top", tck=0, maxpixels=ncell(r), labels=list(cex=cex.legend)))
       + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="grey"))
       
@@ -64,7 +54,6 @@ print(rasterVis::levelplot(r, col.regions=climate.colors.pest, xlab="", ylab="",
       + latticeExtra::layer(sp.polygons(pz3, lwd=1, col="red"))
       + latticeExtra::layer(sp.polygons(pz2, lwd=1, col="red"))
       + latticeExtra::layer(sp.polygons(pz0, lwd=1, col="red"))
-      + latticeExtra::layer(sp.polygons(sardinia, lwd=0.5, col="grey"))
       + latticeExtra::layer(sp.points(petroskoi.table, cex=2, col="black", pch=19))
       + latticeExtra::layer(sp.points(petroskoi.table, cex=1, col="white", pch="P."))
       )
