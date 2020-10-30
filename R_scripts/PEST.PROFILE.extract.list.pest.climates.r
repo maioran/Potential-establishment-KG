@@ -14,7 +14,7 @@ if(length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Climates",sep
   pest.climates.list        <- rat$climate[unique(unlist(KG.map.observed.countries))]
   
   # remove climates not in EU
-  if(remove.climates.not.in.EU == TRUE)
+  if(i.remove.climates.not.in.EU == "yes")
   {
     pest.climates.list <- pest.climates.list[which(pest.climates.list %in% EU.climates)]
   }

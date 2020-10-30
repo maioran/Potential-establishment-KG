@@ -3,8 +3,15 @@
 ############## EFSA Köppen–Geiger approach for climate suitability of pests #########################
 #####################################################################################################
 #####################################################################################################
-# Developed by Andrea Maiorano, EFSA, ALPHA Unit, PLH Team
-# This version developed in 2020
+# Developed by Andrea MAIORANO
+# with the support of the EFSA Agricultural insect Pest Categorization working group: 
+# Virág Kertész, Franz Streissl. Alan MacLeod, Josep Jaques, Lucia Zappalà
+# 
+# EFSA, ALPHA Unit, PLH Team
+# This version developed in November 2020
+#####################################################################################################
+
+
 #####################################################################################################
 # INSTRUCTIONS:
 # 1) fill-in the configuration file (excel) and save it in the project folder
@@ -44,13 +51,14 @@ for(pest.name in i.pest.list)
     source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r")
   }
   
+  # load list of protected zones
+  source("R_scripts\\PEST.PROFILE.load.protected.zones.r")
+  
   # load GIS layers
   source("R_scripts\\PEST.PROFILE.load.admin.boundary.layers.r")
   
   # Extract the list of climates relevant for the pest
   source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r")
-  
-  
   
   # KG pest ap
   source("R_scripts\\PEST.PROFILE.KG.pest.map.R")

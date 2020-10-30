@@ -1,0 +1,23 @@
+﻿PZ,Country,NUTS_CODE,PZ_name2,admin.level
+Ireland,Ireland,IE,Ireland,0
+Ibiza,Spain,ES531,Eivissa i Formentera,3
+Menorca,Spain,ES533,Menorca,3
+Cyprus,Cyprus,CY,Cyprus,0
+Malta,Malta,MT,Malta,0
+Azores,Portugal,PT200,Região Autónoma dos Açores,3
+Madeira,Portugal,PT300,Região Autónoma da Madeira,3
+Åland,Finland,FI200,Åland,3
+Häme,Finland,FI1C2,Kanta-Häme,3
+Häme,Finland,FI1C3,Päijät-Häme,3
+Kymi,Finland,FI1C4,Kymenlaakso,3
+Pirkanmaa,Finland,FI197,Pirkanmaa,3
+Satakunta,Finland,FI196,Satakunta,3
+Turku,Finland,,,3
+Uusimaa,Finland,FI1B1,Helsinki-Uusimaa,3
+Blekinge,Sweden,SE221,Blekinge County,3
+Gotland,Sweden,SE214,Gotland County,3
+Halland,Sweden,SE231,Halland County,3
+Kalmar,Sweden,SE213,Kalmar County,3
+Skåne,Sweden,SE224,Skåne County,3
+Northern Ireland,United Kingdom,UKN0,Northern Ireland,2
+United Kingdom,United Kingdom,UK,United Kingdom,0
