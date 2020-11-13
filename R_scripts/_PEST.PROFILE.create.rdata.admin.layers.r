@@ -3,6 +3,17 @@
 # This script load relevant administrative boundary layers from different sources and at 
 # different administrative resolution
 ####################################################################################################
+# ------------------
+# Clean environment
+# ------------------
+rm(list=ls())
+gc()
+library("sp")
+
+output.dir    <- "Output\\"
+input.dir     <- "Data\\input\\"
+data.dir      <- "Data\\"
+kg.map.dir    <- paste(data.dir,"input\\GIS\\", sep="")
 
 # save EPPO layer rdata file
 EPPO.admin.layer    <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EPPOadm_Borders_ms_simplified.shp", sep=""), "EPPOadm_Borders_ms_simplified")
@@ -33,3 +44,9 @@ save(EU.NUTS3.layer, file=paste(data.dir, "rdata\\EU.NUTS3.layer.RData", sep="")
 EU.NUTS2.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\NUTS_RG_01M_2021_4326_LEVL_2_reshaped.shp", sep=""), "NUTS_RG_01M_2021_4326_LEVL_2_reshaped")
 EU.NUTS2.layer      <- sp::spTransform(EU.NUTS2.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
 save(EU.NUTS2.layer, file=paste(data.dir, "rdata\\EU.NUTS2.layer.RData", sep=""))
+
+EU27.layer          <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EU27_Eurostat_NUTS_RG_01M_2021_4326_reshaped.shp", sep=""), "EU27_Eurostat_NUTS_RG_01M_2021_4326_reshaped")
+EU27.layer          <- sp::spTransform(EU27.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
+save(EU27.layer, file=paste(data.dir, "rdata\\EU27.layer.RData", sep=""))
+
+sp::spTransform()

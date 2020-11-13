@@ -4,14 +4,33 @@
 # different administrative resolution
 ####################################################################################################
 
-# save EPPO layer rdata file
-load(paste(data.dir, "rdata\\EPPO.admin.layer.RData",sep=""))
+pest.kg.table$layer <- NA
+if(any(pest.kg.table$admin.source == "EPPO"))
+{
+  pest.kg.table$layer[which(pest.kg.table$admin.source == "EPPO")] <- paste(pest.kg.table$admin.source[which(pest.kg.table$admin.source == "EPPO")], ".admin.layer.RData", sep="")
+  pest.kg.table$layer[which(pest.kg.table$admin.source != "EPPO")] <- paste(pest.kg.table$admin.source[which(pest.kg.table$admin.source != "EPPO")], ".admin.layer.RData", sep="")
+}else
+{
+  pest.kg.table$layer <- paste(pest.kg.table$admin.source, pest.kg.table$admin.level, ".layer.RData", sep="")
+}
+
+for(admin.layer in unique(pest.kg.table$layer))
+{
+  
+}
+
+
+if(any(pest.kg.table$admin.source == "EPPO"))
+{
+  # load EPPO layer rdata file
+  load(paste(data.dir, "rdata\\EPPO.admin.layer.RData",sep=""))
+}
 
 # load EU (Eurostat) NUTS0 layer
 load(paste(data.dir, "rdata\\EU.NUTS0.layer.RData",sep=""))
 
 # check if FAO gaul layers are needed from revised observed distribution table 
-if(any(pest.kg.table$admin.source == "fao.gaul"))
+if(any(pest.kg.table$admin.source == "FAO.GAUL"))
 {
   if(0 %in% pest.kg.table$admin.level[which(pest.kg.table$admin.source == "fao.gaul")])
   {

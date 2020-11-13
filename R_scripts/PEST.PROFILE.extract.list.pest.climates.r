@@ -6,6 +6,20 @@
 
 if(length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Climates",sep="")))==0)
 {
+  
+  for(admin.source in unique(pest.kg.table$admin.source))
+  {# admin.source <- "EPPO"
+    pest.kg.table.filtered <- pest.kg.table[which(pest.kg.table$admin.source == admin.source),]
+    for(admin.level in unique(pest.kg.table.filtered$admin.level))
+    {
+      
+      
+      
+    }
+    
+  }
+  
+  
   # From EPPO country layer, extract only countries present in the EPPO distribution table
   EPPO.world.select         <- subset(EPPO.admin.layer, EPPO_ADM %in% pest.kg.table$KG.EPPO)
   # From global KG map extract raster with relevant countries

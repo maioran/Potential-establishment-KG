@@ -32,7 +32,7 @@ source("R_scripts\\PEST.PROFILE.load.input.from.configuration.file.r")
 # set main directories
 source("R_scripts\\PEST.PROFILE.main.directories.r")
 # Load Köppen–Geiger raster file (load raster and setup color palette for climates)
-# source("R_scripts\\PEST.PROFILE.KG.map.setup.R")
+# source("R_scripts\\_PEST.PROFILE.KG.map.setup.R")
 load(paste(data.dir, "rdata\\r_KG_raster.RData",sep=""))
 
 # Load EU27 Climate list

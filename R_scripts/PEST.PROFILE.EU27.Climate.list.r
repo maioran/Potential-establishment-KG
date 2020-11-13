@@ -6,8 +6,7 @@
 
 if(i.recalculate.EU27.climate.list == "yes")
 {
-  EU27.layer          <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EU27_Eurostat_NUTS_RG_01M_2021_4326_reshaped.shp", sep=""), "EU27_Eurostat_NUTS_RG_01M_2021_4326_reshaped")
-  EU27.layer          <- sp::spTransform(EU27.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
+  load(paste(data.dir, "rdata\\EU27.layer.RData",sep="")) 
   
   # Extract KG raster of EU27
   EU.climates.extract <- extract(x=r, y=EU27.layer)
