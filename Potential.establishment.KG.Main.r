@@ -3,7 +3,7 @@
 ############## EFSA Köppen–Geiger approach for climate suitability of pests #########################
 #####################################################################################################
 #####################################################################################################
-# Developed by Andrea MAIORANO
+# Developed by Andrea MAIORANO (ALPHA-PLH)
 # with the support of the EFSA Agricultural insect Pest Categorization working group: 
 # Virág Kertész, Franz Streissl. Alan MacLeod, Josep Jaques, Lucia Zappalà
 # 
@@ -31,8 +31,10 @@ source("R_scripts\\PEST.PROFILE.install.required.packages.r")
 source("R_scripts\\PEST.PROFILE.load.input.from.configuration.file.r")
 # set main directories
 source("R_scripts\\PEST.PROFILE.main.directories.r")
-# Setup Köppen–Geiger raster file (load raster and setup color palette for climates)
-source("R_scripts\\PEST.PROFILE.KG.map.setup.R")
+# Load Köppen–Geiger raster file (load raster and setup color palette for climates)
+# source("R_scripts\\PEST.PROFILE.KG.map.setup.R")
+load(paste(data.dir, "rdata\\r_KG_raster.RData",sep=""))
+
 # Load EU27 Climate list
 source("R_scripts\\PEST.PROFILE.EU27.Climate.list.R")
 
@@ -42,7 +44,7 @@ for(pest.name in i.pest.list)
   # create and check directories
   source("R_scripts\\PEST.PROFILE.check.pest.directories.r")
   
-  # download EPPO distribution tables
+  # download EPPO distribution tables or load reviewed distribution table
   source("R_scripts\\PEST.PROFILE.web.EPPO.distribution.table.r")
   
   # download EPPO host list table (if selected in configuration file)

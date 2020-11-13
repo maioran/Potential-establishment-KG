@@ -23,12 +23,12 @@
 ###########################################################################################
 
 # required packages 
-#library(raster)
-#library(rasterVis)
-library(rworldxtra)
-#library(rgdal)
-library(ggplot2)
-library(tmap)
+# library(raster)
+# library(rasterVis)
+# library(rworldxtra)
+# #library(rgdal)
+# library(ggplot2)
+# library(tmap)
 
 # Read raster files
 period <- "1986-2010"
@@ -55,3 +55,7 @@ levels(r) <- rat
 
 # set crs
 crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0" 
+
+save(r,file= paste(data.dir, "rdata\\r_KG_raster.RData",sep=""))
+
+

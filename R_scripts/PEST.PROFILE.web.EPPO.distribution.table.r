@@ -5,8 +5,7 @@
 ####################################################################################################
 
 # test if any file is present in the REVIEW.distribution folder. If any file is present then connect to EPPO Global db
-if(length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Distribution",sep="")))==0 | 
-  length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Climates",sep="")))==0)
+if(length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Distribution",sep="")))==0)
 {
   # Connect to EPPO server and retrieve EPPO pest code
   path.eppo.code    <- "https://data.eppo.int/api/rest/1.0/tools/names2codes"
@@ -49,8 +48,9 @@ if(length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Distribution"
   
 }else
 {
-  # if table with reviewed distribution is available then use table
+  # if table with reviewed distribution is available it is loaded
   pest.kg.table <- read.csv(paste(output.dir, pest.name,"\\REVIEW.Distribution\\Filtered.distribution.table_Reviewed.csv", sep=""))
+ 
 }
 
 

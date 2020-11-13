@@ -44,11 +44,12 @@ if(i.region.to.plot != "Global")
 jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = kg.print.width, height = kg.print.heigth, units="cm", res=800)
 #detach("package:ggplot2", unload=TRUE)
 
-print(rasterVis::levelplot(r, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r),
+kg.map <- rasterVis::levelplot(r, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r),
                 scales=list(x=list(limits=c(xmin(r), xmax(r)), at=seq(xmin(r), xmax(r), map.coord.reg$xat)),
                             y=list(limits=c(ymin(r), ymax(r)), at=seq(ymin(r), ymax(r), map.coord.reg$yat)), cex=0.6), 
                 colorkey=list(space="top", tck=0, maxpixels=ncell(r), labels=list(cex=cex.legend)))
-      + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="grey"))
+kg.map <- kg.map
+          +latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="grey"))
       
       + latticeExtra::layer(sp.polygons(world.select, lwd=0.5, col="black"))
       + latticeExtra::layer(sp.polygons(pz3, lwd=1, col="red"))
@@ -56,7 +57,8 @@ print(rasterVis::levelplot(r, col.regions=climate.colors.pest, xlab="", ylab="",
       + latticeExtra::layer(sp.polygons(pz0, lwd=1, col="red"))
       + latticeExtra::layer(sp.points(petroskoi.table, cex=2, col="black", pch=19))
       + latticeExtra::layer(sp.points(petroskoi.table, cex=1, col="white", pch="P."))
-      )
+
+print(kg.map)
 
 dev.off()
 # out=paste(kg.output.dir,pest.name,'_KG_', period,'_5m.pdf', sep='')
