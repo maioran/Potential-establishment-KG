@@ -40,7 +40,7 @@ if(length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Distribution"
   # add columns including administrative boundary source and level. This is needed especially in the phase of review of climates
   pest.kg.table$admin.level  <- "0"
   pest.kg.table$admin.source <- "EPPO"
-  pest.kg.table$admin.code   <- "na"
+  pest.kg.table$admin.code   <- NA
   
   # save table including list of filtered distribution
   write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, pest.name, "\\Distribution\\Filtered.distribution.table_",actual.date,".csv", sep=""))
