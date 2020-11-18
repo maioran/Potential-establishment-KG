@@ -39,6 +39,9 @@ gc()
 # Read raster files
 period <- "1986-2010"
 r      <- raster::raster(paste('Data//input//GIS//KG_', period, '.grd', sep=''))
+# newcrs <- CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
+# 
+# r <- raster::projectRaster(r, crs=newcrs)
 
 # Color palette for climate classification
 climate.colors <- c("#960000", "#FF0000", "#FF6E6E", "#FFCCCC", "#CC8D14", "#CCAA54", "#FFCC00", "#FFFF64", "#007800", "#005000", "#003200", "#96FF00", "#00D700", "#00AA00", "#BEBE00", "#8C8C00", "#5A5A00", "#550055", "#820082", "#C800C8", "#FF6EFF", "#646464", "#8C8C8C", "#BEBEBE", "#E6E6E6", "#6E28B4", "#B464FA", "#C89BFA", "#C8C8FF", "#6496FF", "#64FFFF", "#F5FFFF")
@@ -62,9 +65,6 @@ levels(r) <- rat
 # set crs
 #rgdal::crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0" 
 
-newcrs <- CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
-
-r <- raster::projectRaster(r, crs=newcrs)
 
 save(r,file= "Data\\rdata\\r_KG_raster.RData")
 

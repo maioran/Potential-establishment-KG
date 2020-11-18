@@ -59,6 +59,14 @@ for(pest.name in i.pest.list)
     source("R_scripts\\PEST.PROFILE.load.protected.zones.r")
   }
  
+  # Function to create administrative units layers: 
+  # - create layers including administrative units where pest was observed
+  # - list of administrative units that were not found due to spelling mistakes, different naming conventions, different enconding, ...
+  source("R_scripts\\_PEST.PROFILE.admin.layer.fun.r")
+  
+  # Function to extract climates from complete Koppen-Geiger map for the administrative units or points where pest was observed
+  source("_PEST.PROFILE.extract.climate.fun.r")
+  
   # load GIS layers
   source("R_scripts\\PEST.PROFILE.load.admin.boundary.layers.r")
   
