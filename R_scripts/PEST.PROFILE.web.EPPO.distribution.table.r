@@ -5,7 +5,7 @@
 ####################################################################################################
 
 # test if any file is present in the REVIEW.distribution folder. If any file is present then connect to EPPO Global db
-if(length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Distribution",sep="")))==0)
+if(length(list.files(paste("Data\\processed\\", pest.name, "\\REVIEW.Distribution\\",sep="")))==0)
 {
   # Connect to EPPO server and retrieve EPPO pest code
   path.eppo.code    <- "https://data.eppo.int/api/rest/1.0/tools/names2codes"
@@ -41,6 +41,8 @@ if(length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Distribution"
   pest.kg.table$admin.level  <- "0"
   pest.kg.table$admin.source <- "EPPO"
   pest.kg.table$admin.code   <- NA
+  pest.kg.table$lat          <- NA
+  pest.kg.table$long         <- NA
   
   # save table including list of filtered distribution
   write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, pest.name, "\\Distribution\\Filtered.distribution.table_",actual.date,".csv", sep=""))
@@ -50,7 +52,8 @@ if(length(list.files(paste("Data\\processed\\", pest.name, "REVIEW.Distribution"
 }else
 {
   # if table with reviewed distribution is available it is loaded
-  pest.kg.table <- read.csv(paste(output.dir, pest.name,"\\REVIEW.Distribution\\Filtered.distribution.table_Reviewed.csv", sep=""))
+  rev.distr      <- list.files(paste("Data\\processed\\", pest.name, "\\REVIEW.Distribution\\",sep=""))
+  pest.kg.table  <- read.csv(paste("Data\\processed\\", pest.name, "\\REVIEW.Distribution\\", rev.distr, sep=""), stringsAsFactors = FALSE, na.strings = c("na", "NA", ""))
  
 }
 

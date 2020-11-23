@@ -68,7 +68,7 @@ for(pest.name in i.pest.list)
   source("_PEST.PROFILE.extract.climate.fun.r")
   
   # load GIS layers
-  source("R_scripts\\PEST.PROFILE.load.admin.boundary.layers.r")
+  source("R_scripts\\PEST.PROFILE.generate.observations.layers.r")
   
   # Extract the list of climates relevant for the pest
   source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r")
