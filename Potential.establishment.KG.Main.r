@@ -65,7 +65,7 @@ for(pest.name in i.pest.list)
   source("R_scripts\\_PEST.PROFILE.admin.layer.fun.r")
   
   # Function to extract climates from complete Koppen-Geiger map for the administrative units or points where pest was observed
-  source("_PEST.PROFILE.extract.climate.fun.r")
+  source("R_scripts\\_PEST.PROFILE.extract.climate.fun.r")
   
   # load GIS layers
   source("R_scripts\\PEST.PROFILE.generate.observations.layers.r")
