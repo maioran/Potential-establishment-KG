@@ -66,6 +66,4 @@ levels(r) <- rat
 #rgdal::crs(r) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0" 
 
 
-save(r,file= "Data\\rdata\\r_KG_raster.RData")
-
-
+save(r,period,climate.colors,file= "Data\\rdata\\r_KG_raster.RData")

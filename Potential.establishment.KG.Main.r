@@ -23,8 +23,7 @@
 # ------------------
 rm(list=ls())
 gc()
-
-actual.date       <- format(Sys.time(), "%Y-%m-%d")
+actual.date <- Sys.Date()
 # install packages if needed
 source("R_scripts\\PEST.PROFILE.install.required.packages.r")
 # load inputs from configuration file 
@@ -77,3 +76,4 @@ for(pest.name in i.pest.list)
   source("R_scripts\\PEST.PROFILE.KG.pest.map.R")
   
 }
+
