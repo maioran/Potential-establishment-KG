@@ -50,7 +50,6 @@ admin.layer.fun <- function(admin.layer, admin.level, admin.source, fltrd.distr.
         fltrd.distr.table$KG.EPPO[admin.index] <- admin.layer@data[,name.field][which(admin.layer@data[,id.field] == fltrd.distr.table$admin.code[admin.index])]
       }
       
-      
     }
     
   }

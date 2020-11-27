@@ -21,7 +21,7 @@ if(i.region.to.plot != "Global")
 {
   cex.legend <- 0.7
   kg.print.width = 30
-  kg.print.heigth = 24
+  kg.print.heigth = 15
 }
 
 if(i.region.to.plot != "Global")
@@ -37,18 +37,30 @@ if(i.region.to.plot != "Global")
 jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = kg.print.width, height = kg.print.heigth, units="cm", res=800)
 #detach("package:ggplot2", unload=TRUE)
 
-kg.map <- rasterVis::levelplot(r.pest, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r),
-                scales=list(x=list(limits=c(xmin(r), xmax(r)), at=seq(xmin(r), xmax(r), map.coord.reg$xat)),
-                            y=list(limits=c(ymin(r), ymax(r)), at=seq(ymin(r), ymax(r), map.coord.reg$yat)), cex=0.6), 
-                colorkey=list(space="top", tck=0, maxpixels=ncell(r), labels=list(cex=cex.legend)))
-kg.map <- kg.map + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="grey"), data=list(pest.layer=pest.layer))
+kg.map <- rasterVis::levelplot(r.pest, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r.pest),
+                               scales=list(x=list(limits=c(xmin(r.pest), xmax(r.pest)), at=seq(xmin(r.pest), xmax(r.pest), map.coord.reg$xat)),
+                                           y=list(limits=c(ymin(r.pest), ymax(r.pest)), at=seq(ymin(r.pest), ymax(r.pest), map.coord.reg$yat)), cex=0.6), 
+                               colorkey=list(space="top", tck=0, maxpixels=ncell(r.pest), labels=list(cex=cex.legend)))
+kg.map <- kg.map + latticeExtra::layer(panel.text(-175, -50, paste("\uA9 EFSA\n",format(actual.date, "%d %B %Y"),sep=""), adj=0, cex=0.7))
+kg.map <- kg.map + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="grey"), data=list(EPPO.admin.layer=EPPO.admin.layer))
 
 for(pest.layer in observed.layer.list)
 {# pest.layer <- observed.layer.list[[3]]
   kg.map <- kg.map + latticeExtra::layer(sp.polygons(pest.layer, lwd=0.5, col="black"), data=list(pest.layer=pest.layer))
 }
 
-kg.map <- kg.map + latticeExtra::layer(sp.points(points.layer, cex=1.5, col="black", pch=19), data=list(pest.layer=pest.layer))
+if(!is.na(points.layer))
+{
+  kg.map <- kg.map + latticeExtra::layer(sp.points(points.layer, cex=1.5, col="black", pch=19), data=list(points.layer=points.layer))
+}
+if(exists("pz.layer.list"))
+{
+  for(pz.layer in pz.layer.list)
+  {# pest.layer <- pz.layer.list[[1]]
+    kg.map <- kg.map + latticeExtra::layer(sp.polygons(pz.layer, lwd=0.8, col="red"), data=list(pz.layer=pz.layer))
+  }
+}
+
 
 print(kg.map)
 

@@ -24,6 +24,7 @@
 rm(list=ls())
 gc()
 actual.date <- Sys.Date()
+start.time <- Sys.time()
 # install packages if needed
 source("R_scripts\\PEST.PROFILE.install.required.packages.r")
 # load inputs from configuration file 
@@ -52,11 +53,7 @@ for(pest.name in i.pest.list)
     source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r")
   }
   
-  # load list of protected zones
-  if(i.include.protected.zones == "yes")
-  {
-    source("R_scripts\\PEST.PROFILE.load.protected.zones.r")
-  }
+  
  
   # Function to create administrative units layers: 
   # - create layers including administrative units where pest was observed
@@ -69,6 +66,14 @@ for(pest.name in i.pest.list)
   # load GIS layers
   source("R_scripts\\PEST.PROFILE.generate.observations.layers.r")
   
+  # if protected zone mapping is requested then related layers are loaded
+  # load list of protected zones
+  if(i.include.protected.zones == "yes")
+  {
+    source("R_scripts\\PEST.PROFILE.load.protected.zones.r")
+    source("R_scripts\\PEST.PROFILE.generate.pz.layers.r")
+  }
+  
   # Extract the list of climates relevant for the pest
   source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r")
   
@@ -76,4 +81,5 @@ for(pest.name in i.pest.list)
   source("R_scripts\\PEST.PROFILE.KG.pest.map.R")
   
 }
-
+end.time <- Sys.time()
+end.time -start.time
