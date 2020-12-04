@@ -27,14 +27,14 @@ if(length(list.files(paste("Data\\processed\\", pest.name, "\\REVIEW.Distributio
   pest.kg.table     <- data.frame(lapply(pest.kg.table, as.character), stringsAsFactors=FALSE)[,1:4]
   
   # add supporting column for countries/states
-  pest.kg.table$KG.EPPO                                   <- pest.kg.table$State
-  pest.kg.table$KG.EPPO[which(pest.kg.table$KG.EPPO=="")] <- pest.kg.table$Country[which(pest.kg.table$KG.EPPO=="")]
+  pest.kg.table$Observation                               <- pest.kg.table$State
+  pest.kg.table$Observation[which(pest.kg.table$Observation=="")] <- pest.kg.table$Country[which(pest.kg.table$Observation=="")]
   
   # filter info according to states of big countries
   big.countries <- c("United States of America", "Brazil", "Russia", "China", "India", "Canada", "Australia")
-  if(any(big.countries %in% pest.kg.table$KG.EPPO))
+  if(any(big.countries %in% pest.kg.table$Observation))
   {
-    pest.kg.table     <- pest.kg.table[-which(pest.kg.table$KG.EPPO %in% big.countries),]
+    pest.kg.table     <- pest.kg.table[-which(pest.kg.table$Observation %in% big.countries),]
   }
   
   # add columns including administrative boundary source and level. This is needed especially in the phase of review of climates

@@ -15,7 +15,7 @@ units.na.list       <- c()
 points.layer        <- NA
 
 for(admin.source in unique(pest.kg.table$admin.source))
-{# TEST: admin.source <- unique(pest.kg.table$admin.source)[4]
+{# TEST: admin.source <- unique(pest.kg.table$admin.source)[1]
   # filter on admin source
   pest.kg.table.source.fltr <- pest.kg.table[which(pest.kg.table$admin.source == admin.source),]
   

@@ -5,7 +5,7 @@ extract.climate.fun <- function(r, obs.layer.list, loc.layer)
   climate.list <- c()
   
   for(actual.obs.layer in c(obs.layer.list, loc.layer))
-  {# actual.obs.layer <- loc.layer
+  {# actual.obs.layer <- c(obs.layer.list, loc.layer)[1]
     # From global KG map extract raster with relevant countries
     KG.map.observed.countries <- raster::extract(x=r, y=actual.obs.layer)
     # extract list of climates for the specific organism

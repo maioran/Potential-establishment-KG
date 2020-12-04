@@ -53,8 +53,6 @@ for(pest.name in i.pest.list)
     source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r")
   }
   
-  
- 
   # Function to create administrative units layers: 
   # - create layers including administrative units where pest was observed
   # - list of administrative units that were not found due to spelling mistakes, different naming conventions, different enconding, ...
