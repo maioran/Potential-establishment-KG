@@ -66,30 +66,30 @@ EU.NUTS.table <- EU.NUTS3.layer@data
 EU.NUTS.table <- EU.NUTS.table[,-which(colnames(EU.NUTS.table) %in% c("MOUNT_TYPE", "URBN_TYPE", "COAST_TYPE", "LEVL_CODE", "id"))]
 # modify names
 colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NUTS_ID")] <- "NUTS3_ID"
-colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NAME_LATN")] <- "NUTS3_NAME_LATIN"
-colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NUTS_NAME")] <- "NUTS3_NAME"
+colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NAME_LATN")] <- "NUTS3_NAME_LATN"
+
 # add column for nuts2 code
 EU.NUTS.table$NUTS_ID <- substring(EU.NUTS.table$NUTS3_ID, 1, nchar(EU.NUTS.table$NUTS3_ID)-1)
 # add column for nuts2 names
 EU.NUTS.table <- merge(EU.NUTS.table, EU.NUTS2.layer@data[,c("NUTS_ID", "NAME_LATN", "NUTS_NAME")], by=c("NUTS_ID"))
 colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NUTS_ID")] <- "NUTS2_ID"
-colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NAME_LATN")] <- "NUTS2_NAME_LATIN"
-colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NUTS_NAME")] <- "NUTS2_NAME"
+colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NAME_LATN")] <- "NUTS2_NAME_LATN"
+
 # add column for nuts0 names
 EU.NUTS.table <- merge(EU.NUTS.table, EU.NUTS0.layer@data[,c("CNTR_CODE", "NAME_LATN", "NUTS_NAME")], by=c("CNTR_CODE"))
-colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NAME_LATN")] <- "NUTS0_NAME_LATIN"
-colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NUTS_NAME")] <- "NUTS0_NAME"
-# reorder columns
-EU.NUTS.table <- EU.NUTS.table[, c("CNTR_CODE", "NUTS0_NAME_LATIN", "NUTS0_NAME", 
-                                   "NUTS2_ID",  "NUTS2_NAME_LATIN", "NUTS2_NAME",
-                                   "NUTS3_ID",  "NUTS3_NAME_LATIN", "NUTS3_NAME")]
+colnames(EU.NUTS.table)[which(colnames(EU.NUTS.table) == "NAME_LATN")] <- "NUTS0_NAME_LATN"
+
 # encode string column with correct encoding (UTF-8)
-Encoding(EU.NUTS.table$NUTS0_NAME_LATIN) <- "UTF-8"
-Encoding(EU.NUTS.table$NUTS0_NAME)       <- "UTF-8"
-Encoding(EU.NUTS.table$NUTS2_NAME_LATIN) <- "UTF-8"
-Encoding(EU.NUTS.table$NUTS2_NAME)       <- "UTF-8"
-Encoding(EU.NUTS.table$NUTS3_NAME_LATIN) <- "UTF-8"
-Encoding(EU.NUTS.table$NUTS3_NAME)       <- "UTF-8"
+Encoding(EU.NUTS.table$NUTS0_NAME_LATN) <- "UTF-8"
+Encoding(EU.NUTS.table$NUTS2_NAME_LATN) <- "UTF-8"
+Encoding(EU.NUTS.table$NUTS3_NAME_LATN) <- "UTF-8"
+# add English country name
+country.code <- read.csv(paste(data.dir, "support.info\\EU_NUTS_Country_code.csv", sep=""), header = TRUE, stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")
+EU.NUTS.table <- merge(EU.NUTS.table, country.code, by=c("CNTR_CODE"))
+# reorder columns
+EU.NUTS.table <- EU.NUTS.table[, c("CNTR_CODE", "NUTS0_NAME_INT","NUTS0_NAME_LATN", 
+                                   "NUTS2_ID",  "NUTS2_NAME_LATN", 
+                                   "NUTS3_ID",  "NUTS3_NAME_LATN")]
 # write table
 write.csv(EU.NUTS.table, file=paste(data.dir, "support.info\\EU.NUTS.codes and names.csv", sep=""), row.names = FALSE)
 rm(EU.NUTS3.layer, EU.NUTS0.layer, EU.NUTS2.layer, EU.NUTS.table)
