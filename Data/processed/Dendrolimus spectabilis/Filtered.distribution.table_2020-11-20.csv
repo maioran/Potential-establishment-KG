@@ -1,0 +1,23 @@
+Continent,Country,State,Status,Observation,admin.level,admin.source,admin.code,lat,long
+Asia,China,Hebei,"Present, no details",Hebei,0,EPPO,NA,NA,NA
+Asia,China,Heilongjiang,"Present, no details",Heilongjiang,0,EPPO,NA,NA,NA
+Asia,China,Jiangsu,"Present, no details",Jiangsu,0,EPPO,NA,NA,NA
+Asia,China,Jilin,"Present, no details",Jilin,0,EPPO,NA,NA,NA
+Asia,China,Liaoning,"Present, no details",Liaoning,0,EPPO,NA,NA,NA
+Asia,China,Shandong,"Present, no details",Shandong,0,EPPO,NA,NA,NA
+Asia,Japan,,"Present, no details",Japan,0,EPPO,NA,NA,NA
+Asia,Japan,Hokkaido,"Present, no details",Hokkaido,0,EPPO,NA,NA,NA
+Asia,Japan,Honshu,"Present, no details",Honshu,0,EPPO,NA,NA,NA
+Asia,Japan,Kyushu,"Present, no details",Kyushu,0,EPPO,NA,NA,NA
+Asia,Japan,Ryukyu Archipelago,"Present, no details",Ryukyu Archipelago,0,EPPO,NA,NA,NA
+Asia,Korea Dem. People's Republic,,"Present, no details",Korea Dem. People's Republic,0,EPPO,NA,NA,NA
+Asia,"Korea, Republic",,"Present, no details","Korea, Republic",0,EPPO,NA,NA,NA
+Asia,Taiwan,,"Present, no details",Taiwan,0,EPPO,NA,NA,NA
+Europe,Russia,Eastern Siberia,"Present, no details",Eastern Siberia,0,EPPO,NA,NA,NA
+Europe,Russia,Far East,"Present, no details",Far East,0,EPPO,NA,NA,NA
+Africa,Senegal,Senegal,review,Senegal,,location,NA,13.772,-16.417
+Europe,Italy,,review,Sicily,2,EU.NUTS,ITG1,NA,NA
+America,USA,New Mexico,review,Monument,,location,NA,32.635,-103.284
+Africa,South Africa,South Africa,review,Western Cape,1,FAO.GAUL,NA,NA,NA
+Asia,Thailand,Thailand,review,Johor,1,FAO.GAUL,NA,NA,NA
+Europe,Spain,Spain,review,Spain,0,EU.NUTS,ES,NA,NA
