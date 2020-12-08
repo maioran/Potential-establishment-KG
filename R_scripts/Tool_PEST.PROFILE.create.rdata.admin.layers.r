@@ -21,6 +21,7 @@ EPPO.admin.layer    <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EPPOadm_Borde
 EPPO.admin.layer    <- sp::spTransform(EPPO.admin.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
 save(EPPO.admin.layer, file=paste(data.dir, "rdata\\EPPO0.layer.RData", sep=""))
 write.csv(EPPO.admin.layer@data[,-which(names(EPPO.admin.layer) %in% c("layer", "path"))], file=paste(data.dir, "support.info\\EPPO Codes and names.csv", sep=""), row.names = FALSE)
+rm(EPPO.admin.layer)
 
 # FAO.GAUL
 FAO.GAUL0.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\g2015_2014_0_reshaped_0005.shp", sep=""), "g2015_2014_0_reshaped_0005", stringsAsFactors = FALSE)
@@ -36,7 +37,7 @@ rm(FAO.GAUL1.layer)
 FAO.GAUL2.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\g2015_2014_2_reshaped_0005.shp", sep=""), "g2015_2014_2_reshaped_0005", stringsAsFactors = FALSE)
 FAO.GAUL2.layer      <- sp::spTransform(FAO.GAUL2.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
 save(FAO.GAUL2.layer, file=paste(data.dir, "rdata\\FAO.GAUL2.layer.RData", sep=""))
-write.csv(FAO.GAUL2.layer@data[,-which(names(EPPO.admin.layer) %in% c("STR2_YEAR", "EXP2_YEAR", "Shape_Leng", "Shape_Area"))], file=paste(data.dir, "support.info\\FAO.GAUL codes and names.csv", sep=""), row.names = FALSE)
+write.csv(FAO.GAUL2.layer@data[,-which(names(FAO.GAUL2.layer) %in% c("STR2_YEAR", "EXP2_YEAR", "Shape_Leng", "Shape_Area"))], file=paste(data.dir, "support.info\\FAO.GAUL codes and names.csv", sep=""), row.names = FALSE)
 rm(FAO.GAUL2.layer)
 
 # EU.NUTS
