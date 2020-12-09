@@ -30,7 +30,7 @@ for(admin.source in unique(pest.kg.table$admin.source))
       
       # create a layer including only the relevant administrative units
       actual.layer.select <- admin.layer.fun(actual.layer, admin.level, admin.source, pest.kg.table.level.fltr)
-      
+      actual.layer.select$units.na
       observed.layer.list <- c(observed.layer.list, actual.layer.select$layer)
       units.na.list       <- c(units.na.list, actual.layer.select$units.na)
       
@@ -45,4 +45,7 @@ for(admin.source in unique(pest.kg.table$admin.source))
   
   
 }
-rm(pest.kg.table.source.fltr, admin.source, actual.layer, actual.layer.select)
+colnames(units.na.list) <- "Admin.names.to.check"
+write.csv(units.na.list, file=paste(output.dir,pest.name, "\\Admin.names.to.check.csv", sep=""), row.names = FALSE)
+
+rm(pest.kg.table.source.fltr, admin.source, actual.layer, actual.layer.select, units.na.list)

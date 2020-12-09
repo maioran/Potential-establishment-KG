@@ -45,19 +45,38 @@ write.csv(FAO.GAUL2.layer@data[,-which(names(FAO.GAUL2.layer) %in% c("STR2_YEAR"
 rm(FAO.GAUL2.layer)
 
 ######### EU.NUTS ####################
+# read table with international name of countries
+country.int.codes <- read.csv(paste(data.dir, "support.info\\EU_NUTS_Country_code.csv", sep=""), stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")
 # EU NUTS 0 RData
 EU.NUTS0.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\NUTS_RG_01M_2021_4326_LEVL_0_reshaped.shp", sep=""), "NUTS_RG_01M_2021_4326_LEVL_0_reshaped", stringsAsFactors = FALSE, encoding = "UTF-8")
 EU.NUTS0.layer      <- sp::spTransform(EU.NUTS0.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
+# encode correctly characters (UTF-8)
+Encoding(EU.NUTS0.layer@data$NAME_LATN) <- "UTF-8"
+Encoding(EU.NUTS0.layer@data$NUTS_NAME) <- "UTF-8"
+# add column with international country names
+EU.NUTS0.layer@data <- merge(EU.NUTS0.layer@data, country.int.codes, by=c("CNTR_CODE"))
+# save RData 
 save(EU.NUTS0.layer, file=paste(data.dir, "rdata\\EU.NUTS0.layer.RData", sep=""))
 
 # EU NUTS 2 RData
 EU.NUTS2.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\NUTS_RG_01M_2021_4326_LEVL_2_reshaped.shp", sep=""), "NUTS_RG_01M_2021_4326_LEVL_2_reshaped", stringsAsFactors = FALSE, encoding = "English_United States.1252")
 EU.NUTS2.layer      <- sp::spTransform(EU.NUTS2.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
+# encode correctly characters (UTF-8)
+Encoding(EU.NUTS2.layer@data$NAME_LATN) <- "UTF-8"
+Encoding(EU.NUTS2.layer@data$NUTS_NAME) <- "UTF-8"
+# add column with international country names
+EU.NUTS2.layer@data <- merge(EU.NUTS2.layer@data, country.int.codes, by=c("CNTR_CODE"))
+# save RData 
 save(EU.NUTS2.layer, file=paste(data.dir, "rdata\\EU.NUTS2.layer.RData", sep=""))
 
 # EU NUTS 3 RData
 EU.NUTS3.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\NUTS_RG_01M_2021_4326_LEVL_3_reshaped.shp", sep=""), "NUTS_RG_01M_2021_4326_LEVL_3_reshaped", stringsAsFactors = FALSE, encoding = "UTF-8")
 EU.NUTS3.layer      <- sp::spTransform(EU.NUTS3.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
+Encoding(EU.NUTS3.layer@data$NAME_LATN) <- "UTF-8"
+Encoding(EU.NUTS3.layer@data$NUTS_NAME) <- "UTF-8"
+# add column with international country names
+EU.NUTS3.layer@data <- merge(EU.NUTS3.layer@data, country.int.codes, by=c("CNTR_CODE"))
+# save RData 
 save(EU.NUTS3.layer, file=paste(data.dir, "rdata\\EU.NUTS3.layer.RData", sep=""))
 
 # Print table of EU NUTS administrative codes and names in the support info folder
@@ -84,8 +103,8 @@ Encoding(EU.NUTS.table$NUTS0_NAME_LATN) <- "UTF-8"
 Encoding(EU.NUTS.table$NUTS2_NAME_LATN) <- "UTF-8"
 Encoding(EU.NUTS.table$NUTS3_NAME_LATN) <- "UTF-8"
 # add English country name
-country.code <- read.csv(paste(data.dir, "support.info\\EU_NUTS_Country_code.csv", sep=""), header = TRUE, stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")
-EU.NUTS.table <- merge(EU.NUTS.table, country.code, by=c("CNTR_CODE"))
+#country.code <- read.csv(paste(data.dir, "support.info\\EU_NUTS_Country_code.csv", sep=""), header = TRUE, stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")
+#EU.NUTS.table <- merge(EU.NUTS.table, country.code, by=c("CNTR_CODE"))
 # reorder columns
 EU.NUTS.table <- EU.NUTS.table[, c("CNTR_CODE", "NUTS0_NAME_INT","NUTS0_NAME_LATN", 
                                    "NUTS2_ID",  "NUTS2_NAME_LATN", 
