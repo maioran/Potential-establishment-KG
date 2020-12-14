@@ -11,7 +11,8 @@
 # - units.na.list
 
 observed.layer.list <- c()
-units.na.list       <- c()
+units.na.list       <- as.table(matrix(NA, nrow=0, ncol=1))
+colnames(units.na.list) <- c("Admin_units_to_check")
 points.layer        <- NA
 
 for(admin.source in unique(pest.kg.table$admin.source))
@@ -32,7 +33,12 @@ for(admin.source in unique(pest.kg.table$admin.source))
       actual.layer.select <- admin.layer.fun(actual.layer, admin.level, admin.source, pest.kg.table.level.fltr)
       actual.layer.select$units.na
       observed.layer.list <- c(observed.layer.list, actual.layer.select$layer)
-      units.na.list       <- c(units.na.list, actual.layer.select$units.na)
+      
+      if(!is.null(actual.layer.select$units.na))
+      {
+        units.na.list       <- rbind(units.na.list, actual.layer.select$units.na)
+      }
+      
       
     }
   }else
@@ -45,7 +51,10 @@ for(admin.source in unique(pest.kg.table$admin.source))
   
   
 }
-colnames(units.na.list) <- "Admin.names.to.check"
-write.csv(units.na.list, file=paste(output.dir,pest.name, "\\Admin.names.to.check.csv", sep=""), row.names = FALSE)
+if(!is.null(actual.layer.select$units.na))
+{
+  write.csv(units.na.list, file=paste(output.dir,pest.name, "\\Admin.names.to.check.csv", sep=""), row.names = FALSE, col.names=FALSE)
+  
+}
 
 rm(pest.kg.table.source.fltr, admin.source, actual.layer, actual.layer.select, units.na.list)
