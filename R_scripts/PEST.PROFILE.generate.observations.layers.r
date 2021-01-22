@@ -11,49 +11,51 @@
 # - units.na.list
 
 observed.layer.list <- c()
-units.na.list       <- as.table(matrix(NA, nrow=0, ncol=1))
-colnames(units.na.list) <- c("Admin_units_to_check")
+units.na.list       <- c()
 points.layer        <- NA
 
 for(admin.source in unique(pest.kg.table$admin.source))
-{# TEST: admin.source <- unique(pest.kg.table$admin.source)[1]
+{# TEST: admin.source <- unique(pest.kg.table$admin.source)[4]
   # filter on admin source
   pest.kg.table.source.fltr <- pest.kg.table[which(pest.kg.table$admin.source == admin.source),]
   
-  if(admin.source != "location")
+  if(!is.na(admin.source))
   {
-    for(admin.level in unique(pest.kg.table.source.fltr$admin.level))
-    {#TEST: admin.level <- 0
-      pest.kg.table.level.fltr <- pest.kg.table.source.fltr[which(pest.kg.table.source.fltr$admin.level == admin.level),]
-      
-      # load actual layer
-      actual.layer <- get(load(paste(data.dir, "rdata\\", admin.source, admin.level,".layer.RData",sep="")))
-      
-      # create a layer including only the relevant administrative units
-      actual.layer.select <- admin.layer.fun(actual.layer, admin.level, admin.source, pest.kg.table.level.fltr)
-      actual.layer.select$units.na
-      observed.layer.list <- c(observed.layer.list, actual.layer.select$layer)
-      
-      if(!is.null(actual.layer.select$units.na))
-      {
-        units.na.list       <- rbind(units.na.list, actual.layer.select$units.na)
+    if(admin.source != "location")
+    {
+      for(admin.level in unique(pest.kg.table.source.fltr$admin.level))
+      {#TEST: admin.level <- 1
+        pest.kg.table.level.fltr <- pest.kg.table.source.fltr[which(pest.kg.table.source.fltr$admin.level == admin.level),]
+        
+        # load actual layer
+        actual.layer <- get(load(paste(data.dir, "rdata\\", admin.source, admin.level,".layer.RData",sep="")))
+        
+        # create a layer including only the relevant administrative units
+        actual.layer.select <- admin.layer.fun(actual.layer, admin.level, admin.source, pest.kg.table.level.fltr)
+        actual.layer.select$units.na
+        observed.layer.list <- c(observed.layer.list, actual.layer.select$layer)
+        
+        if(!is.null(actual.layer.select$units.na))
+        {
+          units.na.list       <- c(units.na.list, actual.layer.select$units.na)
+        }
+        
+        
       }
-      
+    }else
+    {
+      # create a layer of location points
+      points.layer              <- pest.kg.table.source.fltr
+      coordinates(points.layer) <- ~ long + lat
       
     }
-  }else
-  {
-    # create a layer of location points
-    points.layer              <- pest.kg.table.source.fltr
-    coordinates(points.layer) <- ~ long + lat
     
   }
   
-  
 }
-if(!is.null(actual.layer.select$units.na))
+if(!is.null(units.na.list))
 {
-  write.csv(units.na.list, file=paste(output.dir,pest.name, "\\Admin.names.to.check.csv", sep=""), row.names = FALSE, col.names=FALSE)
+  write.table(units.na.list, file=paste(output.dir,pest.name, "\\Admin.names.to.check.csv", sep=""),row.names = FALSE, col.names=FALSE, fileEncoding = "UTF-8")
   
 }
 

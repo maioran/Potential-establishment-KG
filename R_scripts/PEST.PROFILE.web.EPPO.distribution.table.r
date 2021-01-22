@@ -4,7 +4,8 @@
 # If a file is present in the REVIEW.Distribution table, then the file is used
 ####################################################################################################
 
-# test if any file is present in the REVIEW.distribution folder. If any file is present then connect to EPPO Global db
+# test if any file is present in the REVIEW.Distribution and in the REVIEW.Climates folder. If any file is present then connect to EPPO Global db
+
 if(length(list.files(paste("Data\\processed\\", pest.name, "\\REVIEW.Distribution\\",sep="")))==0)
 {
   # Connect to EPPO server and retrieve EPPO pest code

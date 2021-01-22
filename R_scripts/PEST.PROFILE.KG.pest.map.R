@@ -51,7 +51,7 @@ for(pest.layer in observed.layer.list)
 
 if(!is.na(points.layer))
 {
-  kg.map <- kg.map + latticeExtra::layer(sp.points(points.layer, cex=0.8, col="black", pch=19), data=list(points.layer=points.layer))
+  kg.map <- kg.map + latticeExtra::layer(sp.points(points.layer, cex=0.5, col="black", lwd=0.5, pch=21, fill="red", ), data=list(points.layer=points.layer))
 }
 if(exists("pz.layer.list"))
 {
