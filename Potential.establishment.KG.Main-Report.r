@@ -41,47 +41,9 @@ source("R_scripts\\PEST.PROFILE.EU27.Climate.list.R")
 for(pest.name in i.pest.list)
 {#TEST: pest.name <- i.pest.list[1]
   
-  # create and check directories
-  source("R_scripts\\PEST.PROFILE.check.pest.directories.r")
+  rmarkdown::render("KG-report.Rmd", params = list(
+    pest.name = pest.name),
+    output_file = paste0("Report-", pest.name, "-", ".html")
+  )
   
-  # download EPPO distribution tables or load reviewed distribution table
-  source("R_scripts\\PEST.PROFILE.web.EPPO.distribution.table.r")
-  
-  
-  # download EPPO host list table (if selected in configuration file)
-  if(i.eppo.host.table=="yes") 
-  {
-    source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r")
-  }
-  
-  # Function to create administrative units layers: 
-  # - create layers including administrative units where pest was observed
-  # - list of administrative units that were not found due to spelling mistakes, different naming conventions, different enconding, ...
-  source("R_scripts\\_PEST.PROFILE.admin.layer.fun.r")
-  
-  # Function to extract climates from complete Koppen-Geiger map for the administrative units or points where pest was observed
-  source("R_scripts\\_PEST.PROFILE.extract.climate.fun.r")
-  
-  # load GIS layers
-  source("R_scripts\\PEST.PROFILE.generate.observations.layers.r")
-  
-  # if protected zone mapping is requested then related layers are loaded
-  # load list of protected zones
-  if(i.include.protected.zones == "yes")
-  {
-    source("R_scripts\\PEST.PROFILE.load.protected.zones.r")
-    source("R_scripts\\PEST.PROFILE.generate.pz.layers.r")
-  }
-  
-  start.extract.list.climates <- Sys.time()
-  # Extract the list of climates relevant for the pest (RESOURCE DEMANDING)
-  source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r")
-  extract.list.climates.time <- Sys.time()-start.extract.list.climates
-  
-  start.kg.map <- Sys.time()
-  # KG pest map (RESOURCE DEMANDING)
-  source("R_scripts\\PEST.PROFILE.KG.pest.map.R")
- kg.map.time <- Sys.time() - start.kg.map
 }
-all.end.time <- Sys.time()
-all.tool.time <- all.end.time-all.start.time

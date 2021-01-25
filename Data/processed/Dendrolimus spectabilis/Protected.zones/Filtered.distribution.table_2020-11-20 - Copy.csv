@@ -1,5 +1,0 @@
-Continent,Country,State,Status,Observation,admin.level,admin.source,admin.code,lat,long
-Europe,France,France,"Present, no details",France,0,EPPO,NA,NA,NA
-America,Argentina,Argentina,"Present, no details",Argentina,0,FAO.GAUL,NA,NA,NA
-Europe,Italy,Italy,,Piemonte,2,EU.NUTS,NA,NA,NA
-Europe,Italy,Italy,,Toscana,2,EU.NUTS,NS,NS,NA

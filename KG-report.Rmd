@@ -1,0 +1,62 @@
+---
+title: "Koppen-Geiger climate suitability assessment for "
+author: "Andrea Maiorano"
+date: "1/25/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Koppen-Geiger map
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r kg-map, echo=FALSE, warning=FALSE, message=FALSE, results='hide', fig.keep='all'}
+# create and check directories
+  source("R_scripts\\PEST.PROFILE.check.pest.directories.r", local = knitr::knit_global())
+  
+  # download EPPO distribution tables or load reviewed distribution table
+  source("R_scripts\\PEST.PROFILE.web.EPPO.distribution.table.r", local = knitr::knit_global())
+  
+  
+  # download EPPO host list table (if selected in configuration file)
+  if(i.eppo.host.table=="yes") 
+  {
+    source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r", local = knitr::knit_global())
+  }
+  
+  # Function to create administrative units layers: 
+  # - create layers including administrative units where pest was observed
+  # - list of administrative units that were not found due to spelling mistakes, different naming conventions, different enconding, ...
+  source("R_scripts\\_PEST.PROFILE.admin.layer.fun.r", local = knitr::knit_global())
+  
+  # Function to extract climates from complete Koppen-Geiger map for the administrative units or points where pest was observed
+  source("R_scripts\\_PEST.PROFILE.extract.climate.fun.r", local = knitr::knit_global())
+  
+  # load GIS layers
+  source("R_scripts\\PEST.PROFILE.generate.observations.layers.r", local = knitr::knit_global())
+  
+  # if protected zone mapping is requested then related layers are loaded
+  # load list of protected zones
+  if(i.include.protected.zones == "yes")
+  {
+    source("R_scripts\\PEST.PROFILE.load.protected.zones.r", local = knitr::knit_global())
+    source("R_scripts\\PEST.PROFILE.generate.pz.layers.r", local = knitr::knit_global())
+  }
+  
+  start.extract.list.climates <- Sys.time()
+  # Extract the list of climates relevant for the pest (RESOURCE DEMANDING)
+  source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r", local = knitr::knit_global())
+  extract.list.climates.time <- Sys.time()-start.extract.list.climates
+  
+  start.kg.map <- Sys.time()
+  # KG pest map (RESOURCE DEMANDING)
+  source("R_scripts\\PEST.PROFILE.KG.pest.map.R")
+  kg.map.time <- Sys.time() - start.kg.map
+```
+
+

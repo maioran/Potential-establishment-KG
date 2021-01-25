@@ -34,7 +34,7 @@ if(i.region.to.plot != "Global")
 }
 
 # setup file
-jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = kg.print.width, height = kg.print.heigth, units="cm", res=800)
+#jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = kg.print.width, height = kg.print.heigth, units="cm", res=800)
 #detach("package:ggplot2", unload=TRUE)
 
 kg.map <- rasterVis::levelplot(r.pest, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r.pest),
@@ -64,5 +64,5 @@ if(exists("pz.layer.list"))
 
 print(kg.map)
 
-dev.off()
+#dev.off()
 
