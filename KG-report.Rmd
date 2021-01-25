@@ -1,8 +1,10 @@
 ---
-title: "Koppen-Geiger climate suitability assessment for "
+title: "Koppen-Geiger climate suitability assessment for `r params$pest.name`"
 author: "Andrea Maiorano"
 date: "1/25/2021"
 output: html_document
+params: 
+  pest.name: "Default pest"
 ---
 
 ```{r setup, include=FALSE}
