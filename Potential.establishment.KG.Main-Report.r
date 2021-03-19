@@ -24,10 +24,10 @@
 rm(list=ls())
 gc()
 actual.date <- Sys.Date()
-all.start.time <- Sys.time()
+
 # install packages if needed
 source("R_scripts\\PEST.PROFILE.install.required.packages.r")
-# load inputs from configuration file 
+# load inputs from configAuration file 
 source("R_scripts\\PEST.PROFILE.load.input.from.configuration.file.r")
 # set main directories
 source("R_scripts\\PEST.PROFILE.main.directories.r")
@@ -43,7 +43,7 @@ for(pest.name in i.pest.list)
   
   rmarkdown::render("KG-report.Rmd", params = list(
     pest.name = pest.name),
-    output_file = paste0("Report-", pest.name, "-", ".html")
+    output_file = paste0("Report-", pest.name, ".html")
   )
   
 }
