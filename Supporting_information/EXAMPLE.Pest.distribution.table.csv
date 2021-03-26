@@ -1,0 +1,104 @@
+Continent,Country,State,Observation,admin.level ,admin.source,admin.code,lat,long,note,paper,data.source
+America,Argentina,Argentina,Fronterita,0,location,NA,-26.8122222,-65.0477778,,Impacts of Crop Residue on Damage by Sugarcane Pests During the Tillering Phase in Argentina Isaac 2016 (from EPPO dist),EPPO; UK; CABI
+America,Argentina,Argentina,Luisiana  (Cruz Alta),0,location,,-27.0341667,-65.4730556,,Impacts of Crop Residue on Damage by Sugarcane Pests During the Tillering Phase in Argentina Isaac 2016 (from EPPO dist ),EPPO; UK; CABI
+America,Argentina,Argentina,Simoca ,0,location,,-27.2594444,-65.3177778,,Impacts of Crop Residue on Damage by Sugarcane Pests During the Tillering Phase in Argentina Isaac 2016 (from EPPO dist),EPPO; UK; CABI
+America,Argentina,Argentina,,,,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO
+America,Barbados ,Barbados ,Barbados,0,EPPO,,,,,"Plagiprospherysa trinitatis (Dipt. Tachinidiae), a parasite of Elasmopalpus lignosellus (Lep. Phycitidae) in Trinidad, W.I. ( (from both EPPO dist and CABI) ",EPPO; CABI
+America,Bermuda,Bermuda,Bermuda,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,Bolivia,,Bolivia,0,EPPO,,,,,"NO ACCESS: Squire FA (1972) Insect pests of grain crops. PANS 18, 253-254. (from both EPPO dist and CABI)",EPPO; UK; CABI
+America,Brazil,Bahia,Bahia,0,EPPO,,,,,"NO ACCESS: Moraes GJ de, Ramalho F de S (1980) [Some insects associated with Vigna unguiculata Walp in the northeast]. Boletim de Pesquisa, EMBRAPA no. 1, 1-10",EPPO; UK; CABI
+America,Brazil,Espirito Santo,Espirito Santo pinco pallino,1,FAO.GAUL,,,,,,CABI
+America,Brazil,Goias,Santo Antonio De Goias,2,location,,-16.50180196,-49.28245227,,A Field Technique for Infesting Rice with Elasmopalpus lignosellus (Zeller) (Lepidoptera: Pyralidae) and Evaluating Insecticide Treatment (from EPPO dist),EPPO; UK; CABI
+America,Brazil,Mato Grosso,Mato Grosso,0,EPPO,,,,,"NO ACCESS: Xavier LMS, Laumann RA, Borges M, Magalhães DM, Vilela EF, Blassioli-Moraes MC (2011) Trichogramma pretiosum attraction due to the Elasmopalpus lignosellus damage in maize. Pesquisa Agropecuária Brasileira 46(6), 578-585.",EPPO; CABI
+America,Brazil,Mato Grosso do Sul,Mato Grosso Do Sul,0,EPPO,,,,,"NO ACCES: Sousa PG (1982) Wheat in Sidrolândia and São Gabriel d'Oeste, MS. Comunicado Técnico, UEPAE de Dourados 11, 6pp.",EPPO; CABI
+America,Brazil,Minas Gerais,"Centro Nacional de Pesquisa de Milho e Sorgo, Sete Lagoas city",0,location,,-19.46694464,-44.17347431,,"EFEITO DA UMIDADE DO SOLO SOBRE O DANO DA LAGARTA ELASMO, Elasmopalpus lignosellus (ZELLER) NA CULTURA DO MILHO (from our first screening)",form our first screening
+America,Brazil,Minas Gerais,Itacarambi,2,FAO.GAUL,8235,,,kml ,RECONHECIMENTO DE INSETO PRAGAS DA CULTURA DO MILHO POR AGRICULTORES DO VALE DO PERUAÇÚ DO NORTE DE MINAS GERAIS 2015 (from EPPO dist),EPPO; UK; CABI
+America,Brazil,Minas Gerais,Januaria,2,FAO.GAUL,8269,,,kml ,RECONHECIMENTO DE INSETO PRAGAS DA CULTURA DO MILHO POR AGRICULTORES DO VALE DO PERUAÇÚ DO NORTE DE MINAS GERAIS 2015 (from EPPO dist),EPPO; UK; CABI
+America,Brazil,Para,Para,0,EPPO,,,,,,CABI
+America,Brazil,Parana,Parana,0,EPPO,,,,,"NO ACCESS: * Borges JD (1990) Entomofauna of the Paraná pine. Pesquisa Agropecuária Brasileira 25(2), 201-206.
+------- On Araucaria angustifolia.
+
+* Cividanes FJ (1989) Study of damage caused by Elasmopalpus lignosellus (Zeller, 1848) to wheat under grass mulch. Semina (Londrina) 10(1), 12-16.",EPPO; UK; CABI
+America,Brazil,Pernambuco,Pernambuco,0,EPPO,,,,,"NO ACCESS: Moraes GJ de, Ramalho F de S (1980) [Some insects associated with Vigna unguiculata Walp in the northeast]. Boletim de Pesquisa, EMBRAPA no. 1, 1-10",EPPO; UK; CABI
+America,Brazil,Rio de Janeiro,Rio De Janeiro,0,EPPO,,,,,,EPPO; CABI
+America,Brazil,Rio Grande do Sul,Rio Grande Do Sul,0,EPPO,,,,,"NO ACCESS: * Bolzan Morais T, Martini Sanchotene D, Bidel Dornelles SH, Castro de Almeida T, Lima Spatt L, Nogueira Muller E, Pereira Shimoia E, Borges Leon C (2017) [Efficiency of clorantraniliprole in Elasmopalpus lignosellus (Zeller, 1848) control applied via seed treatment on soybean crop]. Perspectiva, Erechim. 41(155), 17-24 (in Portuguese). (from EPPO dist)
+
+* Correa Costa E, Link D (1992) Effectiveness of some insecticides in the control of the stem borer Elasmopalpus lignosellus (Zeller, 1848) in irrigated rice. Lavoura Arrozeira 45(404), 9-10. (from EPPO and CABI dist)",EPPO; CABI
+America,Brazil,Sao Paulo,Sao Paulo,0,EPPO,,,,,"NO ACCESS:  Pigatti A, Almeida PR de, Ribas C (1979) Field test for the control of Elasmopalpus lignosellus (Zeller, 1848) in wheat crops. Biologico 45(11/12), 305-308.",EPPO; UK; CABI
+America,Chile,Región de Arica y Parinacota  ,Arica y Parinacota,1,FAO.GAUL,91503,,,,"Introducción a los Phycitinae de Chile (Lepidoptera: Pyralidae), nuevo registro y descripción de una nueva especie del género Homoeographa Ragonot, 1888 (from EPPO dist)",EPPO
+America,Chile,Región de la Araucanía,Araucania,1,FAO.GAUL,884,,,,"Introducción a los Phycitinae de Chile (Lepidoptera: Pyralidae), nuevo registro y descripción de una nueva especie del género Homoeographa Ragonot, 1888 (from EPPO dist)",EPPO; UK; CABI
+America,Colombia,,Colombia,0,EPPO,,,,,"NO ACCESS:  Pantoja JE, Londoño F, Gómez LA (1993) Effect of dead hearts caused by Elasmopalpus lignosellus and other borers on sugarcane production. Serie Tecnica - CENICANA, Centro de Investigacion de la Cana de Azucar de Colombia no. 12, 50 pp. (from both EPPO dist and CABI)",EPPO; CABI
+America,Costa Rica,,Costa Rica,0,EPPO,,,,,"NO ACCESS: Badilla Fernández F (2002) A successful biological control program of insect pests in sugar cane in Costa Rica. Manejo Integrado de Plagas y Agroecología 64, 77-87.",EPPO; UK; CABI
+America,Cuba,Cuba,Baragua,2,FAO.GAUL,14584,,,kml,THE LESSER CORN STALK-BORER (ELASMOPALPUS LIGNOSELLUS ZELLER) INJURING SUGAR CANE IN CUBA,EPPO
+America,Cuba,Cuba,Camaguey,2,FAO.GAUL,14572,,,kml,THE LESSER CORN STALK-BORER (ELASMOPALPUS LIGNOSELLUS ZELLER) INJURING SUGAR CANE IN CUBA,EPPO
+America,Cuba,Cuba,Central Jaronù,0,location,,21.82545,-77.958855,,THE LESSER CORN STALK-BORER (ELASMOPALPUS LIGNOSELLUS ZELLER) INJURING SUGAR CANE IN CUBA,EPPO
+America,El Salvador,,El Salvador,0,EPPO,,,,,"UNIVERSIDAD DE EL SALVADOR FACULTAD DE CIENCIAS AGRONÓMICAS: PARASITOIDISMO Y CONTROL MICROBIANO DEL BARRENADOR (Diatraea,saccharalis F.) DE LA CAÑA DE AZÚCAR (Saccharum officinarum L.), EN EL DEPARTAMENTO DE SONSONATE, EL SALVADOR, 2009 (from EPPO dist)",EPPO; UK; CABI
+America,French Guiana,,French Guiana,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,Guatemala,,Guatemala,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,Guyana,Guyana,Guyana,0,EPPO,,,,,,EPPO; UK; CABI
+America,Jamaica,Jamaica,Jamaica,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,Mexico,,Mexico,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,Panama,Panama,Panama,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,Paraguay,,Paraguay,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,Peru,,Peru,0,EPPO,,,,,"NO ACCESS; Razuri RV (1974) [Biology and behaviour of Elasmopalpus lignosellus Zeller, in maize]. Revista Peruana de Entomologia 17(1), 74-77 (in Spanish). (from EPPO dist)",EPPO; UK; CABI
+America,Puerto Rico,Puerto Rico,Puerto Rico,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,Trinidad and Tobago,Trinidad and Tobago,Trinidad and Tobago,0,EPPO,,,,,"Plagiprospherysa trinitatis (Dipt. Tachinidiae), a parasite of Elasmopalpus lignosellus (Lep. Phycitidae) in Trinidad, W.I. (from EPPO dist)",EPPO; UK; CABI
+America,Uruguay,,Uruguay,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,US,Alabama,"Wiregrass Substation in Headland, Ala. 'Florunner'",,location,,31.35493119,-85.32645315,,"Effects of Two Planting Dates and Three Tillage Systems on the Abundance of Lesser Cornstalk Borer (Lepidoptera: Pyralidae), Other Selected Insects, and Yield in Peanut Fields (from EPPO dist) + Density of the Lesser Cornstalk Borer, Elasmopalpus lignosellus (Zeller) in Peanut Fields: Endemic and Outbreak Population Configurations (from our first screening)",from our first screening
+America,US,Arizona,Arizona,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Arizona,Tempe,,location,,33.4255104,-111.9400054,kml,UNITED STATES DEPARTMENT OF AGRICULTURE BULLETIN No. 539 Howard ,from personal research
+America,US,Arkansas,Arkansas,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,California,California,,,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,US,California,Coachella valley,,location,,33.7666873,-116.3591772,kml,Cultural and Chemical Control of the Lesser Cornstalk Borer in Southern Californial (from personal research),from personal research
+America,US,California,Imperial valley,,location,,32.7375477,-114.9633007,kml,Cultural and Chemical Control of the Lesser Cornstalk Borer in Southern Californial (from personal research),from personal research
+America,US,California,Palo Verde valley,,location,,33.4328069,-114.7321814,kml,Cultural and Chemical Control of the Lesser Cornstalk Borer in Southern Californial (from personal research),from personal research
+America,US,California,San Diego County,2,FAO.GAUL,28901,,,,Cultural and Chemical Control of the Lesser Cornstalk Borer in Southern Californial (from personal research),from personal research
+America,US,Columbia Districit,District of Columbia,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist); UNITED STATES DEPARTMENT OF AGRICULTURE BULLETIN No. 539 Howard (from our personal research)",EPPO; UK; CABI; personal research 
+America,US,Connecticut,Connecticut,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Delaware,Delaware,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Florida,Arcadia,,location,,27.2158826,-81.8584164,kml,UNITED STATES DEPARTMENT OF AGRICULTURE BULLETIN No. 539 Howard (from personal research),from personal research
+America,US,Florida,Belle Glade,0,location,,26.6845104,-80.6675577,kml ,"Effects of Elasmopalpus lignosellus (Lepidoptera: Pyralidae) Damage on Sugarcane Yield (from EPPO dist, maybe useful for biology too)",EPPO; UK; CABI
+America,US,Florida,Gadsden,2,FAO.GAUL,29016,,,kml,Phenology and Dispersion Patterns of Larval Lesser Cornstalk Borers (Lepidoptera: Pyralidae) In Grain Sorghum in North Florida (from our first sceening),EPPO; UK; CABI
+America,US,Florida,Jackson,2,FAO.GAUL,29028,,,kml,Phenology and Dispersion Patterns of Larval Lesser Cornstalk Borers (Lepidoptera: Pyralidae) In Grain Sorghum in North Florida (from our first sceening),EPPO; UK; CABI
+America,US,Florida,Lakeland,,location,,28.0394654,-81.9498042,kml,UNITED STATES DEPARTMENT OF AGRICULTURE BULLETIN No. 539 Howard; Thesis Kamal 1973 (both from personal reasearch),from personal research
+America,US,Florida,Miami,,location,,25.7616798,-80.1917902,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,Florida,Moore Haven,0,location,,26.8331174,-81.0931234,kml ,"Effects of Elasmopalpus lignosellus (Lepidoptera: Pyralidae) Damage on Sugarcane Yield (from EPPO dist, maybe useful for biology too)",EPPO; UK; CABI
+America,US,Florida,Palm Beach,,,,26.7056206,-80.0364297,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,Georgia," University of Georgia Coastal Plain Experiment Station in Tifton, GA",0,location,,31.4766962,-83.53027463,,"Field Evaluation of Soybean Engineered with a Synthetic cry1Ac
+Transgene for Resistance to Corn Earworm, Soybean Looper, Velvetbean Caterpillar (Lepidoptera: Noctuidae), and Lesser Cornstalk Borer (Lepidoptera: Pyralidae) (from EPPO dist)",EPPO; UK; CABI
+America,US,Georgia,Dublin,0,location,,32.5404447,-82.903754,kml,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,US,Georgia,"University of Georgia Plant Sciences Farm,  Athens, GA",0,location,,33.94217249,-83.37506559,,"Field Evaluation of Soybean Engineered with a Synthetic cry1Ac Transgene for Resistance to Corn Earworm, Soybean Looper, Velvetbean Caterpillar (Lepidoptera: Noctuidae), and Lesser Cornstalk Borer (Lepidoptera: Pyralidae) (from EPPO dist)",EPPO; UK; CABI
+America,US,Hawaii,Kauai,2,FAO.GAUL,29227,,,kml,Temperature-Dependent Development of Elasmopalpus lignosellus (Lepidoptera: Pyralidae) on Sugarcane Under Laboratory Conditions (from our first screening),EPPO
+America,US,Hawaii,,,,,,,,Ota and Chang (1990) (from CABI),EPPO; CABI
+America,US,Illinois,Illinois,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Indiana,Lafayette,,location,,30.2240897,-92.0198427,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,Iowa,Iowa,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Kansas,Kansas,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Louisiana,Baton Rouge,,location,,30.4514677,-91.1871466,kml,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,US,Louisiana,New Orleans,,location,,29.9510658,-90.0715323,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,Maryland,Maryland,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Massachusetts,Massachusetts,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,US,Mississippi,Mississippi,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Missouri,Missouri,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,New Jersey,New Jersey,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,US,New Mexico,New Mexico,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,New York,New York,0,EPPO,,,,,,UK; CABI
+America,US,NORTH CAROLINA,Castle Hayne,0,location,,34.3557241,-77.8999864,kml,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,US,NORTH CAROLINA,Clayton,0,location,,35.650711,-78.4563914,kml,Evaluation of Cultivated and Wild Peanut Species for Resistance to the Lesser Cornstalk Borer (from EPPO dist),EPPO; UK; CABI
+America,US,NORTH CAROLINA,"Sandhills Research Station, N.C.",0,location,,35.18318309,-79.67756149,,Evaluation of Cultivated and Wild Peanut Species for Resistance to the Lesser Cornstalk Borer (from EPPO dist),EPPO; UK; CABI
+America,US,Ohio,Ohio,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Oklahoma,Oklahoma,0,EPPO,,,,,Field Comparison of Peanut Varieties Resistant to the Lesser Cornstalk Borer (from EPPO dist),EPPO; UK; CABI
+America,US,South Carolina,Charleston,2,FAO.GAUL,31002,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,US,South Carolina,Clemson College,,location,,34.6246095,-82.7396897,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,Tennessee,Nashville,,location,,36.1626638,-86.7816016,kml,UNITED STATES DEPARTMENT OF AGRICULTURE BULLETIN No. 539 Howard (from personal research),from personal research
+America,US,Tennessee,Tennessee,0,EPPO,,,,,,EPPO; UK; CABI
+America,US,Texas,Big Spring,,location,,32.2503979,-101.4787355,kml,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI
+America,US,Texas,Brownsville,,location,,25.9017472,-97.4974838,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,Texas,Burnet county,,location,,30.7270349,-98.2212979,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,Texas,Comanche,2,FAO.GAUL,31246,,,,"Ecology of Elasmopalpus lignosellus Parasite Complex on Peanuts in Texas (from EPPO dist) +  Natural Mortality of the Lesser Cornstalk Borer (Lepidoptera: Pyralidae) in a Peanut Agroecosystem (from our first screening) -> ""northeast of C. County""",from our first screening
+America,US,Texas,Dallas,,location,,32.7766642,-96.7969879,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,Texas,Kerrville,,location,,30.0474332,-99.1403189,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,Texas,Victoria,,location,,28.8052674,-97.0035982,kml,Thesis Kamal 1973 (from personal research),from personal research
+America,US,US Virgin Islands,United States Virgin Islands,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist! Not indicated on CABI)",CABI
+America,US,Virginia,Virginia,0,EPPO,,,,,"NO ACCESS: Perez JR, Van KhuoN, Thi Van T, Castro S (1980) Diseases and pests of sugar-cane in the Socialist Republic of Vietnam. Ciencias de la Agricultura 6, 156-158. (from EPPO dist)",EPPO; UK; CABI
+America,Venezuela,,Venezuela,0,EPPO,,,,,"Systematics of immature Phycitines (Lepidoptera: Pyralidae) associated with leguminous plants in the Southern United States. USDA Technical Bulletin no. 1589, 126 pp. (from EPPO dist)",EPPO; UK; CABI

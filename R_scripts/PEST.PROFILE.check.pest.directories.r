@@ -6,7 +6,7 @@
 
 dir.create(file.path(output.dir, pest.name))
 dir.create(file.path(review.dir, pest.name))
-dir.create(file.path(paste(data.dir, "processed\\", pest.name, sep="")))
+#dir.create(file.path(paste(data.dir, "processed\\", pest.name, sep="")))
 
 dir.create(file.path(paste(output.dir, pest.name, sep=""), "Distribution"))
 dir.create(file.path(paste(output.dir, pest.name, sep=""), "Hosts"))

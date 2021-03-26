@@ -1,0 +1,32 @@
+﻿Group,Climate group,Climate code,Climate description
+A,Tropical,Af,Tropical rainforest climate
+A,Tropical,Am,Tropical monsoon climate
+A,Tropical,As,Tropical wet and dry or savanna climate
+A,Tropical,Aw,Tropical wet and dry or savanna climate
+B,Dry,BWh,Hot desert climate
+B,Dry,BWk,Cold desert climate
+B,Dry,BSh,Hot semi-arid climate
+B,Dry,BSk,Cold semi-arid climate
+C,Temperate,Cfa,Humid subtropical climate
+C,Temperate,Cfb,Temperate oceanic climate
+C,Temperate,Cfc,Subpolar oceanic climate
+C,Temperate,Cwa,Monsoon-influenced humid subtropical climate
+C,Temperate,Cwb,Subtropical highland climate or Monsoon-influenced temperate oceanic climate
+C,Temperate,Cwc,Cold subtropical highland climate or Monsoon-influenced subpolar oceanic climate
+C,Temperate,Csa,Hot-summer Mediterranean climate
+C,Temperate,Csb,Warm-summer Mediterranean climate
+C,Temperate,Csc,Cold-summer Mediterranean climate
+D,Continental,Dfa,Hot-summer humid continental climate
+D,Continental,Dfb,Warm-summer humid continental climate
+D,Continental,Dfc,Subarctic climate
+D,Continental,Dfd,Extremely cold subarctic climate
+D,Continental,Dwa,Monsoon-influenced hot-summer humid continental climate
+D,Continental,Dwb,Monsoon-influenced warm-summer humid continental climate
+D,Continental,Dwc,Monsoon-influenced subarctic climate
+D,Continental,Dwd,Monsoon-influenced extremely cold subarctic climate
+D,Continental,Dsa,Mediterranean-influenced hot-summer humid continental climate
+D,Continental,Dsb,Mediterranean-influenced warm-summer humid continental climate
+D,Continental,Dsc,Mediterranean-influenced subarctic climate
+D,Continental,Dsd,Mediterranean-influenced extremely cold subarctic climate
+E,Polar and alpine,ET,Tundra climate
+E,Polar and alpine,EF,Ice cap climate

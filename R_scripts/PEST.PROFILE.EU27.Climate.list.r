@@ -23,3 +23,5 @@ if(i.recalculate.EU27.climate.list == "yes")
   EU.climates <- read.csv(paste(input.dir, "EU27.Climate.list.csv", sep=""), stringsAsFactors = FALSE, header = TRUE)[,1]
 }
 
+
+

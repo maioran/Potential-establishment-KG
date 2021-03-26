@@ -21,11 +21,10 @@ if(any(is.na(pest.hosts$Organism)))
 {
   pest.hosts <- pest.hosts[-which(is.na(pest.hosts$Organism)),]
 }
-
 pest.hosts <- pest.hosts[order(pest.hosts$Organism),]
-if(any(pest.hosts$Type %in% i.host.remove))
+if(any !(pest.hosts$Type %in% i.host.status))
 {
-  pest.hosts <- pest.hosts[-which(pest.hosts$Type %in% i.host.remove),]
+  pest.hosts <- pest.hosts[which(pest.hosts$Type %in% i.host.status),]
 }
 write.csv(pest.hosts, row.names = FALSE, paste(output.dir, pest.name, "\\Hosts\\Host.table_",actual.date,".csv", sep=""))
 rm(eppo.pest.host.url, tables.host)

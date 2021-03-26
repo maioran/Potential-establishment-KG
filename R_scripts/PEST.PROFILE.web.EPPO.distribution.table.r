@@ -6,18 +6,20 @@
 
 # test if any file is present in the REVIEW.Distribution and in the REVIEW.Climates folder. If any file is present then connect to EPPO Global db
 
-if(length(list.files(paste("Data\\processed\\", pest.name, "\\REVIEW.Distribution\\",sep="")))==0)
+if(length(list.files(paste(review.dir,pest.name, "\\REVIEW.Distribution\\",sep="")))==0)
 {
   # Connect to EPPO server and retrieve EPPO pest code
   path.eppo.code    <- "https://data.eppo.int/api/rest/1.0/tools/names2codes"
-  response          <- httr::POST(path.eppo.code, body=list(authtoken="61b2d7f23653e1f2e9815f14ef7bfd80",intext=pest.name))
+  response          <- httr::POST(path.eppo.code, body=list(authtoken=i.EPPO.thoken,intext=pest.name))
   pest.eppo.code    <- strsplit(httr::content(response)[[1]], ";")[[1]][2]
   
   ########### DISTRIBUTION ################
   # retrieve EPPO pest distribution table
   eppo.pest.distr.url <- RCurl::getURL(paste("https://gd.eppo.int/taxon/", pest.eppo.code,"/distribution", sep=""))#, .opts = list(ssl.verifypeer = FALSE))
-  tables <- XML::readHTMLTable(eppo.pest.distr.url) %>%
-    rlist::list.clean( fun = is.null, recursive = FALSE)
+  # tables <- XML::readHTMLTable(eppo.pest.distr.url) %>%
+  #   rlist::list.clean(fun = is.null, recursive = FALSE)
+  tables <- XML::readHTMLTable(eppo.pest.distr.url)
+  tables <- rlist::list.clean(tables, fun = is.null, recursive = FALSE)
   
   # clean EPPO table
   # select according to Status
@@ -53,9 +55,9 @@ if(length(list.files(paste("Data\\processed\\", pest.name, "\\REVIEW.Distributio
 }else
 {
   # if table with reviewed distribution is available it is loaded
-  rev.distr      <- list.files(paste("Data\\processed\\", pest.name, "\\REVIEW.Distribution\\",sep=""))
-  pest.kg.table  <- read.csv(paste("Data\\processed\\", pest.name, "\\REVIEW.Distribution\\", rev.distr, sep=""), stringsAsFactors = FALSE, na.strings = c("na", "NA", ""))
- 
+  rev.distr      <- list.files(paste(review.dir,pest.name, "\\REVIEW.Distribution\\",sep=""))
+  pest.kg.table  <- read.csv(paste(review.dir,pest.name, "\\REVIEW.Distribution\\", rev.distr, sep=""), stringsAsFactors = FALSE, na.strings = c("na", "NA", ""))
+ rm(rev.distr)
 }
 
 

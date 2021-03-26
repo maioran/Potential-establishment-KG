@@ -8,7 +8,7 @@ climate.colors.pest <- climate.colors
 climate.colors.pest[which(!levels(r)[[1]]$climate %in% pest.climates.list)] <- "#00000000"
 
 # map coordinate range (x1, x2, y1, y2). Grid extent (xat, yat) is set directly in the levelplot function below
-r.pest <- crop(r, extent(map.coord.reg$x1,map.coord.reg$x2, map.coord.reg$y1, map.coord.reg$y2))
+r.pest <- raster::crop(r, extent(map.coord.reg$x1,map.coord.reg$x2, map.coord.reg$y1, map.coord.reg$y2))
 
 # modifying legend dimension if region is not global
 if(i.region.to.plot != "Global")
@@ -40,7 +40,7 @@ jpeg(paste(output.dir,pest.name,"\\Koppen-Geiger\\",pest.name,"_KG_",period,"_",
 kg.map <- rasterVis::levelplot(r.pest, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r.pest),
                                scales=list(x=list(limits=c(xmin(r.pest), xmax(r.pest)), at=seq(xmin(r.pest), xmax(r.pest), map.coord.reg$xat)),
                                            y=list(limits=c(ymin(r.pest), ymax(r.pest)), at=seq(ymin(r.pest), ymax(r.pest), map.coord.reg$yat)), cex=0.6), 
-                               colorkey=list(space="top", tck=0, maxpixels=ncell(r.pest), labels=list(cex=cex.legend)))
+                               colorkey=list(labels=list(labels=r.pest@data@attributes[[1]]$climate), space="top", tck=0, maxpixels=ncell(r.pest), labels=list(cex=cex.legend)))
 kg.map <- kg.map + latticeExtra::layer(panel.text(-175, -50, paste("\uA9 EFSA\n",format(actual.date, "%d %B %Y"),sep=""), adj=0, cex=0.7))
 kg.map <- kg.map + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="grey"), data=list(EPPO.admin.layer=EPPO.admin.layer))
 

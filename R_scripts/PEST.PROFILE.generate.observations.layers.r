@@ -46,7 +46,7 @@ for(admin.source in unique(pest.kg.table$admin.source))
     {
       # create a layer of location points
       points.layer              <- pest.kg.table.source.fltr
-      coordinates(points.layer) <- ~ long + lat
+      sp::coordinates(points.layer) <- ~ long + lat
       
     }
     
@@ -59,4 +59,4 @@ if(!is.null(units.na.list))
   
 }
 
-rm(pest.kg.table.source.fltr, admin.source, actual.layer, actual.layer.select, units.na.list)
+rm(pest.kg.table.source.fltr, admin.source, actual.layer, actual.layer.select)

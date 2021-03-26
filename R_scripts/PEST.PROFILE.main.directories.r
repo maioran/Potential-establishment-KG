@@ -1,6 +1,7 @@
-output.dir    <- "Output\\"
+output.dir    <- "02_Output\\"
 input.dir     <- "Data\\input\\"
 data.dir      <- "Data\\"
-review.dir    <- "Review\\"
-config.dir    <- "00_Configuration\\"
+review.dir    <- "03_Review\\"
+config.dir    <- "01_Configuration\\"
 kg.map.dir    <- paste(data.dir,"input\\GIS\\", sep="")
+support.info  <- "Supporting_information\\"

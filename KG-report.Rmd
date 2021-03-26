@@ -1,83 +1,92 @@
 ---
 title: "Climate suitability assessment for *`r params$pest.name`* based on the Köppen–Geiger climate classification"
-author: "Andrea Maiorano"
+author: "`r params$author.list`"
 date: "`r Sys.Date()`<br><br>"
 output: html_document
   # officedown::rdocx_document:
   # reference_docx: draft-styles2.docx
 params:
   pest.name: "Default pest"
+  author.list: "Default author"
 ---
 
-
 ```{r setup, echo=FALSE}
-
+# setup knitr
 knitr::opts_chunk$set(echo = TRUE,
                       dev = c('jpeg'),
                       fig.align = 'center', fig.height = 7, fig.width = 10)
-
 # library(officedown)
 # library(officer)
 
 ```
 
-## Climate suitability based on the Köppen–Geiger climate classification
-Climate suitability based on the Köppen–Geiger climate classification is a relatively simple and easily accessible tool that can simplify and speed-up urgent analysis. This approach identifies areas with the same climates of the areas where a specific organism is distributed. It is a good compromise for simplified assessment with time constraints.
+Climate suitability based on the Köppen–Geiger climate classification is a relatively simple and easily accessible tool that can simplify and speed-up urgent analysis. This approach identifies areas with the same climates of the areas where a specific organism is distributed. It is a good compromise for simplified assessment with time constraints.<br>
 
-## Climate suitability for *`r params$pest.name`*
+```{r pest-info, echo=FALSE, warning=FALSE, message=FALSE, fig.keep='all'}
+# download EPPO distribution tables or load reviewed distribution table
+source("R_scripts\\PEST.PROFILE.web.EPPO.distribution.table.r", local = knitr::knit_global())
+# download EPPO host list table (if selected in configuration file)
+if(i.eppo.host.table=="yes") 
+{
+  source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r", local = knitr::knit_global())
+}
+# Function to create administrative units layers: 
+# - create layers including administrative units where pest was observed
+# - list of administrative units that were not found due to spelling mistakes, different naming conventions, different enconding, etc...
+source("R_scripts\\_PEST.PROFILE.admin.layer.fun.r", local = knitr::knit_global())
+# Function to extract climates from complete Koppen-Geiger map for the administrative units or points where pest was observed
+source("R_scripts\\_PEST.PROFILE.extract.climate.fun.r", local = knitr::knit_global())
+# load GIS layers
+source("R_scripts\\PEST.PROFILE.generate.observations.layers.r", local = knitr::knit_global())
+```
+
+
+```{r DistrLocToBeCheched, echo=FALSE, eval=(length(units.na.list)>0), results='asis'}
+cat(
+   '### Observed distribution: location names that need to be checked
+Please check the following location names that were not recognised by the system:<br>', 
+sep="")
+
+cat(units.na.list, sep="<br>")
+
+cat("<br>", sep="")
+```
+
+### Observed distribution table<br>
 
 ```{r process-map, echo=FALSE, warning=FALSE, message=FALSE, fig.keep='all'}
-# create and check directories
-#ps <- prop_section(page_margins = page_mar(bottom = 0.5, top = 0.5, left = 0.5, right=0.5))
-#block_section(ps)
-  source("R_scripts\\PEST.PROFILE.check.pest.directories.r", local = knitr::knit_global())
-  
-  # download EPPO distribution tables or load reviewed distribution table
-  source("R_scripts\\PEST.PROFILE.web.EPPO.distribution.table.r", local = knitr::knit_global())
-  #library(knitr)
-  
- kable_styling(kbl(pest.kg.table[,c("State", "Observation", "admin.source", "lat", "long")], format="pipe", digits = 0))
-  #knitr::kable(pest.kg.table[,c("State", "Observation", "admin.source", "lat", "long")], format="pipe", digits = 0)
+# print table including observed distribution (EPPO or user-defined)
+obs.table.show <- pest.kg.table[,c("Continent","Country","State","Observation", "admin.level","admin.source", "lat", "long")]
+colnames(obs.table.show) <- c("Continent","Country","State","Location", "Admin level", "Admin source", "Lat", "Long")
+knitr::kable(obs.table.show, format="pipe", digits = 4)
+# if protected zone mapping is requested then related layers are loaded
+# load list of protected zones
+if(i.include.protected.zones == "yes")
+{
+  source("R_scripts\\PEST.PROFILE.load.protected.zones.r", local = knitr::knit_global())
+  source("R_scripts\\PEST.PROFILE.generate.pz.layers.r", local = knitr::knit_global())
+}
+# Extract the list of climates relevant for the pest (RESOURCE DEMANDING)
+source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r", local = knitr::knit_global())
+kg.climate.list <- read.csv(paste0(support.info, "KG_climates.csv"), header = TRUE, stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")
 
-   # download EPPO host list table (if selected in configuration file)
-   if(i.eppo.host.table=="yes") 
-   {
-     source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r", local = knitr::knit_global())
-   }
-   
-   # Function to create administrative units layers: 
-   # - create layers including administrative units where pest was observed
-   # - list of administrative units that were not found due to spelling mistakes, different naming conventions, different enconding, ...
-   source("R_scripts\\_PEST.PROFILE.admin.layer.fun.r", local = knitr::knit_global())
-   
-   # Function to extract climates from complete Koppen-Geiger map for the administrative units or points where pest was observed
-   source("R_scripts\\_PEST.PROFILE.extract.climate.fun.r", local = knitr::knit_global())
-   
-   # load GIS layers
-   source("R_scripts\\PEST.PROFILE.generate.observations.layers.r", local = knitr::knit_global())
-   
-   # if protected zone mapping is requested then related layers are loaded
-   # load list of protected zones
-   if(i.include.protected.zones == "yes")
-   {
-     source("R_scripts\\PEST.PROFILE.load.protected.zones.r", local = knitr::knit_global())
-     source("R_scripts\\PEST.PROFILE.generate.pz.layers.r", local = knitr::knit_global())
-   }
-   
-   
-   # Extract the list of climates relevant for the pest (RESOURCE DEMANDING)
-   source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r", local = knitr::knit_global())
- 
-   
 ```
- 
- 
- <!---BLOCK_LANDSCAPE_START--->
+
+<!---BLOCK_LANDSCAPE_START--->
+### Climates included in the assessment<br>
+
+```{r pest.climate.table, echo=FALSE, warning=FALSE, message=FALSE, fig.keep='all'}
+pest.climate.table <- kg.climate.list[which(kg.climate.list$Climate.code %in% pest.climates.list),]
+#rm(kg.climate.list)
+knitr::kable(pest.climate.table, format="pipe", row.names = FALSE)
+#kable_styling(kbl(pest.climate.table, format="pipe", row.names = FALSE))
+```
+ <!---BLOCK_LANDSCAPE_STOP--->
+
+<!---BLOCK_LANDSCAPE_START--->
 ```{r kg-map, echo=FALSE, warning=FALSE, message=FALSE, results='hide', fig.keep='all'}
- 
- # KG pest map (RESOURCE DEMANDING)
- 
- source("R_scripts\\PEST.PROFILE.KG.pest.map.R")
+# KG pest map (RESOURCE DEMANDING)
+source("R_scripts\\PEST.PROFILE.KG.pest.map.R")
  
 ```
  <!---BLOCK_LANDSCAPE_STOP--->
