@@ -15,7 +15,7 @@ units.na.list       <- c()
 points.layer        <- NA
 
 for(admin.source in unique(pest.kg.table$admin.source))
-{# TEST: admin.source <- unique(pest.kg.table$admin.source)[4]
+{# TEST: admin.source <- unique(pest.kg.table$admin.source)[1]
   # filter on admin source
   pest.kg.table.source.fltr <- pest.kg.table[which(pest.kg.table$admin.source == admin.source),]
   
@@ -24,7 +24,7 @@ for(admin.source in unique(pest.kg.table$admin.source))
     if(admin.source != "location")
     {
       for(admin.level in unique(pest.kg.table.source.fltr$admin.level))
-      {#TEST: admin.level <- 1
+      {#TEST: admin.level <- 0
         pest.kg.table.level.fltr <- pest.kg.table.source.fltr[which(pest.kg.table.source.fltr$admin.level == admin.level),]
         
         # load actual layer
@@ -32,7 +32,7 @@ for(admin.source in unique(pest.kg.table$admin.source))
         
         # create a layer including only the relevant administrative units
         actual.layer.select <- admin.layer.fun(actual.layer, admin.level, admin.source, pest.kg.table.level.fltr)
-        actual.layer.select$units.na
+        #actual.layer.select$units.na
         observed.layer.list <- c(observed.layer.list, actual.layer.select$layer)
         
         if(!is.null(actual.layer.select$units.na))

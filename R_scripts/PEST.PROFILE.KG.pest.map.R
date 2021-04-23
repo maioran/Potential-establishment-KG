@@ -27,7 +27,6 @@ if(i.region.to.plot != "Global")
 if(i.region.to.plot != "Global")
 {
   cex.legend <- 0.4
-  
 }else
 {
   cex.legend <- 0.7

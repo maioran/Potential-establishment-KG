@@ -5,7 +5,7 @@
 ####################################################################################################
 
 pest.kg.table$layer <- NA
-if(any(pest.kg.table$admin.source == "EPPO"))
+if(any(pest.kg.table$admin.source == "EPPO", na.rm=TRUE))
 {
   pest.kg.table$layer[which(pest.kg.table$admin.source == "EPPO")] <- paste(pest.kg.table$admin.source[which(pest.kg.table$admin.source == "EPPO")], ".admin.layer.RData", sep="")
   pest.kg.table$layer[which(pest.kg.table$admin.source != "EPPO")] <- paste(pest.kg.table$admin.source[which(pest.kg.table$admin.source != "EPPO")], ".admin.layer.RData", sep="")
@@ -14,17 +14,17 @@ if(any(pest.kg.table$admin.source == "EPPO"))
   pest.kg.table$layer <- paste(pest.kg.table$admin.source, pest.kg.table$admin.level, ".layer.RData", sep="")
 }
 
-for(admin.layer in unique(pest.kg.table$layer))
-{
-  
-}
+# for(admin.layer in unique(pest.kg.table$layer))
+# {
+# 
+# }
 
 
-if(any(pest.kg.table$admin.source == "EPPO"))
-{
+# if(any(pest.kg.table$admin.source == "EPPO"))
+# {
   # load EPPO layer rdata file
-  load(paste(data.dir, "rdata\\EPPO.admin.layer.RData",sep=""))
-}
+load(paste(data.dir, "rdata\\EPPO0.layer.RData",sep=""))
+# }
 
 # load EU (Eurostat) NUTS0 layer
 load(paste(data.dir, "rdata\\EU.NUTS0.layer.RData",sep=""))

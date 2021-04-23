@@ -23,21 +23,26 @@ rm(list=ls())
 gc()
 actual.date <- Sys.Date()
 start.time <- Sys.time()
+#if (!require("renv"))       install.packages("renv")
+#renv::snapshot()
 
-# install packages if needed
-source("R_scripts\\PEST.PROFILE.install.required.packages.r")
+#renv::init()
 # set main directories
 source("R_scripts\\PEST.PROFILE.main.directories.r")
+# load renv data (for portability)
+#load(paste0(data.dir,"rdata\\bivpois.RData"))
+# install packages if needed
+source("R_scripts\\PEST.PROFILE.install.required.packages.r")
+#renv::restore()
 # load inputs from configuration file 
 source("R_scripts\\PEST.PROFILE.load.input.from.configuration.file.r")
 
 # Load Köppen–Geiger raster file (load raster and setup color palette for climates)
 # source("R_scripts\\_PEST.PROFILE.KG.map.setup.R")
 load(paste(data.dir, "rdata\\r_KG_raster.RData",sep=""))
-
 # Load EU27 Climate list
 source("R_scripts\\PEST.PROFILE.EU27.Climate.list.R")
-
+load(paste(data.dir, "rdata\\EPPO0.layer.RData",sep=""))
 for(pest.name in i.pest.list)
 {#TEST: pest.name <- i.pest.list[1]
   
