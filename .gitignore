@@ -1,7 +1,11 @@
 .Rproj.user
 .Rhistory
-.RData
 .Ruserdata
+.Rprofile
+02_Output
+03_Review
+Data/input/GIS
 Output/
+PESTS/
 C:\Users\maioran\Documents\Projects\Potential-establishment-KG\Output
 packrat/lib*/
