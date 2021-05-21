@@ -23,13 +23,12 @@ knitr::opts_chunk$set(echo = TRUE,
 Climate suitability based on the Köppen–Geiger climate classification is a relatively simple and easily accessible tool that can simplify and speed-up urgent analysis. This approach identifies areas with the same climates of the areas where a specific organism is distributed. It is a good compromise for simplified assessment with time constraints.<br>
 
 ```{r pest-info, echo=FALSE, warning=FALSE, message=FALSE, fig.keep='all'}
-# download EPPO distribution tables or load reviewed distribution table
-source("R_scripts\\PEST.PROFILE.web.EPPO.distribution.table.r", local = knitr::knit_global())
-# download EPPO host list table (if selected in configuration file)
-if(i.eppo.host.table=="yes") 
-{
-  source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r", local = knitr::knit_global())
-}
+
+# # download EPPO host list table (if selected in configuration file)
+# if(i.eppo.host.table=="yes") 
+# {
+#   source("R_scripts\\PEST.PROFILE.web.EPPO.host.table.r", local = knitr::knit_global())
+# }
 # Function to create administrative units layers: 
 # - create layers including administrative units where pest was observed
 # - list of administrative units that were not found due to spelling mistakes, different naming conventions, different enconding, etc...
@@ -55,17 +54,21 @@ cat("<br>", sep="")
 ### Observed distribution table<br>
 
 ```{r process-map, echo=FALSE, warning=FALSE, message=FALSE, fig.keep='all'}
-# print table including observed distribution (EPPO or user-defined)
-obs.table.show <- pest.kg.table[,c("Continent","Country","State","Observation", "admin.level","admin.source", "lat", "long")]
-colnames(obs.table.show) <- c("Continent","Country","State","Location", "Admin level", "Admin source", "Lat", "Long")
-knitr::kable(obs.table.show, format="pipe", digits = 4)
+if(distr.table == TRUE)
+{
+  # print table including observed distribution (EPPO or user-defined)
+  obs.table.show <- pest.kg.table[,c("Continent","Country","State","Observation", "admin.level","admin.source", "lat", "long")]
+  colnames(obs.table.show) <- c("Continent","Country","State","Location", "Admin level", "Admin source", "Lat", "Long")
+  knitr::kable(obs.table.show, format="pipe", digits = 4)
+}
+
 # if protected zone mapping is requested then related layers are loaded
 # load list of protected zones
-if(i.include.protected.zones == "yes")
-{
-  source("R_scripts\\PEST.PROFILE.load.protected.zones.r", local = knitr::knit_global())
-  source("R_scripts\\PEST.PROFILE.generate.pz.layers.r", local = knitr::knit_global())
-}
+# if(i.include.protected.zones == "yes")
+# {
+#   source("R_scripts\\PEST.PROFILE.load.protected.zones.r", local = knitr::knit_global())
+#   source("R_scripts\\PEST.PROFILE.generate.pz.layers.r", local = knitr::knit_global())
+# }
 # Extract the list of climates relevant for the pest (RESOURCE DEMANDING)
 source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r", local = knitr::knit_global())
 kg.climate.list <- read.csv(paste0(support.info, "KG_climates.csv"), header = TRUE, stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")

@@ -14,10 +14,10 @@ output.dir    <- "Output\\"
 input.dir     <- "Data\\input\\"
 data.dir      <- "Data\\"
 kg.map.dir    <- paste(data.dir,"input\\GIS\\", sep="")
-
+list.files(paste0(data.dir, "input\\GIS\\"))
 ######### EPPO ####################
 # save EPPO layer rdata file
-EPPO.admin.layer    <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EPPOadm_Borders_ms_simplified.shp", sep=""), "EPPOadm_Borders_ms_simplified", stringsAsFactors = FALSE)
+EPPO.admin.layer    <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EPPOadm_simplified.shp", sep=""), "EPPOadm_simplified", stringsAsFactors = FALSE)
 EPPO.admin.layer    <- sp::spTransform(EPPO.admin.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
 save(EPPO.admin.layer, file=paste(data.dir, "rdata\\EPPO0.layer.RData", sep=""))
 # save EPPO admin table (based on FAO GAUL)

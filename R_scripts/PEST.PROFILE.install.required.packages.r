@@ -4,15 +4,35 @@
 # The dplyr package is loaded anyway
 ####################################################################################################
 
-if (!require("httr"))          install.packages("httr")
-if (!require("knitr"))         install.packages("knitr")
-if (!require("latticeExtra"))  install.packages("latticeExtra")
-if (!require("rmarkdown"))     install.packages("rmarkdown")
-if (!require("markdown"))      install.packages("markdown")
-if (!require("raster"))        install.packages("raster")
-if (!require("rasterVis"))     install.packages("rasterVis")
-if (!require("readxl"))        install.packages("readxl")
-if (!require("RCurl"))         install.packages("RCurl")
-if (!require("sp"))            install.packages("sp")
-if (!require("rlist"))         install.packages("rlist")
-if (!require("XML"))           install.packages("XML")
+#options("install.lock"=FALSE)
+
+pkg <- c("cellranger",
+         #"crayon",
+         #"fansi",
+         "httr",
+         "jpeg",
+         "knitr",
+         "lattice",
+         "latticeExtra",
+         "markdown",
+         #"png",
+         #"R6",
+         "raster",
+         "rasterVis",
+         "RCurl",
+         "readxl",
+         "RColorBrewer",
+         #"rematch",
+         "rlist",
+         "rmarkdown",
+         "sp",
+         #"stringi",
+         "stringr",
+         "utf8",
+         "viridisLite",
+         "XML")
+
+for(current.pkg in pkg)
+{
+  if (!require(current.pkg))    install.packages(current.pkg,   dependencies = TRUE) #, INSTALL_opts = '--no-lock')
+}

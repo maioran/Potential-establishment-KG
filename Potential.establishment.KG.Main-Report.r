@@ -21,8 +21,11 @@
 # ------------------
 rm(list=ls())
 gc()
+library(raster)
+library(sp)
 actual.date <- Sys.Date()
 start.time <- Sys.time()
+report.kg <- TRUE
 #if (!require("renv"))       install.packages("renv")
 #renv::snapshot()
 
@@ -32,7 +35,7 @@ source("R_scripts\\PEST.PROFILE.main.directories.r")
 # load renv data (for portability)
 #load(paste0(data.dir,"rdata\\bivpois.RData"))
 # install packages if needed
-source("R_scripts\\PEST.PROFILE.install.required.packages.r")
+#source("R_scripts\\PEST.PROFILE.install.required.packages.r")
 #renv::restore()
 # load inputs from configuration file 
 source("R_scripts\\PEST.PROFILE.load.input.from.configuration.file.r")
@@ -45,15 +48,28 @@ source("R_scripts\\PEST.PROFILE.EU27.Climate.list.R")
 load(paste(data.dir, "rdata\\EPPO0.layer.RData",sep=""))
 for(pest.name in i.pest.list)
 {#TEST: pest.name <- i.pest.list[1]
-  
+  # pest.name <- "Amyelois transitella"
   # create and check directories
   source("R_scripts\\PEST.PROFILE.check.pest.directories.r", local = knitr::knit_global())
-  
-  rmarkdown::render("KG-report.Rmd", params = list(
-    pest.name = pest.name,
-    author.list = i.authors),
-    output_file = paste0(output.dir, pest.name,"\\Report-", pest.name, ".html")
-  )
+  # download EPPO distribution tables or load reviewed distribution table
+  source("R_scripts\\PEST.PROFILE.web.EPPO.distribution.table.r", local = knitr::knit_global())
+  if(distr.table == TRUE || climate.available ==TRUE)
+  {
+    if(report.kg==TRUE)
+    {
+      rmarkdown::render("KG-report.Rmd", params = list(
+      pest.name = pest.name,
+      author.list = i.authors),
+      output_file = paste0(output.dir, "\\Report-", pest.name, ".html"))
+    }else
+    {
+      source("KG.r")
+    }
+    
+  }else
+  {
+    print(paste0("****** WARNING: COULD NOT CREATE MAP FOR ", pest.name ))
+  }
   
 }
 end.time <- Sys.time()
