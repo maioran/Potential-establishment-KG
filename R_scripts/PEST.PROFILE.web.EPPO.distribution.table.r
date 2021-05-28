@@ -30,18 +30,19 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
   {
     ########### DISTRIBUTION ################
     # retrieve EPPO pest distribution table
+    
     # http GET request on the EPPO URL
     eppo.distr.url   <- paste0("https://gd.eppo.int/taxon/", pest.eppo.code,"/distribution")
     eppo.get.request <- httr::GET(eppo.distr.url,
                                   query = list(
-                                    apikey="61b2d7f23653e1f2e9815f14ef7bfd80",
+                                    apikey=i.EPPO.token,
                                     details = "true"
                                   ))
     # parse results
-    table_content <- httr::content(eppo.get.request, as = 'text')
+    table_content    <- httr::content(eppo.get.request, as = 'text')
     # get table and clean list
-    tables <- XML::readHTMLTable(table_content)
-    tables <- rlist::list.clean(tables, fun = is.null, recursive = FALSE)
+    tables           <- XML::readHTMLTable(table_content)
+    tables           <- rlist::list.clean(tables, fun = is.null, recursive = FALSE)
     
     if(length(tables) != 0)
     {
