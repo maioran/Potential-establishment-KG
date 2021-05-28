@@ -25,7 +25,7 @@ library(raster)
 library(sp)
 actual.date <- Sys.Date()
 start.time <- Sys.time()
-report.kg <- TRUE
+report.kg <- FALSE
 #if (!require("renv"))       install.packages("renv")
 #renv::snapshot()
 
