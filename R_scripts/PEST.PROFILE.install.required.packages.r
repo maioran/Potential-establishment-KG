@@ -30,3 +30,4 @@ for(current.pkg in pkg)
 {
   if (!require(current.pkg))    install.packages(current.pkg,   dependencies = TRUE) #, INSTALL_opts = '--no-lock')
 }
+

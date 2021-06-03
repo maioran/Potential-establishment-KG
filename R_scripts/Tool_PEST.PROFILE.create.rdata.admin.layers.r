@@ -14,7 +14,7 @@ output.dir    <- "Output\\"
 input.dir     <- "Data\\input\\"
 data.dir      <- "Data\\"
 kg.map.dir    <- paste(data.dir,"input\\GIS\\", sep="")
-list.files(paste0(data.dir, "input\\GIS\\"))
+
 ######### EPPO ####################
 # save EPPO layer rdata file
 EPPO.admin.layer    <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EPPOadm_simplified.shp", sep=""), "EPPOadm_simplified", stringsAsFactors = FALSE)

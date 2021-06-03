@@ -1,5 +1,5 @@
 # open eppo shapefile
-EPPO.admin.layer <- rgdal::readOGR("Data\\input\\GIS/EPPOadm_simplified.shp")
+EPPO.admin.layer <- rgdal::readOGR("Data\\input\\GIS\\EPPOadm_simplified.shp", use_iconv = TRUE, encoding = "UTF-8")
 # head(EPPO.admin.layer)
 # remove not useful fields
 eppo.field.remove <- c("STR1_YEAR", "EXP1_YEAR", "STATUS", "DISP_AREA", "Shape_Leng", "Shape_Area",
@@ -30,9 +30,9 @@ EPPO.admin.layer@data$EPPO_ADM[bg] <- paste(EPPO.admin.layer@data$ADM0_NAME[bg],
                                     EPPO.admin.layer@data$ADM_NAME[bg],
                                     sep="-")
 EPPO.admin.layer@data$EPPO_ADM[-bg] <-EPPO.admin.layer@data$ADM0_NAME[-bg]
-save(EPPO.admin.layer, file="Data\\rdata/EPPO0.layer.RData")
+save(EPPO.admin.layer, file="Data\\rdata\\EPPO0.layer.RData")
 
 # 
-bg <- which(EPPO.admin.layer@data$EPPO_ADM == "Brazil-Mato Grosso do Sul")
-EPPO.admin.layer@data$EPPO_ADM[bg]
-
+bg <- which(EPPO.admin.layer@data$ADM0_NAME == "Canada")
+EPPO.admin.layer@data[91,]
+grep("Cote",EPPO.admin.layer@data$ADM0_NAME)

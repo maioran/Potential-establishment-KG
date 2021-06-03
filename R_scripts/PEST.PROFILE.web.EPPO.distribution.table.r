@@ -18,7 +18,7 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
 {
   # Connect to EPPO server and retrieve EPPO pest code
   path.eppo.code    <- "https://data.eppo.int/api/rest/1.0/tools/names2codes"
-  response          <- httr::POST(path.eppo.code, body=list(authtoken=i.EPPO.thoken,intext=pest.name))
+  response          <- httr::POST(path.eppo.code, body=list(authtoken=i.EPPO.token,intext=pest.name))
   pest.eppo.code    <- strsplit(httr::content(response)[[1]], ";")[[1]][2]
   
   if(pest.eppo.code == "****NOT FOUND*****")

@@ -21,7 +21,7 @@ i.region.to.plot                 <- readxl::read_xlsx(config.file, sheet = "Othe
 i.recalculate.EU27.climate.list  <- readxl::read_xlsx(config.file, sheet = "Other settings")[[3,2]]
 i.eppo.host.table                <- readxl::read_xlsx(config.file, sheet = "Other settings")[[4,2]]
 i.include.protected.zones        <- readxl::read_xlsx(config.file, sheet = "Other settings")[[5,2]]
-i.EPPO.thoken                    <- readxl::read_xlsx(config.file, sheet = "Other settings")[[6,2]]
+i.EPPO.token                     <- readxl::read_xlsx(config.file, sheet = "Other settings")[[6,2]]
 # sheet: Climates_to_remove
 i.climates.to.remove             <- readxl::read_xlsx(config.file, sheet = "Climates_to_be_removed")[[1]]
 # sheet: tech. Addtional settings
