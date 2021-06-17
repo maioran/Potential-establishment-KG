@@ -11,7 +11,7 @@ climate.colors.pest[which(!levels(r)[[1]]$climate %in% pest.climates.list)] <- "
 r.pest <- raster::crop(r, extent(map.coord.reg$x1,map.coord.reg$x2, map.coord.reg$y1, map.coord.reg$y2))
 
 # modifying legend dimension if region is not global
-if(i.region.to.plot == "Europe")
+if(i.region.to.plot %in% c("Europe"))
 {
   cex.legend <- 0.5
   kg.print.width = 18
@@ -27,7 +27,7 @@ if(i.region.to.plot == "Europe")
   kg.efsa.x       <- -175
   kg.efsa.y       <- -50
   
-}else if(i.region.to.plot == "SE Asia")
+}else if(i.region.to.plot %in% c("SE Asia"))
 {
   cex.legend <- 0.5
   kg.print.width = 16
@@ -35,6 +35,20 @@ if(i.region.to.plot == "Europe")
   kg.efsa.x       <- -23
   kg.efsa.y       <- 33
   
+}else if(i.region.to.plot %in% c("China"))
+{
+  cex.legend <- 0.5
+  kg.print.width = 18
+  kg.print.heigth = 13
+  kg.efsa.x       <- -23
+  kg.efsa.y       <- 33
+}else if(i.region.to.plot %in% c("China_SE"))
+{
+  cex.legend <- 0.6
+  kg.print.width = 21
+  kg.print.heigth = 15
+  kg.efsa.x       <- -175
+  kg.efsa.y       <- -50
 }else
 {
   cex.legend <- 0.7

@@ -12,7 +12,7 @@
 # a list including a vector layer with the administrative units inlcuded in fltrd.distr.table
 # a vector including the list of administrative units that were not recognised
 admin.layer.fun <- function(admin.layer, admin.level, admin.source, fltrd.distr.table)
-{#TEST: admin.layer <- actual.layer; fltrd.distr.table <- pest.kg.table.level.fltr; admin.source <- "FAO.GAUL";
+{#TEST: admin.layer <- actual.layer; fltrd.distr.table <- pest.kg.table.level.fltr; admin.source <- "EPPO";
   admin.units.not.available <- c()
   if(admin.source == "EPPO")
   {

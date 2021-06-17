@@ -15,15 +15,15 @@ input.dir     <- "Data\\input\\"
 data.dir      <- "Data\\"
 kg.map.dir    <- paste(data.dir,"input\\GIS\\", sep="")
 
-######### EPPO ####################
-# save EPPO layer rdata file
-EPPO.admin.layer    <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EPPOadm_simplified.shp", sep=""), "EPPOadm_simplified", stringsAsFactors = FALSE)
-EPPO.admin.layer    <- sp::spTransform(EPPO.admin.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
-save(EPPO.admin.layer, file=paste(data.dir, "rdata\\EPPO0.layer.RData", sep=""))
-# save EPPO admin table (based on FAO GAUL)
-EPPO.table <- EPPO.admin.layer@data[,-which(names(EPPO.admin.layer) %in% c("layer", "path"))]
-write.csv(EPPO.table, file="Supporting_information\\EPPO Codes and names.csv", row.names = FALSE)
-rm(EPPO.admin.layer, EPPO.table)
+# ######### EPPO ####################
+# # save EPPO layer rdata file
+# EPPO.admin.layer    <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EPPOadm_simplified.shp", sep=""), "EPPOadm_simplified", stringsAsFactors = FALSE)
+# EPPO.admin.layer    <- sp::spTransform(EPPO.admin.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
+# save(EPPO.admin.layer, file=paste(data.dir, "rdata\\EPPO0.layer.RData", sep=""))
+# # save EPPO admin table (based on FAO GAUL)
+# EPPO.table <- EPPO.admin.layer@data[,-which(names(EPPO.admin.layer) %in% c("layer", "path"))]
+# write.csv(EPPO.table, file="Supporting_information\\EPPO Codes and names.csv", row.names = FALSE)
+# rm(EPPO.admin.layer, EPPO.table)
 
 ######### FAO.GAUL ####################
 # FAO GAUL 0 RData
@@ -41,7 +41,7 @@ FAO.GAUL2.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\g2015_2014_2
 FAO.GAUL2.layer      <- sp::spTransform(FAO.GAUL2.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
 save(FAO.GAUL2.layer, file=paste(data.dir, "rdata\\FAO.GAUL2.layer.RData", sep=""))
 # save FAO GAUL 2 admin table
-write.csv(FAO.GAUL2.layer@data[,-which(names(FAO.GAUL2.layer) %in% c("STR2_YEAR", "EXP2_YEAR", "Shape_Leng", "Shape_Area"))], file="Supporting_information\\EPPO Codes and names.csv", row.names = FALSE)
+write.csv(FAO.GAUL2.layer@data[,-which(names(FAO.GAUL2.layer) %in% c("STR2_YEAR", "EXP2_YEAR", "Shape_Leng", "Shape_Area"))], file="Supporting_information\\FAO_GAUL_Codes_and_names.csv", row.names = FALSE)
 rm(FAO.GAUL2.layer)
 
 ######### EU.NUTS ####################
@@ -113,7 +113,7 @@ EU.NUTS.table <- EU.NUTS.table[, c("CNTR_CODE", "NUTS0_NAME_INT","NUTS0_NAME_LAT
                                    "NUTS2_ID",  "NUTS2_NAME_LATN", 
                                    "NUTS3_ID",  "NUTS3_NAME_LATN")]
 # write table
-write.csv(EU.NUTS.table, file="Supporting_information\\EPPO Codes and names.csv", row.names = FALSE)
+write.csv(EU.NUTS.table, file="Supporting_information\\EU_NUTS_Codes_and_names.csv", row.names = FALSE)
 rm(EU.NUTS3.layer, EU.NUTS0.layer, EU.NUTS2.layer, EU.NUTS.table)
 
 EU27.layer          <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EU27_Eurostat_NUTS_RG_01M_2021_4326_reshaped.shp", sep=""), "EU27_Eurostat_NUTS_RG_01M_2021_4326_reshaped", stringsAsFactors = FALSE)

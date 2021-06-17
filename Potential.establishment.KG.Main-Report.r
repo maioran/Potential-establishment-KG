@@ -25,7 +25,7 @@ library(raster)
 library(sp)
 actual.date <- Sys.Date()
 start.time <- Sys.time()
-report.kg <- TRUE
+report.kg <- FALSE
 
 # set main directories
 source("R_scripts\\PEST.PROFILE.main.directories.r")
