@@ -28,18 +28,18 @@ start.time <- Sys.time()
 report.kg <- TRUE
 
 # set main directories
-source("R_scripts\\PEST.PROFILE.main.directories.r")
+source("R_scripts\\SCANClim.main.directories.r")
 
 # install packages if needed
 #source("R_scripts\\PEST.PROFILE.install.required.packages.r")
 
 # load inputs from configuration file 
-source("R_scripts\\PEST.PROFILE.load.input.from.configuration.file.r")
+source("R_scripts\\SCANClim.load.input.from.configuration.file.r")
 
 # Load Köppen–Geiger raster file (load raster and setup color palette for climates)
 load(paste(data.dir, "rdata\\r_KG_raster.RData",sep=""))
 # Load EU27 Climate list
-source("R_scripts\\PEST.PROFILE.EU27.Climate.list.R")
+source("R_scripts\\SCANClim.EU27.Climate.list.R")
 # load EPPO admin layer
 load(paste(data.dir, "rdata\\EPPO0.layer.RData",sep=""))
 
@@ -47,9 +47,9 @@ for(pest.name in i.pest.list)
 {#TEST: pest.name <- i.pest.list[1]  OR  pest.name <- "Amyelois transitella"
   
   # create and check directories
-  source("R_scripts\\PEST.PROFILE.check.pest.directories.r", local = knitr::knit_global())
+  source("R_scripts\\SCANClim.check.pest.directories.r", local = knitr::knit_global())
   # download EPPO distribution tables or load reviewed distribution table
-  source("R_scripts\\PEST.PROFILE.web.EPPO.distribution.table.r", local = knitr::knit_global())
+  source("R_scripts\\SCANClim.web.EPPO.distribution.table.r", local = knitr::knit_global())
   if(distr.table == TRUE || climate.available ==TRUE)
   {
     if(report.kg==TRUE)

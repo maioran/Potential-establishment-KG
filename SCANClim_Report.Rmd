@@ -32,11 +32,11 @@ Climate suitability based on the Köppen–Geiger climate classification is a re
 # Function to create administrative units layers: 
 # - create layers including administrative units where pest was observed
 # - list of administrative units that were not found due to spelling mistakes, different naming conventions, different enconding, etc...
-source("R_scripts\\_PEST.PROFILE.admin.layer.fun.r", local = knitr::knit_global())
+source("R_scripts\\_SCANClim.admin.layer.fun.r", local = knitr::knit_global())
 # Function to extract climates from complete Koppen-Geiger map for the administrative units or points where pest was observed
-source("R_scripts\\_PEST.PROFILE.extract.climate.fun.r", local = knitr::knit_global())
+source("R_scripts\\_SCANClim.extract.climate.fun.r", local = knitr::knit_global())
 # load GIS layers
-source("R_scripts\\PEST.PROFILE.generate.observations.layers.r", local = knitr::knit_global())
+source("R_scripts\\SCANClim.generate.observations.layers.r", local = knitr::knit_global())
 ```
 
 
@@ -70,7 +70,7 @@ if(distr.table == TRUE)
 #   source("R_scripts\\PEST.PROFILE.generate.pz.layers.r", local = knitr::knit_global())
 # }
 # Extract the list of climates relevant for the pest (RESOURCE DEMANDING)
-source("R_scripts\\PEST.PROFILE.extract.list.pest.climates.r", local = knitr::knit_global())
+source("R_scripts\\SCANClim.extract.list.pest.climates.r", local = knitr::knit_global())
 kg.climate.list <- read.csv(paste0(support.info, "KG_climates.csv"), header = TRUE, stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")
 
 ```
@@ -89,7 +89,7 @@ knitr::kable(pest.climate.table, format="pipe", row.names = FALSE)
 <!---BLOCK_LANDSCAPE_START--->
 ```{r kg-map, echo=FALSE, warning=FALSE, message=FALSE, results='hide', fig.keep='all'}
 # KG pest map (RESOURCE DEMANDING)
-source("R_scripts\\PEST.PROFILE.KG.pest.map.R")
+source("R_scripts\\SCANClim.KG.pest.map.R")
  
 ```
  <!---BLOCK_LANDSCAPE_STOP--->
