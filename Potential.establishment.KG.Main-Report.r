@@ -25,7 +25,7 @@ library(raster)
 library(sp)
 actual.date <- Sys.Date()
 start.time <- Sys.time()
-report.kg <- FALSE
+report.kg <- TRUE
 
 # set main directories
 source("R_scripts\\PEST.PROFILE.main.directories.r")
@@ -54,7 +54,7 @@ for(pest.name in i.pest.list)
   {
     if(report.kg==TRUE)
     {
-      rmarkdown::render("KG-report.Rmd", params = list(
+      rmarkdown::render("R_scripts\\KG-report.Rmd", params = list(
       pest.name = pest.name,
       author.list = i.authors),
       output_file = paste0(output.dir, "\\Report-", pest.name, ".html"))
