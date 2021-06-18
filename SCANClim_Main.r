@@ -54,13 +54,13 @@ for(pest.name in i.pest.list)
   {
     if(report.kg==TRUE)
     {
-      rmarkdown::render("R_scripts\\KG-report.Rmd", params = list(
+      rmarkdown::render("SCANClim_Report.Rmd", params = list(
       pest.name = pest.name,
       author.list = i.authors),
       output_file = paste0(output.dir, "\\Report-", pest.name, ".html"))
     }else
     {
-      source("KG.r")
+      source("SCANClim_basic.r")
     }
     
   }else
