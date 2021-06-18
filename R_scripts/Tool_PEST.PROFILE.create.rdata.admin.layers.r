@@ -41,8 +41,15 @@ FAO.GAUL2.layer      <- rgdal::readOGR(paste(data.dir, "input\\GIS\\g2015_2014_2
 FAO.GAUL2.layer      <- sp::spTransform(FAO.GAUL2.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
 save(FAO.GAUL2.layer, file=paste(data.dir, "rdata\\FAO.GAUL2.layer.RData", sep=""))
 # save FAO GAUL 2 admin table
-write.csv(FAO.GAUL2.layer@data[,-which(names(FAO.GAUL2.layer) %in% c("STR2_YEAR", "EXP2_YEAR", "Shape_Leng", "Shape_Area"))], file="Supporting_information\\FAO_GAUL_Codes_and_names.csv", row.names = FALSE)
-rm(FAO.GAUL2.layer)
+FAO.GAUL.table <- FAO.GAUL2.layer@data[,-which(names(FAO.GAUL2.layer) %in% c("STR2_YEAR", "EXP2_YEAR", "Shape_Leng"))]
+FAO.GAUL.table <- FAO.GAUL.table[,c("Continent",
+                                    "ADM0_NAME", "ADM0_CODE",
+                                    "ADM1_NAME", "ADM1_CODE",
+                                    "ADM2_NAME", "ADM2_CODE",
+                                    "ADM_NAME", "ADM_CODE",
+                                    "Shape_Area")]
+write.csv(FAO.GAUL.table, file="Supporting_information\\FAO_GAUL_Codes_and_names.csv", row.names = FALSE)
+rm(FAO.GAUL2.layer, FAO.GAUL.table)
 
 ######### EU.NUTS ####################
 # read table with international names of countries
@@ -119,3 +126,6 @@ rm(EU.NUTS3.layer, EU.NUTS0.layer, EU.NUTS2.layer, EU.NUTS.table)
 EU27.layer          <- rgdal::readOGR(paste(data.dir, "input\\GIS\\EU27_Eurostat_NUTS_RG_01M_2021_4326_reshaped.shp", sep=""), "EU27_Eurostat_NUTS_RG_01M_2021_4326_reshaped", stringsAsFactors = FALSE)
 EU27.layer          <- sp::spTransform(EU27.layer, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
 save(EU27.layer, file=paste(data.dir, "rdata\\EU27.layer.RData", sep=""))
+rm(country.int.codes, EU27.layer)
+rm(list=ls())
+gc()

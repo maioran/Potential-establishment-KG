@@ -1,0 +1,430 @@
+"Continent","ADM0_NAME","ADM0_CODE","ADM1_NAME","ADM1_CODE","ADM2_NAME","ADM2_CODE","EPPO_ADM","Shape_Area"
+NA,"Anguilla",9,"Name Unknown",416,NA,NA,"Anguilla",0.001726
+NA,"Indonesia",116,NA,NA,NA,NA,"Indonesia-Indonesia",153.794891
+NA,"Japan",126,NA,NA,NA,NA,"Japan-Japan",38.1809703
+NA,"Malaysia",153,NA,NA,NA,NA,"Malaysia-Malaysia",26.8571264
+"Asia","India",115,"Andhra Pradesh",1485,"Anantapur",17548,"India-Andhra Pradesh",1.6118757
+"Asia","India",115,"Telangana",1485,"Adilabad",17547,"India-Telangana",1.3786483
+NA,"Indonesia",116,"Kalimantan",1522,NA,NA,"Indonesia-Kalimantan",11.9682752
+NA,"Malaysia",153,"Sarawak",1902,NA,NA,"Malaysia-Sarawak",10.0814367
+NA,"Malaysia",153,"Sabah",1901,NA,NA,"Malaysia-Sabah",6.0329622
+NA,"Malaysia",153,"Johor",1891,NA,NA,"Malaysia-West",1.5589054
+NA,"United Kingdom",256,"England",3182,NA,NA,"United Kingdom-England",17.3011176
+NA,"United Kingdom",256,"Northern Ireland",3183,NA,NA,"United Kingdom-Northern Ireland",1.9693834
+NA,"United Kingdom",256,"Scotland",3184,NA,NA,"United Kingdom-Scotland",11.5929283
+NA,"United Kingdom",256,"Wales",3186,NA,NA,"United Kingdom-Wales",2.7599952
+NA,"Indonesia",116,"Papua Barat",73612,NA,NA,"Indonesia-Irian Jaya",7.8890247
+NA,"Indonesia",116,"Bali",1513,NA,NA,"Indonesia-Java",0.4641311
+NA,"Indonesia",116,"Maluku",73615,NA,NA,"Indonesia-Maluku",3.04973
+"Asia","Indonesia",116,"Nusatenggara Barat",1528,"Dompu",18144,"Indonesia-Nusa Tenggara",0.1892989
+NA,"Indonesia",116,"Sulawesi Tengah",1532,NA,NA,"Indonesia-Sulawesi",4.9668406
+"Asia","Indonesia",116,"Nangroe Aceh Darussalam",1512,"Aceh Besar",17960,"Indonesia-Sumatra",0.2290858
+NA,"Japan",126,"Hokkaidoo",1661,NA,NA,"Japan-Hokkaido",8.7420511
+NA,"Japan",126,"Aiti",1651,NA,NA,"Japan-Honshu",0.5049235
+NA,"Japan",126,NA,NA,NA,NA,"Japan-Kyushu",0.4772132
+NA,"Japan",126,"Okinawa",NA,NA,NA,"Japan-Ryukyu Archipelago",0.2011937
+NA,"Japan",126,"Ehime",1654,NA,NA,"Japan-Shikoku",0.5485329
+NA,"Russian Federation",204,"Bashkortostan Rep.",2494,NA,NA,"Russian Federation",19.7174327
+NA,"Russian Federation",204,"Aginskiy Buryatskiy A. Okrug",2488,NA,NA,"Russian Federation",2.5168585
+NA,"Russian Federation",204,"Amurskaya Oblast",2491,NA,NA,"Russian Federation",48.807413
+NA,"Russian Federation",204,"Arkhangelskaya Oblast",2492,NA,NA,"Russian Federation",55.1915427
+NA,"Russian Federation",204,"Adygeya Rep.",2487,NA,NA,"Russian Federation",0.9035465
+NA,"Russian Federation",204,"Altay Rep.",2489,NA,NA,"Russian Federation",11.7620192
+NA,"Mozambique",170,NA,NA,NA,NA,"Mozambique",67.0589393
+NA,"Mauritius",160,NA,NA,NA,NA,"Mauritius",0.1739921
+NA,"Malawi",152,NA,NA,NA,NA,"Malawi",9.9055668
+NA,"Mayotte",161,NA,NA,NA,NA,"Mayotte",0.0314987
+NA,"Rwanda",205,NA,NA,NA,NA,"Rwanda",2.0638524
+NA,"Somalia",226,NA,NA,NA,NA,"Somalia",51.7666118
+NA,"Zambia",270,NA,NA,NA,NA,"Zambia",62.7442808
+NA,"Kenya",133,NA,NA,NA,NA,"Kenya",47.3457704
+NA,"Madagascar",150,NA,NA,NA,NA,"Madagascar",50.7177603
+NA,"Reunion",206,NA,NA,NA,NA,"Reunion",0.2177527
+NA,"South Sudan",74,NA,NA,NA,NA,"South Sudan",51.5991664
+NA,"Seychelles",220,NA,NA,NA,NA,"Seychelles",0.0408918
+NA,"Tanzania",257,NA,NA,NA,NA,"Tanzania",76.8602655
+NA,"Uganda",253,NA,NA,NA,NA,"Uganda",19.6296736
+NA,"Zimbabwe",271,NA,NA,NA,NA,"Zimbabwe",33.5306895
+NA,"Ilemi triangle",61013,NA,NA,NA,NA,"Ilemi triangle",0.2590982
+NA,"Ethiopia",79,NA,NA,NA,NA,"Ethiopia",92.8692584
+NA,"Eritrea",77,NA,NA,NA,NA,"Eritrea",10.1679578
+NA,"Djibouti",70,NA,NA,NA,NA,"Djibouti",1.797112
+NA,"Comoros",58,NA,NA,NA,NA,"Comoros",0.1370478
+NA,"Burundi",43,NA,NA,NA,NA,"Burundi",2.1856517
+NA,"Gabon",89,NA,NA,NA,NA,"Gabon",21.4566844
+NA,"Equatorial Guinea",76,NA,NA,NA,NA,"Equatorial Guinea",2.1945653
+NA,"Chad",50,NA,NA,NA,NA,"Chad",106.6902005
+NA,"Sao Tome & Principe",214,NA,NA,NA,NA,"Sao Tome & Principe",0.0805058
+NA,"Congo",59,NA,NA,NA,NA,"Congo",27.6957881
+NA,"Congo, Democratic republic of the",68,NA,NA,NA,NA,"Congo, Democratic republic of the",189.9981073
+NA,"Cameroon",45,NA,NA,NA,NA,"Cameroon",38.0226767
+NA,"Central African Republic",49,NA,NA,NA,NA,"Central African Republic",50.680325
+NA,"Angola",8,NA,NA,NA,NA,"Angola",103.7558552
+NA,"Morocco",169,NA,NA,NA,NA,"Morocco",39.4713558
+NA,"Hala'ib triangle",40760,NA,NA,NA,NA,"Hala'ib triangle",1.561432
+NA,"Libya",145,NA,NA,NA,NA,"Libya",147.6465751
+NA,"Ma'tan al-Sarra",40762,NA,NA,NA,NA,"Ma'tan al-Sarra",0.1739189
+NA,"Sudan",6,NA,NA,NA,NA,"Sudan",155.8888017
+NA,"Tunisia",248,NA,NA,NA,NA,"Tunisia",15.1682325
+NA,"Western Sahara",268,NA,NA,NA,NA,"Western Sahara",23.9705798
+NA,"Egypt",40765,NA,NA,NA,NA,"Egypt",89.0791134
+NA,"Algeria",4,NA,NA,NA,NA,"Algeria",212.6930968
+NA,"Abyei",102,NA,NA,NA,NA,"Abyei",0.8189485
+NA,"Namibia",172,NA,NA,NA,NA,"Namibia",72.245525
+NA,"Eswatini",235,NA,NA,NA,NA,"Eswatini",1.5662385
+NA,"Lesotho",142,NA,NA,NA,NA,"Lesotho",2.8356674
+NA,"South Africa",227,NA,NA,NA,NA,"South Africa",113.1316266
+NA,"Botswana",35,NA,NA,NA,NA,"Botswana",50.6723842
+NA,"Saint Helena",207,NA,NA,NA,NA,"Saint Helena",0.0367684
+NA,"Togo",243,NA,NA,NA,NA,"Togo",4.6632373
+NA,"Sierra Leone",221,NA,NA,NA,NA,"Sierra Leone",5.9370449
+NA,"Senegal",217,NA,NA,NA,NA,"Senegal",16.4429069
+NA,"Nigeria",182,NA,NA,NA,NA,"Nigeria",74.9245897
+NA,"Niger",181,NA,NA,NA,NA,"Niger",100.679977
+NA,"Mauritania",159,NA,NA,NA,NA,"Mauritania",89.90863
+NA,"Mali",155,NA,NA,NA,NA,"Mali",106.5771976
+NA,"Liberia",144,NA,NA,NA,NA,"Liberia",7.8568664
+NA,"Guinea-Bissau",105,NA,NA,NA,NA,"Guinea-Bissau",2.5520957
+NA,"Gambia",90,NA,NA,NA,NA,"Gambia",0.9350799
+NA,"Guinea",106,NA,NA,NA,NA,"Guinea",20.0708618
+NA,"Ghana",94,NA,NA,NA,NA,"Ghana",19.5958913
+NA,"Cape Verde",47,NA,NA,NA,NA,"Cape Verde",0.3424116
+NA,"Cote d’Ivoire",66,NA,NA,NA,NA,"Cote d'Ivoire",26.3759875
+NA,"Burkina Faso",42,NA,NA,NA,NA,"Burkina Faso",22.7119697
+NA,"Benin",29,NA,NA,NA,NA,"Benin",9.4972047
+NA,"Dominica",71,NA,NA,NA,NA,"Dominica",0.0632262
+NA,"Dominican Republic",72,NA,NA,NA,NA,"Dominican Republic",4.12448
+NA,"Martinique",158,NA,NA,NA,NA,"Martinique",0.0925914
+NA,"Cayman Islands",48,NA,NA,NA,NA,"Cayman Islands",0.0230982
+NA,"Netherlands Antilles",176,NA,NA,NA,NA,"Netherlands Antilles",0.0657528
+NA,"Antigua and Barbuda",11,NA,NA,NA,NA,"Antigua and Barbuda",0.038453
+NA,"Cuba",63,NA,NA,NA,NA,"Cuba",9.6723845
+NA,"Grenada",99,NA,NA,NA,NA,"Grenada",0.0264331
+NA,"Jamaica",123,NA,NA,NA,NA,"Jamaica",0.9362473
+NA,"St Kitts-Nevis",208,NA,NA,NA,NA,"St Kitts-Nevis",0.0223027
+NA,"Montserrat",168,NA,NA,NA,NA,"Montserrat",0.0085776
+NA,"Turks and Caicos islands",251,NA,NA,NA,NA,"Turks and Caicos islands",0.0462392
+NA,"Trinidad and Tobago",246,NA,NA,NA,NA,"Trinidad and Tobago",0.42477
+NA,"Bahamas",20,NA,NA,NA,NA,"Bahamas",1.058404
+NA,"Saint Lucia",209,NA,NA,NA,NA,"Saint Lucia",0.0504101
+NA,"St Vincent and the Grenadines",211,NA,NA,NA,NA,"St Vincent and the Grenadines",0.0355705
+NA,"Virgin Islands (British)",39,NA,NA,NA,NA,"Virgin Islands (British)",0.0131923
+NA,"Barbados",24,NA,NA,NA,NA,"Barbados",0.0361045
+NA,"Guadeloupe",100,NA,NA,NA,NA,"Guadeloupe",0.1434396
+NA,"Haiti",108,NA,NA,NA,NA,"Haiti",2.3177114
+NA,"Puerto Rico",200,NA,NA,NA,NA,"Puerto Rico",0.7634177
+NA,"Virgin Islands (US)",258,NA,NA,NA,NA,"Virgin Islands (US)",0.030054
+NA,"Aruba",14,NA,NA,NA,NA,"Aruba",0.0149497
+NA,"Panama",191,NA,NA,NA,NA,"Panama",6.1471143
+NA,"El Salvador",75,NA,NA,NA,NA,"El Salvador",1.7325491
+NA,"Nicaragua",180,NA,NA,NA,NA,"Nicaragua",10.6915017
+NA,"Mexico",162,NA,NA,NA,NA,"Mexico",173.46298
+NA,"Honduras",111,NA,NA,NA,NA,"Honduras",9.4148736
+NA,"Guatemala",103,NA,NA,NA,NA,"Guatemala",9.1958673
+NA,"Costa Rica",61,NA,NA,NA,NA,"Costa Rica",4.2089128
+NA,"Belize",28,NA,NA,NA,NA,"Belize",1.8488781
+NA,"Saint Pierre et Miquelon",210,NA,NA,NA,NA,"Saint Pierre et Miquelon",0.0275412
+NA,"Kingman Reef",134,NA,NA,NA,NA,"Kingman Reef",0.0267864
+NA,"Greenland",98,NA,NA,NA,NA,"Greenland",662.8384843
+NA,"Bermuda",30,NA,NA,NA,NA,"Bermuda",0.0060515
+NA,"Colombia",57,NA,NA,NA,NA,"Colombia",92.8064334
+NA,"Guyana",107,NA,NA,NA,NA,"Guyana",17.2679845
+NA,"Ecuador",73,NA,NA,NA,NA,"Ecuador",20.8300036
+NA,"French Guiana",86,NA,NA,NA,NA,"French Guiana",6.7832463
+NA,"Paraguay",194,NA,NA,NA,NA,"Paraguay",35.2573789
+NA,"Suriname",233,NA,NA,NA,NA,"Suriname",11.8198666
+NA,"Uruguay",260,NA,NA,NA,NA,"Uruguay",17.1211522
+NA,"Venezuela",263,NA,NA,NA,NA,"Venezuela",74.724458
+NA,"Falkland Islands (Malvinas)",81,NA,NA,NA,NA,"Falkland Islands (Malvinas)",1.5723961
+NA,"Peru",195,NA,NA,NA,NA,"Peru",106.4847727
+NA,"South Georgia and the South Sandwich Islands",228,NA,NA,NA,NA,"South Georgia and the South Sandwich Islands",0.5393838
+NA,"Chile",51,NA,NA,NA,NA,"Chile",78.7461465
+NA,"Bolivia",33,NA,NA,NA,NA,"Bolivia",92.0060611
+NA,"Argentina",12,NA,NA,NA,NA,"Argentina",278.2891966
+NA,"Heard Island and McDonald Islands",109,NA,NA,NA,NA,"Heard Island and McDonald Islands",0.0553124
+NA,"French Southern and Antarctic Territories",88,NA,NA,NA,NA,"French Southern and Antarctic Territories",0.9483642
+NA,"Antarctica",10,NA,NA,NA,NA,"Antarctica",6041.9657836
+NA,"Turkmenistan",250,NA,NA,NA,NA,"Turkmenistan",57.9088355
+NA,"Uzbekistan",261,NA,NA,NA,NA,"Uzbekistan",48.6957499
+NA,"Tajikistan",239,NA,NA,NA,NA,"Tajikistan",14.6719043
+NA,"Kyrgyzstan",138,NA,NA,NA,NA,"Kyrgyzstan",21.4710303
+NA,"Kazakhstan",132,NA,NA,NA,NA,"Kazakhstan",343.064396
+NA,"Mongolia",167,NA,NA,NA,NA,"Mongolia",184.6392273
+NA,"Taiwan",147296,NA,NA,NA,NA,"Taiwan",3.199821
+NA,"Republic of Korea",202,NA,NA,NA,NA,"Republic of Korea",9.9542209
+NA,"Dem People's Rep of Korea",67,NA,NA,NA,NA,"Dem People's Rep of Korea",12.9458063
+NA,"China",33364,"Xianggang (Hong Kong)",NA,NA,NA,"China-Xianggang (Hong Kong)",0.094754
+NA,"China/India",52,NA,NA,NA,NA,"China/India",0.3364503
+NA,"Aksai Chin",2,NA,NA,NA,NA,"Aksai Chin",3.0289502
+NA,"Myanmar",171,NA,NA,NA,NA,"Myanmar",58.1128363
+NA,"Cambodia",44,NA,NA,NA,NA,"Cambodia",15.1016265
+NA,"Vietnam",264,NA,NA,NA,NA,"Vietnam",27.8335091
+NA,"Laos",139,NA,NA,NA,NA,"Laos",19.7232206
+NA,"Thailand",240,NA,NA,NA,NA,"Thailand",43.4036363
+NA,"Brunei Darussalam",40,NA,NA,NA,NA,"Brunei Darussalam",0.4806937
+NA,"Philippines",196,NA,NA,NA,NA,"Philippines",24.6011352
+NA,"Singapore",222,NA,NA,NA,NA,"Singapore",0.0482709
+NA,"East Timor",242,NA,NA,NA,NA,"East Timor",1.2239721
+NA,"Nepal",175,NA,NA,NA,NA,"Nepal",13.5597472
+NA,"Pakistan",188,NA,NA,NA,NA,"Pakistan",73.3751334
+NA,"Iran",117,NA,NA,NA,NA,"Iran",161.6660224
+NA,"India",40781,"Jammu & Kashmir",NA,NA,NA,"India-Jammu & Kashmir",18.2758739
+NA,"Sri Lanka",231,NA,NA,NA,NA,"Sri Lanka",5.4232817
+NA,"Bhutan",31,NA,NA,NA,NA,"Bhutan",3.4374009
+NA,"Bangladesh",23,NA,NA,NA,NA,"Bangladesh",12.3941298
+NA,"Arunachal Pradesh",15,NA,NA,NA,NA,"Arunachal Pradesh",6.2426764
+NA,"Afghanistan",1,NA,NA,NA,NA,"Afghanistan",62.5548857
+NA,"Oman",187,NA,NA,NA,NA,"Oman",26.7321984
+NA,"Kuwait",137,NA,NA,NA,NA,"Kuwait",1.6164887
+NA,"West Bank",267,NA,NA,NA,NA,"West Bank",0.0075986
+NA,"West Bank",267,NA,NA,NA,NA,"West Bank",0.5515279
+NA,"Lebanon",141,NA,NA,NA,NA,"Lebanon",0.988214
+NA,"Qatar",201,NA,NA,NA,NA,"Qatar",1.0351174
+NA,"Saudi Arabia",215,NA,NA,NA,NA,"Saudi Arabia",171.3545386
+NA,"Turkey",249,NA,NA,NA,NA,"Turkey",81.3293435
+NA,"Yemen",269,NA,NA,NA,NA,"Yemen",38.2885227
+NA,"Gaza Strip",91,NA,NA,NA,NA,"Gaza Strip",0.0343743
+NA,"Iraq",118,NA,NA,NA,NA,"Iraq",42.1032063
+NA,"Jordan",130,NA,NA,NA,NA,"Jordan",8.4344576
+NA,"Syria",238,NA,NA,NA,NA,"Syria",18.5832438
+NA,"Israel",121,NA,NA,NA,NA,"Israel",1.9643387
+NA,"Georgia",92,NA,NA,NA,NA,"Georgia",7.6048279
+NA,"Cyprus",64,NA,NA,NA,NA,"Cyprus",0.913838
+NA,"Bahrain",21,NA,NA,NA,NA,"Bahrain",0.0607156
+NA,"Azerbaijan",19,NA,NA,NA,NA,"Azerbaijan",17.45512
+NA,"Armenia",13,NA,NA,NA,NA,"Armenia",3.1378314
+NA,"United Arab Emirates",255,NA,NA,NA,NA,"United Arab Emirates",6.3132212
+NA,"Moldova, Republic of",165,NA,NA,NA,NA,"Moldova, Republic of",4.0127479
+NA,"Hungary",113,NA,NA,NA,NA,"Hungary",11.0478721
+NA,"Poland",198,NA,NA,NA,NA,"Poland",40.9483735
+NA,"Romania",203,NA,NA,NA,NA,"Romania",27.5842585
+NA,"Ukraine",254,NA,NA,NA,NA,"Ukraine",73.8425611
+NA,"Belarus",26,NA,NA,NA,NA,"Belarus",28.1405066
+NA,"Czech Republic",65,NA,NA,NA,NA,"Czech Republic",9.8348219
+NA,"Kuril islands",136,NA,NA,NA,NA,"Kuril islands",0.5674513
+NA,"Slovakia",223,NA,NA,NA,NA,"Slovakia",5.9957871
+NA,"Bulgaria",41,NA,NA,NA,NA,"Bulgaria",12.2416448
+NA,"Isle of Man",120,NA,NA,NA,NA,"Isle of Man",0.0788958
+NA,"Norway",186,NA,NA,NA,NA,"Norway",60.6113704
+NA,"Guernsey",104,NA,NA,NA,NA,"Guernsey",0.0098617
+NA,"Sweden",236,NA,NA,NA,NA,"Sweden",79.0945637
+NA,"Faroe Islands",82,NA,NA,NA,NA,"Faroe Islands",0.2402995
+NA,"Lithuania",147,NA,NA,NA,NA,"Lithuania",9.1929351
+NA,"Latvia",140,NA,NA,NA,NA,"Latvia",9.503453
+NA,"Svalbard and Jan Mayen Islands",234,NA,NA,NA,NA,"Svalbard and Jan Mayen Islands",26.2761068
+NA,"Ireland",119,NA,NA,NA,NA,"Ireland",9.3835461
+NA,"Iceland",114,NA,NA,NA,NA,"Iceland",19.4944912
+NA,"Jersey",128,NA,NA,NA,NA,"Jersey",0.0148112
+NA,"Finland",84,NA,NA,NA,NA,"Finland",62.9126727
+NA,"Estonia",78,NA,NA,NA,NA,"Estonia",7.0311062
+NA,"Denmark",69,NA,NA,NA,NA,"Denmark",6.3980189
+NA,"Madeira Islands",151,NA,NA,NA,NA,"Madeira Islands",0.0772396
+NA,"The former Yugoslav Republic of Macedonia",241,NA,NA,NA,NA,"The former Yugoslav Republic of Macedonia",2.745841
+NA,"Montenegro",2647,NA,NA,NA,NA,"Montenegro",1.5156363
+NA,"Croatia",62,NA,NA,NA,NA,"Croatia",6.462588
+NA,"Malta",156,NA,NA,NA,NA,"Malta",0.0315581
+NA,"San Marino",213,NA,NA,NA,NA,"San Marino",0.0067312
+NA,"Slovenia",224,NA,NA,NA,NA,"Slovenia",2.3653457
+NA,"Greece",97,NA,NA,NA,NA,"Greece",13.7972438
+NA,"Italy",122,NA,NA,NA,NA,"Italy",33.2250714
+NA,"Portugal",199,NA,NA,NA,NA,"Portugal",9.3206026
+NA,"Serbia",2648,NA,NA,NA,NA,"Serbia",9.9347311
+NA,"Spain",229,NA,NA,NA,NA,"Spain",53.5643904
+NA,"Bosnia and Herzegovina",34,NA,NA,NA,NA,"Bosnia and Herzegovina",5.7557704
+NA,"Azores Islands",74578,NA,NA,NA,NA,"Azores Islands",0.239397
+NA,"Andorra",7,NA,NA,NA,NA,"Andorra",0.0520217
+NA,"Albania",3,NA,NA,NA,NA,"Albania",3.0763647
+NA,"Netherlands",177,NA,NA,NA,NA,"Netherlands",4.6327649
+NA,"Luxembourg",148,NA,NA,NA,NA,"Luxembourg",0.327136
+NA,"Liechtenstein",146,NA,NA,NA,NA,"Liechtenstein",0.0179005
+NA,"France",85,NA,NA,NA,NA,"France",64.4312553
+NA,"Germany",93,NA,NA,NA,NA,"Germany",45.8756543
+NA,"Switzerland",237,NA,NA,NA,NA,"Switzerland",4.8622631
+NA,"Belgium",27,NA,NA,NA,NA,"Belgium",3.8976387
+NA,"Austria",18,NA,NA,NA,NA,"Austria",10.0407879
+NA,"New Zealand",179,NA,NA,NA,NA,"New Zealand",29.3423191
+NA,"Christmas Island",54,NA,NA,NA,NA,"Christmas Island",0.0112142
+NA,"Papua New Guinea",192,NA,NA,NA,NA,"Papua New Guinea",37.8055901
+NA,"Vanuatu",262,NA,NA,NA,NA,"Vanuatu",1.0345012
+NA,"Solomon Islands",225,NA,NA,NA,NA,"Solomon Islands",2.3236893
+NA,"New Caledonia",178,NA,NA,NA,NA,"New Caledonia",1.6169396
+NA,"Fiji",83,NA,NA,NA,NA,"Fiji",1.5560658
+NA,"Guam",101,NA,NA,NA,NA,"Guam",0.0453975
+NA,"Northern Mariana Islands",185,NA,NA,NA,NA,"Northern Mariana Islands",0.0401673
+NA,"Palau",189,NA,NA,NA,NA,"Palau",0.0369293
+NA,"Micronesia (Federated States of)",163,NA,NA,NA,NA,"Micronesia (Federated States of)",0.0605957
+NA,"Kiribati",135,NA,NA,NA,NA,"Kiribati",0.0829544
+NA,"Samoa",212,NA,NA,NA,NA,"Samoa",0.2369549
+NA,"Tonga",245,NA,NA,NA,NA,"Tonga",0.0603955
+NA,"Cook Islands",60,NA,NA,NA,NA,"Cook Islands",0.0208339
+NA,"Pitcairn",197,NA,NA,NA,NA,"Pitcairn",0.004358
+NA,"Wallis and Futuna",266,NA,NA,NA,NA,"Wallis and Futuna",0.0118327
+NA,"American Samoa",5,NA,NA,NA,NA,"American Samoa",0.0167469
+NA,"Niue",183,NA,NA,NA,NA,"Niue",0.0226084
+NA,"French Polynesia",87,NA,NA,NA,NA,"French Polynesia",0.3349042
+NA,"United States of America",259,"Alabama",3214,NA,NA,"United States of America-Alabama",12.8892338
+NA,"United States of America",259,"Alaska",3215,NA,NA,"United States of America-Alaska",279.8835937
+NA,"United States of America",259,"Arizona",3216,NA,NA,"United States of America-Arizona",28.9274535
+NA,"United States of America",259,"Arkansas",3217,NA,NA,"United States of America-Arkansas",13.5853783
+NA,"United States of America",259,"California",3218,NA,NA,"United States of America-California",41.6303932
+NA,"United States of America",259,"Colorado",3219,NA,NA,"United States of America-Colorado",28.0395078
+NA,"United States of America",259,"Connecticut",3220,NA,NA,"United States of America-Connecticut",1.3902579
+NA,"United States of America",259,"Delaware",3221,NA,NA,"United States of America-Delaware",0.5308297
+NA,"United States of America",259,"District of Columbia",3222,NA,NA,"United States of America-District of Columbia",0.0183792
+NA,"United States of America",259,"Florida",3223,NA,NA,"United States of America-Florida",13.7109568
+NA,"United States of America",259,"Georgia",3224,NA,NA,"United States of America-Georgia",14.5844505
+NA,"United States of America",259,"Hawaii",3225,NA,NA,"United States of America-Hawaii",1.4426193
+NA,"United States of America",259,"Idaho",3226,NA,NA,"United States of America-Idaho",24.4578129
+NA,"United States of America",259,"Illinois",3227,NA,NA,"United States of America-Illinois",15.4080815
+NA,"United States of America",259,"Indiana",3228,NA,NA,"United States of America-Indiana",9.8734582
+NA,"United States of America",259,"Iowa",3229,NA,NA,"United States of America-Iowa",15.8575816
+NA,"United States of America",259,"Kansas",3230,NA,NA,"United States of America-Kansas",22.0047163
+NA,"United States of America",259,"Kentucky",3231,NA,NA,"United States of America-Kentucky",10.6681531
+NA,"United States of America",259,"Louisiana",3232,NA,NA,"United States of America-Louisiana",11.1723936
+NA,"United States of America",259,"Maine",3233,NA,NA,"United States of America-Maine",9.6766245
+NA,"United States of America",259,"Maryland",3234,NA,NA,"United States of America-Maryland",2.7147675
+NA,"United States of America",259,"Massachusetts",3235,NA,NA,"United States of America-Massachusetts",2.2876394
+NA,"United States of America",259,"Michigan",3236,NA,NA,"United States of America-Michigan",17.0204707
+NA,"United States of America",259,"Minnesota",3237,NA,NA,"United States of America-Minnesota",25.5159939
+NA,"United States of America",259,"Mississippi",3238,NA,NA,"United States of America-Mississippi",11.8887587
+NA,"United States of America",259,"Missouri",3239,NA,NA,"United States of America-Missouri",18.6149967
+NA,"United States of America",259,"Montana",3240,NA,NA,"United States of America-Montana",45.0568544
+NA,"United States of America",259,"Nebraska",3241,NA,NA,"United States of America-Nebraska",21.6138431
+NA,"United States of America",259,"Nevada",3242,NA,NA,"United States of America-Nevada",29.9403588
+NA,"United States of America",259,"New Hampshire",3243,NA,NA,"United States of America-New Hampshire",2.6838123
+NA,"United States of America",259,"New Jersey",3244,NA,NA,"United States of America-New Jersey",2.0531449
+NA,"United States of America",259,"New Mexico",3245,NA,NA,"United States of America-New Mexico",30.898747
+NA,"United States of America",259,"New York",3246,NA,NA,"United States of America-New York",13.8760487
+NA,"United States of America",259,"North Carolina",3247,NA,NA,"United States of America-North Carolina",12.8076453
+NA,"United States of America",259,"North Dakota",3248,NA,NA,"United States of America-North Dakota",21.8071507
+NA,"United States of America",259,"Ohio",3249,NA,NA,"United States of America-Ohio",11.3191312
+NA,"United States of America",259,"Oklahoma",3250,NA,NA,"United States of America-Oklahoma",18.0050392
+NA,"United States of America",259,"Oregon",3251,NA,NA,"United States of America-Oregon",28.1566544
+NA,"United States of America",259,"Pennsylvania",3252,NA,NA,"United States of America-Pennsylvania",12.5328695
+NA,"United States of America",259,"Rhode Island",3253,NA,NA,"United States of America-Rhode Island",0.304661
+NA,"United States of America",259,"South Carolina",3254,NA,NA,"United States of America-South Carolina",7.8534128
+NA,"United States of America",259,"South Dakota",3255,NA,NA,"United States of America-South Dakota",22.5784681
+NA,"United States of America",259,"Tennessee",3256,NA,NA,"United States of America-Tennessee",10.8895452
+NA,"United States of America",259,"Texas",3257,NA,NA,"United States of America-Texas",65.1713348
+NA,"United States of America",259,"Utah",3258,NA,NA,"United States of America-Utah",22.9748903
+NA,"United States of America",259,"Vermont",3259,NA,NA,"United States of America-Vermont",2.7784481
+NA,"United States of America",259,"Virginia",3260,NA,NA,"United States of America-Virginia",10.5604867
+NA,"United States of America",259,"Washington",3261,NA,NA,"United States of America-Washington",20.8451918
+NA,"United States of America",259,"West Virginia",3262,NA,NA,"United States of America-West Virginia",6.4938701
+NA,"United States of America",259,"Wisconsin",3263,NA,NA,"United States of America-Wisconsin",16.4844035
+NA,"United States of America",259,"Wyoming",3264,NA,NA,"United States of America-Wyoming",27.9717046
+NA,"Canada",46,"Alberta",825,NA,NA,"Canada-Alberta",93.6215279
+NA,"Canada",46,"British Columbia",826,NA,NA,"Canada-British Columbia",132.4606851
+NA,"Canada",46,"Manitoba",827,NA,NA,"Canada-Manitoba",91.1822448
+NA,"Canada",46,"New Brunswick",828,NA,NA,"Canada-New Brunswick",8.5686765
+NA,"Canada",46,"Newfoundland and Labrador / Terre-Neuve-et-Labrador",829,NA,NA,"Canada-Newfoundland and Labrador / Terre-Neuve-et-Labrador",54.3491885
+NA,"Canada",46,"Northwest Territories / Territoires du Nord-Ouest",830,NA,NA,"Canada-Northwest Territories / Territoires du Nord-Ouest",271.1676667
+NA,"Canada",46,"Nova Scotia",831,NA,NA,"Canada-Nova Scotia",6.3424376
+NA,"Canada",46,"Nunavut",832,NA,NA,"Canada-Nunavut",520.4302765
+NA,"Canada",46,"Ontario",833,NA,NA,"Canada-Ontario",125.3504651
+NA,"Canada",46,"Prince Edward Island",834,NA,NA,"Canada-Prince Edward Island",0.6712749
+NA,"Canada",46,"Québec",835,NA,NA,"Canada-Québec",204.3124144
+NA,"Canada",46,"Saskatchewan",836,NA,NA,"Canada-Saskatchewan",90.4661571
+NA,"Canada",46,"Yukon",837,NA,NA,"Canada-Yukon",87.5588814
+NA,"Brazil",37,"Acre",665,NA,NA,"Brazil-Acre",12.5582663
+NA,"Brazil",37,"Alagoas",666,NA,NA,"Brazil-Alagoas",2.2899179
+NA,"Brazil",37,"Amapa",667,NA,NA,"Brazil-Amapa",11.4220834
+NA,"Brazil",37,"Amazonas",668,NA,NA,"Brazil-Amazonas",128.0197066
+NA,"Brazil",37,"Bahia",669,NA,NA,"Brazil-Bahia",46.867029
+NA,"Brazil",37,"Ceara",670,NA,NA,"Brazil-Ceara",12.0058035
+NA,"Brazil",37,"Distrito Federal",671,NA,NA,"Brazil-Distrito Federal",0.4893963
+NA,"Brazil",37,"Espirito Santo",672,NA,NA,"Brazil-Espirito Santo",3.9607492
+NA,"Brazil",37,"Goias",673,NA,NA,"Brazil-Goias",28.7329183
+NA,"Brazil",37,"Maranhao",674,NA,NA,"Brazil-Maranhao",26.8016634
+NA,"Brazil",37,"Mato Grosso",675,NA,NA,"Brazil-Mato Grosso",75.3203796
+NA,"Brazil",37,"Mato Grosso do Sul",676,NA,NA,"Brazil-Mato Grosso do Sul",30.8990219
+NA,"Brazil",37,"Minas Gerais",677,NA,NA,"Brazil-Minas Gerais",50.1978403
+NA,"Brazil",37,"Para",678,NA,NA,"Brazil-Para",101.0086466
+NA,"Brazil",37,"Paraiba",679,NA,NA,"Brazil-Paraiba",4.6135201
+NA,"Brazil",37,"Parana",680,NA,NA,"Brazil-Parana",17.7096001
+NA,"Brazil",37,"Pernambuco",681,NA,NA,"Brazil-Pernambuco",8.0852829
+NA,"Brazil",37,"Piaui",682,NA,NA,"Brazil-Piaui",20.6999387
+NA,"Brazil",37,"Rio de Janeiro",683,NA,NA,"Brazil-Rio de Janeiro",3.8309727
+NA,"Brazil",37,"Rio Grande Do Norte",684,NA,NA,"Brazil-Rio Grande Do Norte",4.3268054
+NA,"Brazil",37,"Rio Grande do Sul",685,NA,NA,"Brazil-Rio Grande do Sul",25.3690014
+NA,"Brazil",37,"Rondonia",686,NA,NA,"Brazil-Rondonia",19.6732923
+NA,"Brazil",37,"Roraima",687,NA,NA,"Brazil-Roraima",18.193075
+NA,"Brazil",37,"Santa Catarina",688,NA,NA,"Brazil-Santa Catarina",8.6620889
+NA,"Brazil",37,"Sao Paulo",689,NA,NA,"Brazil-Sao Paulo",21.7351811
+NA,"Brazil",37,"Sergipe",690,NA,NA,"Brazil-Sergipe",1.8137095
+NA,"Brazil",37,"Tocantins",691,NA,NA,"Brazil-Tocantins",22.8890538
+NA,"China",147295,"Anhui Sheng",898,NA,NA,"China-Anhui",13.3501226
+NA,"China",147295,"Beijing Shi",899,NA,NA,"China-Beijing",1.7380813
+NA,"China",147295,"Chongqing Shi",900,NA,NA,"China-Chongqing",7.6748687
+NA,"China",147295,"Fujian Sheng",901,NA,NA,"China-Fujian",11.0237961
+NA,"China",147295,"Gansu Sheng",902,NA,NA,"China-Gansu",41.53235
+NA,"China",147295,"Guangdong Sheng",903,NA,NA,"China-Guangdong",15.6595675
+NA,"China",147295,"Guangxi",904,NA,NA,"China-Guangxi",20.9861887
+NA,"China",147295,"Guizhou Sheng",905,NA,NA,"China-Guizhou",15.8803421
+NA,"China",147295,"Hainan Sheng",906,NA,NA,"China-Hainan",2.9043246
+NA,"China",147295,"Hebei Sheng",907,NA,NA,"China-Hebei",19.6979753
+NA,"China",147295,"Heilongjiang Sheng",908,NA,NA,"China-Heilongjiang",53.9231663
+NA,"China",147295,"Henan Sheng",909,NA,NA,"China-Henan",16.2064518
+NA,"China",147295,"Hubei Sheng",911,NA,NA,"China-Hubei",17.5672075
+NA,"China",147295,"Hunan Sheng",912,NA,NA,"China-Hunan",19.2898995
+NA,"China",147295,"Jiangsu Sheng",913,NA,NA,"China-Jiangsu",9.4818074
+NA,"China",147295,"Jiangxi Sheng",914,NA,NA,"China-Jiangxi",15.3617486
+NA,"China",147295,"Jilin Sheng",915,NA,NA,"China-Jilin",21.4006429
+NA,"China",147295,"Liaoning Sheng",916,NA,NA,"China-Liaoning",15.793947
+NA,"China",147295,"Nei Mongol Zizhiqu",917,NA,NA,"China-Nei Mongol Zizhiqu",129.6226687
+NA,"China",147295,"Ningxia",918,NA,NA,"China-Ningxia",5.3099513
+NA,"China",147295,"Qinghai Sheng",919,NA,NA,"China-Qinghai",71.1926863
+NA,"China",147295,"Shaanxi Sheng",920,NA,NA,"China-Shaanxi",20.3470231
+NA,"China",147295,"Shandong Sheng",921,NA,NA,"China-Shandong",15.5566908
+NA,"China",147295,"Shanghai Shi",922,NA,NA,"China-Shanghai",0.5933347
+NA,"China",147295,"Shanxi Sheng",923,NA,NA,"China-Shanxi",15.8182689
+NA,"China",147295,"Sichuan Sheng",924,NA,NA,"China-Sichuan",45.5315571
+NA,"China",147295,"Tianjin Shi",926,NA,NA,"China-Tianjin",1.2603461
+NA,"China",147295,"Xinjiang Uygur Zizhiqu",927,NA,NA,"China-Xinjiang Uygur Zizhiqu",172.6420068
+NA,"China",147295,"Xizang Zizhiqu",928,NA,NA,"China-Xizang Zizhiqu",107.145217
+NA,"China",147295,"Yunnan Sheng",929,NA,NA,"China-Yunnan",34.2923627
+NA,"China",147295,"Zhejiang Sheng",930,NA,NA,"China-Zhejiang",9.4994197
+NA,"India",115,"Andaman and Nicobar",1484,NA,NA,"India-Andaman and Nicobar",0.6229344
+NA,"India",115,"Assam",1487,NA,NA,"India-Assam",7.0370857
+NA,"India",115,"Delhi",1489,NA,NA,"India-Delhi",0.1386351
+NA,"India",115,"Goa",1490,NA,NA,"India-Goa",0.309065
+NA,"India",115,"Gujarat",1491,NA,NA,"India-Gujarat",14.8837107
+NA,"India",115,"Haryana",1492,NA,NA,"India-Haryana",4.0845185
+NA,"India",115,"Himachal Pradesh",1493,NA,NA,"India-Himachal Pradesh",5.2062953
+NA,"India",115,"Karnataka",1494,NA,NA,"India-Karnataka",16.0664216
+NA,"India",115,"Kerala",1495,NA,NA,"India-Kerala",3.1258959
+NA,"India",115,"Maharashtra",1498,NA,NA,"India-Maharashtra",26.4257456
+NA,"India",115,"Manipur",1500,NA,NA,"India-Manipur",1.9925646
+NA,"India",115,"Meghalaya",1501,NA,NA,"India-Meghalaya",2.0275815
+NA,"India",115,"Mizoram",1502,NA,NA,"India-Mizoram",1.8701116
+NA,"India",115,"Nagaland",1503,NA,NA,"India-Nagaland",1.4865209
+NA,"India",115,"Odisha",1504,NA,NA,"India-Odisha",13.479183
+NA,"India",115,"Punjab",1505,NA,NA,"India-Punjab",4.7146918
+NA,"India",115,"Rajasthan",1506,NA,NA,"India-Rajasthan",30.9981803
+NA,"India",115,"Sikkim",1507,NA,NA,"India-Sikkim",0.6540429
+NA,"India",115,"Tamil Nadu",1508,NA,NA,"India-Tamil Nadu",10.7787236
+NA,"India",115,"Tripura",1509,NA,NA,"India-Tripura",0.9344156
+NA,"India",115,"West Bengal",1511,NA,NA,"India-West Bengal",7.589259
+NA,"India",115,"Arunachal Pradesh",70072,NA,NA,"India-Arunachal Pradesh",1.3896143
+NA,"India",115,"Bihar",70073,NA,NA,"India-Bihar",8.4781767
+NA,"India",115,"Chandigarh",70074,NA,NA,"India-Chandigarh",0.0111255
+NA,"India",115,"Chhattisgarh",70075,NA,NA,"India-Chhattisgarh",11.7900867
+NA,"India",115,"Dadra and Nagar Haveli",70076,NA,NA,"India-Dadra and Nagar Haveli",0.0424781
+NA,"India",115,"Daman and Diu",70077,NA,NA,"India-Daman and Diu",0.0483535
+NA,"India",115,"Jharkand",70078,NA,NA,"India-Jharkand",7.0842924
+NA,"India",115,"Madhya Pradesh",70079,NA,NA,"India-Madhya Pradesh",27.2469186
+NA,"India",115,"Puducherry",70080,NA,NA,"India-Puducherry",0.0454795
+NA,"India",115,"Uttar Pradesh",70081,NA,NA,"India-Uttar Pradesh",21.8848125
+NA,"India",115,"Uttarakhand",70082,NA,NA,"India-Uttarakhand",4.8846343
+NA,"Australia",17,"Australian Capital Territory",468,NA,NA,"Australia-Australian Capital Territory",0.2342085
+NA,"Australia",17,"New South Wales",470,NA,NA,"Australia-New South Wales",76.6100106
+NA,"Australia",17,"Northern Territory",471,NA,NA,"Australia-Northern Territory",116.228446
+NA,"Australia",17,"Other Territories",472,NA,NA,"Australia-Other Territories",0.0067068
+NA,"Australia",17,"Queensland",473,NA,NA,"Australia-Queensland",152.2767732
+NA,"Australia",17,"South Australia",474,NA,NA,"Australia-South Australia",92.2154797
+NA,"Australia",17,"Tasmania",475,NA,NA,"Australia-Tasmania",7.3847574
+NA,"Australia",17,"Victoria",476,NA,NA,"Australia-Victoria",22.989274
+NA,"Australia",17,"Western Australia",477,NA,NA,"Australia-Western Australia",227.6182069
+NA,"Spain-Islas Baleares",229,"Spain-Islas Baleares",2719,NA,NA,"Spain-Islas Baleares",0.5248864
+NA,"Spain",229,NA,2716,NA,NA,"Spain",8.885996
+NA,"Spain-Islas Canárias",229,"Spain-Islas Canárias",2720,NA,NA,"Spain-Islas Canárias",0.6869259

@@ -1,3 +1,12 @@
+rm(list=ls())
+gc()
+library("sp")
+
+output.dir    <- "Output\\"
+input.dir     <- "Data\\input\\"
+data.dir      <- "Data\\"
+kg.map.dir    <- paste(data.dir,"input\\GIS\\", sep="")
+
 # open eppo shapefile
 EPPO.admin.layer <- rgdal::readOGR("Data\\input\\GIS\\EPPOadm_simplified.shp", use_iconv = TRUE, encoding = "UTF-8")
 # head(EPPO.admin.layer)
@@ -35,8 +44,16 @@ EPPO.admin.layer@data$EPPO_ADM[-bg] <-EPPO.admin.layer@data$ADM0_NAME[-bg]
 EPPO.admin.layer@data$EPPO_ADM[which(EPPO.admin.layer@data$EPPO_ADM == "Cote d’Ivoire")] <- "Cote d'Ivoire"
 
 save(EPPO.admin.layer, file="Data\\rdata\\EPPO0.layer.RData")
+# write table
+EPPO.table <- EPPO.admin.layer@data
+EPPO.table <- EPPO.table[,c("Continent",
+                            "ADM0_NAME", "ADM0_CODE",
+                            "ADM1_NAME", "ADM1_CODE",
+                            "ADM2_NAME", "ADM2_CODE",
+                            "EPPO_ADM",
+                            "Shape_Area")]
 
-# # 
-# bg <- which(EPPO.admin.layer@data$ADM0_NAME == "Canada")
-# EPPO.admin.layer@data[91,]
-# grep("Cote",EPPO.admin.layer@data$ADM0_NAME)
+write.csv(EPPO.table, file="Supporting_information\\EPPO_Codes_and_names.csv", row.names = FALSE)
+
+rm(list=ls())
+gc()
