@@ -24,7 +24,7 @@ gc()
 library(raster)
 library(sp)
 actual.date <- Sys.Date()
-start.time <- Sys.time()
+# start.time <- Sys.time()
 report.kg <- TRUE
 
 # set main directories
@@ -69,5 +69,7 @@ for(pest.name in i.pest.list)
   }
   
 }
-end.time <- Sys.time()
-time.kg <- end.time - start.time
+# end.time <- Sys.time()
+# time.kg <- end.time - start.time
+rm(list=ls())
+gc()
