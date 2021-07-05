@@ -16,11 +16,11 @@ if(i.recalculate.EU27.climate.list == "yes")
   EU.climates <- EU.climates[-which(EU.climates %in% i.climates.to.remove)]
   
   # write file
-  write.table(EU.climates, paste(input.dir, "EU27.Climate.list.csv", sep=""), row.names=FALSE, col.names = c("EU27Clim"), sep=",")
+  write.table(EU.climates, paste(support.info, "EU27.Climate.list.csv", sep=""), row.names=FALSE, col.names = c("EU27Clim"), sep=",")
   rm(EU27.layer, EU.climates.extract, i.recalculate.EU27.climate.list)
 }else
 {
-  EU.climates <- read.csv(paste(input.dir, "EU27.Climate.list.csv", sep=""), stringsAsFactors = FALSE, header = TRUE)[,1]
+  EU.climates <- read.csv(paste(support.info, "EU27.Climate.list.csv", sep=""), stringsAsFactors = FALSE, header = TRUE)[,1]
 }
 
 
