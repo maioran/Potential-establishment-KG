@@ -1,12 +1,14 @@
 #####################################################################################################
 #####################################################################################################
-############## EFSA Köppen–Geiger approach for climate suitability of pests #########################
+########################################## SCANCLim #################################################
+############## Supporting Climate suitAbility aNalysis based on Climate Classifications #############
+#####################################################################################################
 #####################################################################################################
 #####################################################################################################
 # Developer: Andrea MAIORANO (ALPHA-PLH)
 # 
 # EFSA, ALPHA Unit, PLH Team
-# This version developed in November 2020
+# This version distributed in September 2021
 #####################################################################################################
 
 
@@ -45,7 +47,6 @@ load(paste(data.dir, "rdata\\EPPO0.layer.RData",sep=""))
 
 for(pest.name in i.pest.list)
 {#TEST: pest.name <- i.pest.list[1]  OR  pest.name <- "Amyelois transitella"
-  
   # create and check directories
   source("R_scripts\\SCANClim.check.pest.directories.r", local = knitr::knit_global())
   # download EPPO distribution tables or load reviewed distribution table

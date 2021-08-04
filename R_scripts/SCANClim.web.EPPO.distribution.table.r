@@ -67,7 +67,10 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
         
       }
       # remove records (see above)
-      pest.kg.table <- pest.kg.table[-record.remove,]
+      if(!is.null(record.remove))
+      {
+        pest.kg.table <- pest.kg.table[-record.remove,]
+      }
       # be sure that columns are type "character"
       pest.kg.table     <- data.frame(lapply(pest.kg.table, as.character), stringsAsFactors=FALSE)[,1:4]
       pest.kg.table$Observation <- NA

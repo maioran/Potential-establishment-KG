@@ -47,6 +47,8 @@ if(distr.table == TRUE)
       {
         # create a layer of location points
         points.layer              <- pest.kg.table.source.fltr
+        points.layer$lat  <- as.numeric(points.layer$lat)
+        points.layer$long <- as.numeric(points.layer$long)
         sp::coordinates(points.layer) <- ~ long + lat
         
       }

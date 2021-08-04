@@ -10,7 +10,7 @@ params:
   author.list: "Default author"
 ---
 
-```{r setup, echo=FALSE}
+```{r setup, echo=FALSE,warning=FALSE, message=FALSE}
 # setup knitr
 knitr::opts_chunk$set(echo = TRUE,
                       dev = c('jpeg'),
@@ -40,7 +40,7 @@ source("R_scripts\\SCANClim.generate.observations.layers.r", local = knitr::knit
 ```
 
 
-```{r DistrLocToBeCheched, echo=FALSE, eval=(length(units.na.list)>0), results='asis'}
+```{r DistrLocToBeCheched, echo=FALSE, eval=(length(units.na.list)>0), results='asis',warning=FALSE, message=FALSE}
 cat(
    '### Observed distribution: location names that need to be checked
 Please check the following location names that were not recognised by the system:<br>', 

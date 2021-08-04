@@ -17,7 +17,7 @@ admin.layer.fun <- function(admin.layer, admin.level, admin.source, fltrd.distr.
   if(admin.source == "EPPO")
   {
     name.field <- "EPPO_ADM"
-    id.field   <- "ADM1_CODE"
+    id.field   <- "ADM_CODE"
   }
   if(admin.source == "FAO.GAUL")
   {
