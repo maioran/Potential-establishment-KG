@@ -40,6 +40,8 @@ source("R_scripts\\SCANClim.load.input.from.configuration.file.r")
 
 # Load Köppen–Geiger raster file (load raster and setup color palette for climates)
 load(paste(data.dir, "rdata\\r_KG_raster.RData",sep=""))
+# Load region coordinates for plotting map
+load(paste(data.dir, "rdata\\Coordinates.table.RData", sep=""))
 # Load EU27 Climate list
 source("R_scripts\\SCANClim.EU27.Climate.list.R")
 # load EPPO admin layer

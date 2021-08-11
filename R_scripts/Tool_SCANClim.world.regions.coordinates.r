@@ -1,4 +1,5 @@
-
+rm(list=ls())
+gc()
 coordinate.table <- as.data.frame(matrix(data=NA, nrow = 0, ncol=12))
 
 #Region	        Region         x1 	 x2	   y1	  y2	xat	 yat  cex.leg  print.w   print.h  efsa.x  efsa.y
@@ -22,5 +23,9 @@ for(region in 1:length(regions))
   coordinate.table <- rbind(coordinate.table, as.list(regions[[region]]))
 }
 colnames(coordinate.table) <- c("Region","x1", "x2", "y1", "y2", "xat", "yat", "cex.legend", "print.width", "print.heigth", "efsa.x", "efsa.y")
+coordinate.table[,2:12] <- sapply(coordinate.table[,2:12],as.numeric)
 
-rm(Global, America, Asia,Australia,Caribbean, Europe, Oceania, USA, Peru, Asia_SE, China, China_SE)
+save(coordinate.table, file="Data\\rdata\\Coordinates.table.RData")
+
+rm(list=ls())
+gc()

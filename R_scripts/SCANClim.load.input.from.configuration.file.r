@@ -25,9 +25,6 @@ i.EPPO.token                     <- readxl::read_xlsx(config.file, sheet = "Othe
 # sheet: Climates_to_remove
 i.climates.to.remove             <- readxl::read_xlsx(config.file, sheet = "Climates_to_be_removed")[[1]]
 # sheet: tech. Addtional settings
-i.map.coord.table                <- readxl::read_xlsx(config.file, sheet = "tech", range = "A1:G50")[]
 ###########################################################################################################################################################
-map.coord.reg                    <- i.map.coord.table[which(i.map.coord.table$Region==i.region.to.plot),]
-
 rm(config.file)
 
