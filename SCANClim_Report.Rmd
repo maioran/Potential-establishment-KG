@@ -57,8 +57,8 @@ cat("<br>", sep="")
 if(distr.table == TRUE)
 {
   # print table including observed distribution (EPPO or user-defined)
-  obs.table.show <- pest.kg.table[,c("Continent","Country","State","Observation", "admin.level","admin.source", "lat", "long")]
-  colnames(obs.table.show) <- c("Continent","Country","State","Location", "Admin level", "Admin source", "Lat", "Long")
+  obs.table.show <- pest.kg.table[,c("Continent","Country","State","Observation", "admin.source", "lat", "long")]
+  colnames(obs.table.show) <- c("Continent","Country","State","Observation", "Admin source", "Lat", "Long")
   knitr::kable(obs.table.show, format="pipe", digits = 4)
 }
 

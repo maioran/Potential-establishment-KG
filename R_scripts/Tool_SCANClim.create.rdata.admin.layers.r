@@ -46,9 +46,33 @@ FAO.GAUL.table <- FAO.GAUL.table[,c("Continent",
                                     "ADM0_NAME", "ADM0_CODE",
                                     "ADM1_NAME", "ADM1_CODE",
                                     "ADM2_NAME", "ADM2_CODE",
-                                    "ADM_NAME", "ADM_CODE",
                                     "Shape_Area")]
-write.csv(FAO.GAUL.table, file="Supporting_information\\FAO_GAUL_Codes_and_names.csv", row.names = FALSE)
+# change colum names
+colnames(FAO.GAUL.table)[2] <- "GAUL_0"
+colnames(FAO.GAUL.table)[3] <- "GAUL_0_CODE"
+colnames(FAO.GAUL.table)[4] <- "GAUL_1"
+colnames(FAO.GAUL.table)[5] <- "GAUL_1_CODE"
+colnames(FAO.GAUL.table)[6] <- "GAUL_2"
+colnames(FAO.GAUL.table)[7] <- "GAUL_2_CODE"
+colnames(FAO.GAUL.table)[8] <- "GAUL_2_Shape_Area"
+
+# create a table including all GAUL names and codes
+gaul.level.table <- as.data.frame(matrix(data=NA, nrow=0, ncol=3))
+colnames(gaul.level.table) <- c("GAUL", "GAUL_code", "GAUL_level")
+
+for(level in 0:2)
+{
+  col.name <- paste0("GAUL_", level)
+  col.code <- paste0("GAUL_", level, "_CODE")
+  FAO.GAUL.table.sub <- FAO.GAUL.table[!duplicated(FAO.GAUL.table[,c(col.name, col.code)]), c(col.name, col.code)]
+  FAO.GAUL.table.sub$GAUL_Level <- level
+  colnames(FAO.GAUL.table.sub) <- colnames(gaul.level.table)
+  gaul.level.table <- rbind(gaul.level.table, FAO.GAUL.table.sub)
+}
+
+# write table with GAUL codes and names organized according 
+write.csv(FAO.GAUL.table, file="Supporting_information\\FAO_GAUL_Codes_and_names_v2.csv", row.names = FALSE)
+save(gaul.level.table, file="Data\\rdata\\FAO_GAUL_Codes.RData")
 rm(FAO.GAUL2.layer, FAO.GAUL.table)
 
 ######### EU.NUTS ####################

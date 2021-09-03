@@ -91,8 +91,8 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
       # }
       
       # add columns including administrative boundary source and level. This is needed especially in the phase of review of climates
-      pest.kg.table$admin.level  <- "0"
       pest.kg.table$admin.source <- "EPPO"
+      pest.kg.table$admin.level <- 0
       pest.kg.table$admin.code   <- NA
       pest.kg.table$lat          <- NA
       pest.kg.table$long         <- NA
@@ -122,6 +122,20 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
    colnames(pest.kg.table) <- gsub('ï..', '', colnames(pest.kg.table))
  }
  distr.table <- TRUE
+ 
+ pest.kg.table$admin.level <- NA
+ 
+ if(any(pest.kg.table$admin.source == "EPPO"))
+ {
+   eppo.records <- which(pest.kg.table$admin.source == "EPPO")
+   pest.kg.table$admin.level[eppo.records] <- 0
+   rm(eppo.records)
+ }
+ if(any(pest.kg.table$admin.source == "FAO.GAUL"))
+ {
+   fao.records <- which(pest.kg.table$admin.source == "FAO.GAUL")
+   pest.kg.table$admin.level[fao.records] <- gaul.level.table$GAUL_level[match(pest.kg.table$admin.code[fao.records], gaul.level.table$GAUL_code)]
+ }
  
   rm(rev.distr)
 }
