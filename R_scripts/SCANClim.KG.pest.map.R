@@ -26,16 +26,18 @@ xat          <- coordinate.table.sub$xat
 yat          <- coordinate.table.sub$yat
 
 # setup file
-jpeg(paste(output.dir,"\\Koppen-Geiger\\",i.region.to.plot,"_",pest.name,"_KG_",period,"_", actual.date, ".jpg", sep=""),width = print.width, height = print.heigth, units="cm", res=800)
+jpeg(paste0(output.dir,"\\Koppen-Geiger\\",i.region.to.plot,"_",pest.name,"_KG_",period,"_", Sys.time(), ".jpg"),width = print.width, height = print.heigth, units="cm", res=800)
 #detach("package:ggplot2", unload=TRUE)
 
+# create map inlcuding KG raster and EPPO Admin layer as background
 kg.map <- rasterVis::levelplot(r.pest, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r.pest),
                                scales=list(x=list(limits=c(xmin(r.pest), xmax(r.pest)), at=seq(xmin(r.pest), xmax(r.pest), xat)),
                                            y=list(limits=c(ymin(r.pest), ymax(r.pest)), at=seq(ymin(r.pest), ymax(r.pest), yat)), cex=0.6), 
                                colorkey=list(labels=list(labels=r.pest@data@attributes[[1]]$climate, cex=cex.legend), space="top", tck=0, maxpixels=ncell(r.pest)))
-kg.map <- kg.map + latticeExtra::layer(panel.text(efsa.x, efsa.y, paste("\uA9 EFSA\n",format(actual.date, "%d %B %Y"),sep=""), adj=0, cex=0.7))
+kg.map <- kg.map + latticeExtra::layer(panel.text(efsa.x, efsa.y, paste("\uA9 EFSA\n",format(Sys.Date(), "%d %B %Y"),sep=""), adj=0, cex=0.7))
 kg.map <- kg.map + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="dark grey"), data=list(EPPO.admin.layer=EPPO.admin.layer))
 
+# add observations (admin layers)
 if(distr.table==TRUE)
 {
   for(pest.layer in observed.layer.list)
@@ -44,19 +46,20 @@ if(distr.table==TRUE)
   }
 }
 
-
+# add observation points if any
 if(!is.na(points.layer))
 {
   kg.map <- kg.map + latticeExtra::layer(sp.points(points.layer, cex=0.5, col="black", lwd=0.5, pch=21, fill="red", ), data=list(points.layer=points.layer))
 }
-if(exists("pz.layer.list"))
-{
-  for(pz.layer in pz.layer.list)
-  {# pest.layer <- pz.layer.list[[1]]
-    kg.map <- kg.map + latticeExtra::layer(sp.polygons(pz.layer, lwd=0.8, col="red"), data=list(pz.layer=pz.layer))
-  }
-}
 
+# add layer including protected zones (PREVIOUS VERSION)
+# if(exists("pz.layer.list"))
+# {
+#   for(pz.layer in pz.layer.list)
+#   {# pest.layer <- pz.layer.list[[1]]
+#     kg.map <- kg.map + latticeExtra::layer(sp.polygons(pz.layer, lwd=0.8, col="red"), data=list(pz.layer=pz.layer))
+#   }
+# }
 
 print(kg.map)
 

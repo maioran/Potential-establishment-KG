@@ -6,28 +6,29 @@
 
 #options("install.lock"=FALSE)
 
-pkg <- c("cellranger",
+pkg <- c(#"cellranger",
          "httr",
-         "jpeg",
+         #"jpeg",
          "knitr",
          "lattice",
          "latticeExtra",
          "markdown",
          "raster",
          "rasterVis",
-         "RCurl",
+         "rgdal",
+         #"RCurl",
          "readxl",
-         "RColorBrewer",
+         #"RColorBrewer",
          "rlist",
          "rmarkdown",
          "sp",
-         "stringr",
-         "utf8",
-         "viridisLite",
+         #"stringr",
+         #"utf8",
+         #"viridisLite",
          "XML")
 
 for(current.pkg in pkg)
 {
-  if (!require(current.pkg))    install.packages(current.pkg,   dependencies = TRUE) #, INSTALL_opts = '--no-lock')
+  if (!current.pkg %in% installed.packages())    install.packages(current.pkg,   dependencies = TRUE) #, INSTALL_opts = '--no-lock')
 }
 
