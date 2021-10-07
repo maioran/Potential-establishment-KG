@@ -17,13 +17,13 @@ source("R_scripts\\SCANClim.install.required.packages.r")
 # Clean environment
 rm(list=ls())
 gc()
-# current date
-actual.date <- Sys.Date()
+start.time <- Sys.time()
+# current date including time (format: YYYYMMDD h_m_s)
+actual.date <- format(Sys.time(), "%Y%m%d %H_%M_%S")
+
 # load raster and sp packages
 library(raster)
 library(sp)
-# Setting TRUE will produce an html report
-report.kg <- TRUE
 # set main directories
 source("R_scripts\\SCANClim.main.directories.r")
 # load inputs from configuration file 
@@ -49,7 +49,7 @@ for(pest.name in i.pest.list)
   # check if distribution table or climate list are available
   if(distr.table == TRUE || climate.available ==TRUE)
   {
-    if(report.kg==TRUE)
+    if(i.report=="yes")
     {
       # launch rmarkdown to produce html report
       rmarkdown::render("SCANClim_Report.Rmd", params = list(

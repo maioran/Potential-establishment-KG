@@ -14,7 +14,7 @@ r.pest <- raster::crop(r, extent(coordinate.table.sub$x1,
                                  coordinate.table.sub$x2, 
                                  coordinate.table.sub$y1, 
                                  coordinate.table.sub$y2))
-
+levels(r.pest)[[1]]$colors <- climate.colors.pest
 # set legend dimension and position 
 cex.legend   <- coordinate.table.sub$cex.legend
 print.width  <- coordinate.table.sub$print.width
@@ -26,24 +26,26 @@ xat          <- coordinate.table.sub$xat
 yat          <- coordinate.table.sub$yat
 
 # setup file
-jpeg(paste0(output.dir,"\\Koppen-Geiger\\",i.region.to.plot,"_",pest.name,"_KG_",period,"_", Sys.time(), ".jpg"),width = print.width, height = print.heigth, units="cm", res=800)
+jpeg(paste0(output.dir,"\\Koppen-Geiger\\",i.region.to.plot,"_",pest.name,"_KG_",period,"_", actual.date, ".jpg"),width = print.width, height = print.heigth, units="cm", res=800)
 #detach("package:ggplot2", unload=TRUE)
 
 # create map inlcuding KG raster and EPPO Admin layer as background
-kg.map <- rasterVis::levelplot(r.pest, col.regions=climate.colors.pest, xlab="", ylab="", maxpixels = ncell(r.pest),
+kg.map <- rasterVis::levelplot(r.pest, col.regions=levels(r.pest)[[1]]$colors, 
+                               xlab="", ylab="", maxpixels = ncell(r.pest),
                                scales=list(x=list(limits=c(xmin(r.pest), xmax(r.pest)), at=seq(xmin(r.pest), xmax(r.pest), xat)),
                                            y=list(limits=c(ymin(r.pest), ymax(r.pest)), at=seq(ymin(r.pest), ymax(r.pest), yat)), cex=0.6), 
                                colorkey=list(labels=list(labels=r.pest@data@attributes[[1]]$climate, cex=cex.legend), space="top", tck=0, maxpixels=ncell(r.pest)))
+
 kg.map <- kg.map + latticeExtra::layer(panel.text(efsa.x, efsa.y, paste("\uA9 EFSA\n",format(Sys.Date(), "%d %B %Y"),sep=""), adj=0, cex=0.7))
 kg.map <- kg.map + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="dark grey"), data=list(EPPO.admin.layer=EPPO.admin.layer))
 
 # add observations (admin layers)
 if(distr.table==TRUE)
 {
-  for(pest.layer in observed.layer.list)
-  {# pest.layer <- observed.layer.list[[1]]
-    kg.map <- kg.map + latticeExtra::layer(sp.polygons(pest.layer, lwd=0.5, col="black"), data=list(pest.layer=pest.layer))
-  }
+  kg.map <- kg.map + latticeExtra::layer(sp.polygons(observed.layer.list, lwd=0.5, col="black"), data=list(observed.layer.list=observed.layer.list))
+  # write shapefile
+  rgdal::writeOGR(observed.layer.list, paste0(output.dir, "GIS\\", pest.name, "_obs_layer",".shp"), layer="observed.layer.list", driver="ESRI Shapefile")
+  
 }
 
 # add observation points if any
@@ -65,5 +67,9 @@ print(kg.map)
 
 dev.off()
 
-if(report.kg==TRUE){print(kg.map)}
+# save KG raster map
+writeRaster(r.pest, paste0(output.dir, "GIS\\", pest.name, "_KG.grd"), overwrite=TRUE)
+rgdal::writeOGR(EPPO.admin.layer, paste0(output.dir, "GIS\\", pest.name, "_world_bound.shp"), layer="EPPO.admin.layer", driver="ESRI Shapefile")
+
+if(i.report==TRUE){print(kg.map)}
 

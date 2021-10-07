@@ -45,7 +45,7 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
     if(length(tables) != 0)
     {
       # save full table from EPPO
-      write.csv(tables$dttable, row.names = FALSE, paste(output.dir, "\\Distribution\\Full.distribution.table_",Sys.time(),".csv", sep=""))
+      write.csv(tables$dttable, row.names = FALSE, paste(output.dir, "\\Distribution\\Full.distribution.table_",actual.date,".csv", sep=""))
       # keep only records including only relevant EPPO pest status 
       pest.kg.table     <- tables$dttable[which(tables$dttable$Status %in% i.pest.status),]
       pest.kg.table     <- pest.kg.table[order(pest.kg.table$Country),]
@@ -84,7 +84,7 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
       pest.kg.table$long         <- NA
       
       # save table including list of filtered distribution
-      write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, "\\Distribution\\Filtered.distribution.table_",Sys.time(),".csv", sep=""))
+      write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, "\\Distribution\\Filtered.distribution.table_",actual.date,".csv", sep=""))
       # remove not needed variables
       rm(path.eppo.code, response, eppo.pest.distr.url, tables, record.remove)
       distr.table <- TRUE

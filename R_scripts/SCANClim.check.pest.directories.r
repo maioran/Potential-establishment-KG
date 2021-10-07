@@ -15,6 +15,8 @@ review.dir    <- paste0(pest.dir, pest.name, "\\Review\\")
 dir.create(file.path(paste0(output.dir, "Distribution")))
 # create subfolder Koppen-Geiger
 dir.create(file.path(paste0(output.dir, "Koppen-Geiger")))
+# create subfolder including GIS layers
+dir.create(file.path(paste0(output.dir, "GIS")))
 # create subfolders Climates and Distribution in Review folder
 dir.create(file.path(paste0(review.dir, "REVIEW.Climates")))
 dir.create(file.path(paste0(review.dir, "REVIEW.Distribution")))

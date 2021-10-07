@@ -16,7 +16,7 @@ points.layer        <- NA
 if(distr.table == TRUE)
 {
   for(admin.source in unique(pest.kg.table$admin.source))
-  {# TEST: admin.source <- unique(pest.kg.table$admin.source)[1]
+  {# TEST: admin.source <- unique(pest.kg.table$admin.source)[2]
     # filter on admin source
     pest.kg.table.source.fltr <- pest.kg.table[which(pest.kg.table$admin.source == admin.source),]
     
@@ -25,7 +25,7 @@ if(distr.table == TRUE)
       if(admin.source != "location")
       {
         for(admin.level in unique(pest.kg.table.source.fltr$admin.level))
-        {#TEST: admin.level <- 0
+        { #TEST: admin.level <- 0
           pest.kg.table.level.fltr <- pest.kg.table.source.fltr[which(pest.kg.table.source.fltr$admin.level == admin.level),]
           
           # load actual layer
@@ -33,8 +33,15 @@ if(distr.table == TRUE)
           
           # create a layer including only the relevant administrative units
           actual.layer.select <- admin.layer.fun(actual.layer, admin.level, admin.source, pest.kg.table.level.fltr)
-          #actual.layer.select$units.na
-          observed.layer.list <- c(observed.layer.list, actual.layer.select$layer)
+          
+          # merge the layers in a unique Spatial polygon dataframe
+          if(admin.level==unique(pest.kg.table.source.fltr$admin.level)[1])
+          {
+            observed.layer.list <- actual.layer.select$layer
+          }else
+          {
+            observed.layer.list <- raster::union(observed.layer.list, actual.layer.select$layer)
+          }
           
           if(!is.null(actual.layer.select$units.na))
           {
@@ -50,6 +57,7 @@ if(distr.table == TRUE)
         points.layer$lat  <- as.numeric(points.layer$lat)
         points.layer$long <- as.numeric(points.layer$long)
         sp::coordinates(points.layer) <- ~ long + lat
+        rgdal::writeOGR(points.layer, paste0(output.dir, "GIS\\", pest.name, "_obs_points_layer",".shp"), layer="points.layer", driver="ESRI Shapefile")
         
       }
       
