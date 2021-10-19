@@ -1,9 +1,9 @@
 ####################################################################################################
-# EFSA Koppen-Geiger climate suitability tool
-# This script load input from configuration file
+# SCAN-Clim
+# Load input from configuration file
 ####################################################################################################
 
-############################################################################################################################################################
+####################################################################################################
 # CONFIGURATION FILE
 config.file <- paste0(config.dir,list.files(config.dir))
 # list of authors
@@ -20,8 +20,9 @@ i.recalculate.EU27.climate.list  <- readxl::read_xlsx(config.file, sheet = "Othe
 #i.include.protected.zones        <- readxl::read_xlsx(config.file, sheet = "Other settings")[[5,2]]
 i.EPPO.token                     <- readxl::read_xlsx(config.file, sheet = "Other settings")[[5,2]]
 i.report                         <- readxl::read_xlsx(config.file, sheet = "Other settings")[[6,2]]
+i.gis                            <- readxl::read_xlsx(config.file, sheet = "Other settings")[[7,2]]
 # sheet: Climates_to_remove
 i.climates.to.remove             <- readxl::read_xlsx(config.file, sheet = "Climates_to_be_removed")[[1]]
-###########################################################################################################################################################
+####################################################################################################
 rm(config.file)
 

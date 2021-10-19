@@ -1,6 +1,6 @@
 ####################################################################################################
-# EFSA Koppen-Geiger climate suitability tool
-# This script check if needed R packages are installed and install if needed
+# SCAN-Clim
+# Check if needed R packages are already installed and install them if needed
 # The dplyr package is loaded anyway
 ####################################################################################################
 

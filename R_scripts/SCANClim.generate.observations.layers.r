@@ -57,7 +57,6 @@ if(distr.table == TRUE)
         points.layer$lat  <- as.numeric(points.layer$lat)
         points.layer$long <- as.numeric(points.layer$long)
         sp::coordinates(points.layer) <- ~ long + lat
-        rgdal::writeOGR(points.layer, paste0(output.dir, "GIS\\", pest.name, "_obs_points_layer",".shp"), layer="points.layer", driver="ESRI Shapefile")
         
       }
       
