@@ -15,6 +15,7 @@ params:
 knitr::opts_chunk$set(echo = TRUE,
                       dev = c('jpeg'),
                       fig.align = 'center', fig.height = 7, fig.width = 10)
+# rmarkdown::find_pandoc(dir="C:/Program Files/RStudio/bin/pandoc")
 ```
 Climate suitability based on the Köppen–Geiger climate classification is a relatively simple and easily accessible tool that can simplify and speed-up urgent analysis. This approach identifies areas with the same climates of the areas where a specific organism is distributed. It is a good compromise for simplified assessment with time constraints.<br>
 

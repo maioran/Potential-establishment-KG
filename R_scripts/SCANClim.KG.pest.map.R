@@ -70,7 +70,11 @@ dev.off()
 # save GIS layers
 if(i.gis=="yes")
 {
-  rgdal::writeOGR(points.layer, paste0(output.dir, "GIS\\", pest.name, "_obs_points_layer",".shp"), layer="points.layer", driver="ESRI Shapefile")
+  if(!is.na(points.layer))
+  {
+    rgdal::writeOGR(points.layer, paste0(output.dir, "GIS\\", pest.name, "_obs_points_layer",".shp"), layer="points.layer", driver="ESRI Shapefile")
+  }
+  
   writeRaster(r.pest, paste0(output.dir, "GIS\\", pest.name, "_KG.grd"), overwrite=TRUE)
   rgdal::writeOGR(EPPO.admin.layer, paste0(output.dir, "GIS\\", pest.name, "_world_bound.shp"), layer="EPPO.admin.layer", driver="ESRI Shapefile")
   if(distr.table==TRUE) 
