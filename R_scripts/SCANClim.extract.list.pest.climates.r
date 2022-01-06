@@ -10,7 +10,24 @@
 
 if(length(list.files(paste(review.dir, "\\REVIEW.Climates",sep="")))==0)
 {
-  pest.climates.list <- extract.climate.fun(r, observed.layer.list, points.layer)
+  if(!exists("observed.layer.list"))
+  {
+    pest.climates.list <- extract.climate.fun(r, NA, points.layer)
+  }else
+  {
+    pest.climates.list <- extract.climate.fun(r, observed.layer.list, points.layer)
+  }
+  i.climates.to.remove <- c("Ocean", "Dsb",   "Dsc")
+  
+  if(exists("i.climates.to.remove"))
+  {
+    if(any(!is.na(i.climates.to.remove)))
+    {
+      pest.climates.list <- pest.climates.list[-which(pest.climates.list %in% i.climates.to.remove)]
+    }
+  }
+  
+  
   # remove climates not in EU
   if(i.remove.climates.not.in.EU == "yes")
   {

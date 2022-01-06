@@ -13,6 +13,7 @@
 #observed.layer.list <- c()
 units.na.list       <- c()
 points.layer        <- NA
+
 if(distr.table == TRUE)
 {
   for(admin.source in unique(pest.kg.table$admin.source))
@@ -23,9 +24,9 @@ if(distr.table == TRUE)
     if(!is.na(admin.source))
     {
       if(admin.source != "location")
-      {
+      { 
         for(admin.level in unique(pest.kg.table.source.fltr$admin.level))
-        { #TEST: admin.level <- 0
+        { #TEST: admin.level <- 2
           pest.kg.table.level.fltr <- pest.kg.table.source.fltr[which(pest.kg.table.source.fltr$admin.level == admin.level),]
           
           # load actual layer
@@ -36,7 +37,7 @@ if(distr.table == TRUE)
           
           # merge the layers in a unique Spatial polygon dataframe
           # if this is the first admin source of the first admin layer then it creates the first polygon layers
-          # otherwise it union the successive layers
+          # otherwise it merges the successive layers
           if(!exists("observed.layer.list"))
           {
             observed.layer.list <- actual.layer.select$layer

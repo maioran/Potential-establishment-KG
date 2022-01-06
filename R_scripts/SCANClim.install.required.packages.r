@@ -29,6 +29,9 @@ pkg <- c(#"cellranger",
 
 for(current.pkg in pkg)
 {
-  if (!current.pkg %in% installed.packages())    install.packages(current.pkg,   dependencies = TRUE) #, INSTALL_opts = '--no-lock')
+  if (!current.pkg %in% installed.packages())    
+  {
+    install.packages(current.pkg,   dependencies = TRUE) #, INSTALL_opts = '--no-lock')
+  }
 }
 

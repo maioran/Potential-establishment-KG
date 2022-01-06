@@ -2,7 +2,8 @@
 # SCAN-Clim
 # Create climate suitability map
 ####################################################################################################
-
+library(sf)
+library(rgeos)
 # set the kg map colors according to the climates that are relevant for the pest by setting the remaining as "white" i.e."#00000000"
 climate.colors.pest <- climate.colors
 climate.colors.pest[which(!levels(r)[[1]]$climate %in% pest.climates.list)] <- "#00000000"
@@ -41,7 +42,7 @@ kg.map <- kg.map + latticeExtra::layer(panel.text(efsa.x, efsa.y, paste("\uA9 EF
 kg.map <- kg.map + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="dark grey"), data=list(EPPO.admin.layer=EPPO.admin.layer))
 
 # add observations (admin layers)
-if(distr.table==TRUE)
+if(distr.table==TRUE & exists("observed.layer.list"))
 {
   kg.map <- kg.map + latticeExtra::layer(sp.polygons(observed.layer.list, lwd=0.5, col="black"), data=list(observed.layer.list=observed.layer.list))
   # write shapefile
@@ -61,6 +62,18 @@ if(!is.na(points.layer))
 #   {# pest.layer <- pz.layer.list[[1]]
 #     kg.map <- kg.map + latticeExtra::layer(sp.polygons(pz.layer, lwd=0.8, col="red"), data=list(pz.layer=pz.layer))
 #   }
+# }
+
+# calculate area of polygons
+# observed.layer.list$area_polyg <- area(observed.layer.list)/1000000
+# if(any(observed.layer.list$area_polyg < 4000, na.rm = TRUE))
+# {
+#   small.polyg <- observed.layer.list[which(observed.layer.list$area_polyg < 4000),]
+#   conv        <- st_as_sf(small.polyg)
+#   centr       <- st_centroid(conv)
+#   plot(st_point_on_surface(conv[1]), cex=10, col="black")
+#   test <- as(st_point_on_surface(conv), "Spatial")
+#   kg.map <- kg.map + latticeExtra::layer(sp.points(test, cex=3, col="black", lwd=1, pch=1), data=list(test=test))
 # }
 
 print(kg.map)

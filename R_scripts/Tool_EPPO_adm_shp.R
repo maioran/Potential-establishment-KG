@@ -8,7 +8,7 @@ data.dir      <- "Data\\"
 kg.map.dir    <- paste(data.dir,"input\\GIS\\", sep="")
 
 # open eppo shapefile
-EPPO.admin.layer <- rgdal::readOGR("Data\\input\\GIS\\EPPOadm_simplified_v03.shp", use_iconv = TRUE, encoding = "UTF-8")
+EPPO.admin.layer <- rgdal::readOGR("Data\\input\\GIS\\EPPOadm_simplified_v04.shp", use_iconv = TRUE, encoding = "UTF-8")
 # head(EPPO.admin.layer)
 # remove not useful fields
 # eppo.field.remove <- c("ADM1_CODE", "ADM_CODE","STR1_YEAR", "EXP1_YEAR", "DISP_AREA", "ADM2_CODE", "ADM2_NAME", 
@@ -45,9 +45,10 @@ EPPO.admin.layer <- rgdal::readOGR("Data\\input\\GIS\\EPPOadm_simplified_v03.shp
 
 # modify apostrophe for Cote d'Ivoire
 EPPO.admin.layer@data$EPPO_ADM[which(EPPO.admin.layer@data$EPPO_ADM == "Saint-Barthélemy")] <- "Saint-Barthélemy"
-
+EPPO.admin.layer@data$EPPO_ADM[which(EPPO.admin.layer@data$EPPO_ADM == "Canada-QuÃ©bec")] <- "Canada-Québec"
 save(EPPO.admin.layer, file="Data\\rdata\\EPPO0.layer.RData")
-rgdal::writeOGR(EPPO.admin.layer, "Data\\input\\GIS\\EPPOadm_simplified_v03.shp", driver="ESRI Shapefile",layer="EPPOadm_simplified_v02",encoding = "UTF-8")
+
+rgdal::writeOGR(EPPO.admin.layer, "Data\\input\\GIS\\EPPOadm_simplified_v03.shp", driver="ESRI Shapefile",layer="EPPOadm_simplified_v02",encoding = "WINDOWS-1252")
 # write table
 EPPO.table <- EPPO.admin.layer@data
 EPPO.table <- EPPO.table[,c("ADM0_NAME", "ADM0_CODE",
