@@ -1,7 +1,6 @@
 ####################################################################################################
-# SCAN-Clim
+# SCANClim
 # Check if needed R packages are already installed and install them if needed
-# The dplyr package is loaded anyway
 ####################################################################################################
 
 #options("install.lock"=FALSE)
@@ -35,3 +34,6 @@ for(current.pkg in pkg)
   }
 }
 
+# Clean environment
+rm(list=ls())
+gc()

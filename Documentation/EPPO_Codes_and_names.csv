@@ -24,12 +24,12 @@
 "Japan",126,"Japan-Kyushu",0.4772132
 "Japan",126,"Japan-Ryukyu Archipelago",0.2011937
 "Japan",126,"Japan-Shikoku",0.5485329
-"Russia",204,"Russia-Central Russia",19.7174327
-"Russia",204,"Russia-Eastern Siberia",2.5168585
-"Russia",204,"Russia-Far East",48.807413
-"Russia",204,"Russia-Northern Russia",55.1915427
-"Russia",204,"Russia-Southern Russia",0.9035465
-"Russia",204,"Russia-Western Siberia",11.7620192
+"Russian Federation",204,"Russia-Central Russia",19.7174327
+"Russian Federation",204,"Russia-Eastern Siberia",2.5168585
+"Russian Federation",204,"Russia-Far East",48.807413
+"Russian Federation",204,"Russia-Northern Russia",55.1915427
+"Russian Federation",204,"Russia-Southern Russia",0.9035465
+"Russian Federation",204,"Russia-Western Siberia",11.7620192
 "Mozambique",170,"Mozambique",67.0589393
 "Mauritius",160,"Mauritius",0.1739921
 "Malawi",152,"Malawi",9.9055668
@@ -69,7 +69,7 @@
 "Western Sahara",268,"Western Sahara",23.9705798
 "Egypt",40765,"Egypt",89.0791134
 "Algeria",4,"Algeria",212.6930968
-"Abyei",102,"Abyei",0.8189485
+"Abyei",NA,"Abyei",0.8189485
 "Namibia",172,"Namibia",72.245525
 "Eswatini",235,"Eswatini",1.5662385
 "Lesotho",142,"Lesotho",2.8356674
@@ -89,7 +89,7 @@
 "Guinea",106,"Guinea",20.0708618
 "Ghana",94,"Ghana",19.5958913
 "Cape Verde",47,"Cape Verde",0.3424116
-NA,66,"Cote d'Ivoire",26.3759875
+"Cote d'Ivoire",66,"Cote d'Ivoire",26.3759875
 "Burkina Faso",42,"Burkina Faso",22.7119697
 "Benin",29,"Benin",9.4972047
 "Dominica",71,"Dominica",0.0632262
@@ -182,7 +182,6 @@ NA,66,"Cote d'Ivoire",26.3759875
 "Qatar",201,"Qatar",1.0351174
 "Saudi Arabia",215,"Saudi Arabia",171.3545386
 "Turkey",249,"Turkey",81.3293435
-"Yemen",269,"Yemen",38.2885227
 "Gaza Strip",91,"Gaza Strip",0.0343743
 "Iraq",118,"Iraq",42.1032063
 "Jordan",130,"Jordan",8.4344576
@@ -425,10 +424,20 @@ NA,66,"Cote d'Ivoire",26.3759875
 "Australia",17,"Australia-Western Australia",227.6182069
 "Spain-Islas Baleares",229,"Spain-Islas Baleares",0.5248864
 "Spain",229,"Spain",8.885996
-"Spain",229,"Islas Canarias",0.6869259
+"Spain",229,"Spain-Islas Canarias",0.6869259
 "France",85,"Corse",64.4312553
 "Italy",122,"Sardinia",33.2250714
 "Italy",122,"Sicily",33.2250714
 "Italy",122,"Italy",33.2250714
 "Italy",122,"Isola d'Elba",33.2250714
 "Italy",122,"Pantelleria",33.2250714
+"Macao",NA,"Macao",NA
+"Maldives",NA,"Maldives",NA
+"Micronesia",NA,"Micronesia",NA
+"Tuvalu",NA,"Tuvalu",NA
+"France",85,"Saint-Martin",NA
+"France",85,"Saint-Barthélemy",NA
+NA,NA,NA,NA
+"Yemen",269,"Socotra Island",NA
+"Yemen",269,"Yemen",NA
+"United Republic of Tanzania",257,"Zanzibar",0.0383436

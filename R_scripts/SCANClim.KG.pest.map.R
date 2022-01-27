@@ -26,6 +26,8 @@ efsa.y       <- coordinate.table.sub$efsa.y
 xat          <- coordinate.table.sub$xat
 yat          <- coordinate.table.sub$yat
 
+legend.pos   <- coordinate.table.sub$legend.pos
+
 # setup file
 jpeg(paste0(output.dir,"\\Koppen-Geiger\\",i.region.to.plot,"_",pest.name,"_KG_",period,"_", actual.date, ".jpg"),width = print.width, height = print.heigth, units="cm", res=800)
 
@@ -36,7 +38,7 @@ kg.map <- rasterVis::levelplot(r.pest, col.regions=levels(r.pest)[[1]]$colors,
                                            y=list(limits=c(raster::extent(r.pest)[3], raster::extent(r.pest)[4]), at=seq(raster::extent(r.pest)[3], raster::extent(r.pest)[4], yat)), cex=0.6), 
                              # scales=list(x=list(limits=c(raster::xmin(r.pest), raster::xmax(r.pest)), at=seq(raster::xmin(r.pest), raster::xmax(r.pest), xat)),
                              #             y=list(limits=c(raster::ymin(r.pest), raster::ymax(r.pest)), at=seq(raster::ymin(r.pest), raster::ymax(r.pest), yat)), cex=0.6), 
-                               colorkey=list(labels=list(labels=r.pest@data@attributes[[1]]$climate, cex=cex.legend), space="top", tck=0, maxpixels=ncell(r.pest)))
+                               colorkey=list(labels=list(labels=r.pest@data@attributes[[1]]$climate, cex=cex.legend), space = legend.pos, tck=0, maxpixels=ncell(r.pest)))
 
 kg.map <- kg.map + latticeExtra::layer(panel.text(efsa.x, efsa.y, paste("\uA9 EFSA\n",format(Sys.Date(), "%d %B %Y"),sep=""), adj=0, cex=0.7))
 kg.map <- kg.map + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="dark grey"), data=list(EPPO.admin.layer=EPPO.admin.layer))
@@ -52,7 +54,7 @@ if(distr.table==TRUE & exists("observed.layer.list"))
 # add observation points if any
 if(!is.na(points.layer))
 {
-  kg.map <- kg.map + latticeExtra::layer(sp.points(points.layer, cex=0.5, col="black", lwd=0.5, pch=21, fill="red", ), data=list(points.layer=points.layer))
+  kg.map <- kg.map + latticeExtra::layer(sp.points(points.layer, cex=0.7, col="black", lwd=0.5, pch=21, fill="red", ), data=list(points.layer=points.layer))
 }
 
 # add layer including protected zones (TEST - NOT IMPLEMENTED IN THIS VERSION)
@@ -90,7 +92,7 @@ if(i.gis=="yes")
   
   writeRaster(r.pest, paste0(output.dir, "GIS\\", pest.name, "_KG.grd"), overwrite=TRUE)
   rgdal::writeOGR(EPPO.admin.layer, paste0(output.dir, "GIS\\", pest.name, "_world_bound.shp"), layer="EPPO.admin.layer", driver="ESRI Shapefile")
-  if(distr.table==TRUE) 
+  if(distr.table==TRUE & exists("observed.layer.list")) 
   {
     rgdal::writeOGR(observed.layer.list, paste0(output.dir, "GIS\\", pest.name, "_obs_layer",".shp"), layer="observed.layer.list", driver="ESRI Shapefile")
   }

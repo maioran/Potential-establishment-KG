@@ -26,7 +26,7 @@ if(distr.table == TRUE)
       if(admin.source != "location")
       { 
         for(admin.level in unique(pest.kg.table.source.fltr$admin.level))
-        { #TEST: admin.level <- 2
+        { #TEST: admin.level <- 0
           pest.kg.table.level.fltr <- pest.kg.table.source.fltr[which(pest.kg.table.source.fltr$admin.level == admin.level),]
           
           # load actual layer

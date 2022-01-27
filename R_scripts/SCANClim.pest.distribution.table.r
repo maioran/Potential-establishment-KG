@@ -44,11 +44,17 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
     
     if(length(tables) != 0)
     {
-      # save full table from EPPO
-      write.csv(tables$dttable, row.names = FALSE, paste(output.dir, "\\Distribution\\Full.distribution.table_",actual.date,".csv", sep=""))
       # keep only records including only relevant EPPO pest status 
       pest.kg.table     <- tables$dttable[which(tables$dttable$Status %in% i.pest.status),]
       pest.kg.table     <- pest.kg.table[order(pest.kg.table$Country),]
+      # correction for accent for Islas Canarias
+      # if("Islas Canárias" %in% pest.kg.table$State)
+      # {
+      #   pest.kg.table$State[which(pest.kg.table$State == "Islas Canárias")] <- "Islas Canarias"
+      # }
+      # save full table from EPPO
+      write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, "\\Distribution\\Full.distribution.table_",actual.date,".csv", sep=""))
+      
       # In the case of big countries (e.g. US, Canada, Australia, China...), if many entries exist 
       # with further indication of states (e.g. Alabama in US) remove the first record
       # which includes only the name of the country 
@@ -69,6 +75,9 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
       }
       # make sure that columns are type "character"
       pest.kg.table     <- data.frame(lapply(pest.kg.table, as.character), stringsAsFactors=FALSE)[,1:4]
+      # df <- pest.kg.table
+      # data.table::fwrite(df,"temp.csv")
+      # pest.kg.table <- data.table::fread("temp.csv",encoding = "UTF-8")
       pest.kg.table$Observation <- NA
       pest.kg.table[which(pest.kg.table$State!=""),"Observation"] <- paste(pest.kg.table$Country[which(pest.kg.table$State!="")],
                                                                             pest.kg.table$State[which(pest.kg.table$State!="")],
@@ -140,5 +149,4 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
  
   rm(rev.distr)
 }
-
 
