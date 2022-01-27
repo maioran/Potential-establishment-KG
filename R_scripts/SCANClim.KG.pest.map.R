@@ -2,6 +2,7 @@
 # SCAN-Clim
 # Create climate suitability map
 ####################################################################################################
+print("Creating climate suitability map")
 library(sf)
 library(rgeos)
 # set the kg map colors according to the climates that are relevant for the pest by setting the remaining as "white" i.e."#00000000"
@@ -85,6 +86,7 @@ dev.off()
 # save GIS layers
 if(i.gis=="yes")
 {
+  print("Saving GIS layers")
   if(!is.na(points.layer))
   {
     rgdal::writeOGR(points.layer, paste0(output.dir, "GIS\\", pest.name, "_obs_points_layer",".shp"), layer="points.layer", driver="ESRI Shapefile")
@@ -100,6 +102,10 @@ if(i.gis=="yes")
 }
 
 # print map in html if report required
-if(i.report=="yes"){print(kg.map)}
+if(i.report=="yes")
+{
+  print("Printing html report")
+  print(kg.map)
+}
 
 

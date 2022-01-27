@@ -9,7 +9,7 @@
 # - observed.layer.list
 # - points.layer
 # - units.na.list
-
+print("Generating pest observation layers")
 #observed.layer.list <- c()
 units.na.list       <- c()
 points.layer        <- NA

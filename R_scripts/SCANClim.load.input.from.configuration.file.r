@@ -2,7 +2,7 @@
 # SCAN-Clim
 # Load input from configuration file
 ####################################################################################################
-
+print("Loading inputs from configuration file")
 ####################################################################################################
 # CONFIGURATION FILE
 config.file <- paste0(config.dir,list.files(config.dir))
