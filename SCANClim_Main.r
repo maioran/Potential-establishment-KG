@@ -19,8 +19,8 @@ source("R_scripts\\SCANClim.install.required.packages.r")
 # current date including time (format: YYYYMMDD h_m_s)
 actual.date <- format(Sys.time(), "%Y%m%d %H_%M_%S")
 # load raster and sp packages
-library(raster)
-library(sp)
+#library(raster)
+#library(sp)
 # set main directories
 source("R_scripts\\SCANClim.main.directories.r")
 # load inputs from configuration file 
@@ -30,7 +30,7 @@ load(paste0(data.dir, "rdata\\r_KG_raster.RData"))
 # Load region coordinates for plotting map
 load(paste0(data.dir, "rdata\\Coordinates.table.RData"))
 # Load GAUL codes
-#load(paste0(data.dir, "rdata\\FAO_GAUL_Codes.RData"))
+load(paste0(data.dir, "rdata\\FAO_GAUL_Codes.RData"))
 # Load EU27 Climate list
 source("R_scripts\\SCANClim.EU27.Climate.list.R")
 # load EPPO admin layer

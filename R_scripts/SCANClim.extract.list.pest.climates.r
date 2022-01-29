@@ -17,7 +17,6 @@ if(length(list.files(paste(review.dir, "\\REVIEW.Climates",sep="")))==0)
   {
     pest.climates.list <- extract.climate.fun(r, observed.layer.list, points.layer)
   }
-  i.climates.to.remove <- c("Ocean", "Dsb",   "Dsc")
   
   if(exists("i.climates.to.remove"))
   {

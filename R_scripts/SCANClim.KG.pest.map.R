@@ -3,19 +3,20 @@
 # Create climate suitability map
 ####################################################################################################
 noquote("Creating climate suitability map")
-library(sf)
-library(rgeos)
+#library(sf)
+#library(rgeos)
 # set the kg map colors according to the climates that are relevant for the pest by setting the remaining as "white" i.e."#00000000"
 climate.colors.pest <- climate.colors
-climate.colors.pest[which(!levels(r)[[1]]$climate %in% pest.climates.list)] <- "#00000000"
+climate.colors.pest[which(!raster::levels(r)[[1]]$climate %in% pest.climates.list)] <- "#00000000"
 
 # map coordinate range (x1, x2, y1, y2). 
 # Note that grid extent (xat, yat) is set directly in the rasterVis::levelplot function few lines below
 coordinate.table.sub <- coordinate.table[which(coordinate.table$Region==i.region.to.plot),]
-r.pest <- raster::crop(r, extent(coordinate.table.sub$x1,
-                                 coordinate.table.sub$x2, 
-                                 coordinate.table.sub$y1, 
-                                 coordinate.table.sub$y2))
+r.pest <- raster::crop(r, raster::extent(coordinate.table.sub$x1,
+                                         coordinate.table.sub$x2, 
+                                         coordinate.table.sub$y1, 
+                                         coordinate.table.sub$y2))
+library(raster)
 levels(r.pest)[[1]]$colors <- climate.colors.pest
 # set legend dimension and position 
 cex.legend   <- coordinate.table.sub$cex.legend
@@ -33,7 +34,7 @@ legend.pos   <- coordinate.table.sub$legend.pos
 jpeg(paste0(output.dir,"\\Koppen-Geiger\\",i.region.to.plot,"_",pest.name,"_KG_",period,"_", actual.date, ".jpg"),width = print.width, height = print.heigth, units="cm", res=800)
 
 # create map inlcuding KG raster and EPPO Admin layer as background
-kg.map <- rasterVis::levelplot(r.pest, col.regions=levels(r.pest)[[1]]$colors, 
+kg.map <- rasterVis::levelplot(r.pest, col.regions=raster::levels(r.pest)[[1]]$colors, 
                                xlab="", ylab="", maxpixels = ncell(r.pest),
                                scales=list(x=list(limits=c(raster::extent(r.pest)[1], raster::extent(r.pest)[2]), at=seq(raster::extent(r.pest)[1], raster::extent(r.pest)[2], xat)),
                                            y=list(limits=c(raster::extent(r.pest)[3], raster::extent(r.pest)[4]), at=seq(raster::extent(r.pest)[3], raster::extent(r.pest)[4], yat)), cex=0.6), 
@@ -42,12 +43,12 @@ kg.map <- rasterVis::levelplot(r.pest, col.regions=levels(r.pest)[[1]]$colors,
                                colorkey=list(labels=list(labels=r.pest@data@attributes[[1]]$climate, cex=cex.legend), space = legend.pos, tck=0, maxpixels=ncell(r.pest)))
 
 kg.map <- kg.map + latticeExtra::layer(panel.text(efsa.x, efsa.y, paste("\uA9 EFSA\n",format(Sys.Date(), "%d %B %Y"),sep=""), adj=0, cex=0.7))
-kg.map <- kg.map + latticeExtra::layer(sp.polygons(EPPO.admin.layer, lwd=0.5, col="dark grey"), data=list(EPPO.admin.layer=EPPO.admin.layer))
+kg.map <- kg.map + latticeExtra::layer(sp::sp.polygons(EPPO.admin.layer, lwd=0.5, col="dark grey"), data=list(EPPO.admin.layer=EPPO.admin.layer))
 
 # add observations (admin layers)
 if(distr.table==TRUE & exists("observed.layer.list"))
 {
-  kg.map <- kg.map + latticeExtra::layer(sp.polygons(observed.layer.list, lwd=0.5, col="black"), data=list(observed.layer.list=observed.layer.list))
+  kg.map <- kg.map + latticeExtra::layer(sp::sp.polygons(observed.layer.list, lwd=0.5, col="black"), data=list(observed.layer.list=observed.layer.list))
   # write shapefile
   
 }
@@ -55,7 +56,7 @@ if(distr.table==TRUE & exists("observed.layer.list"))
 # add observation points if any
 if(!is.na(points.layer))
 {
-  kg.map <- kg.map + latticeExtra::layer(sp.points(points.layer, cex=0.7, col="black", lwd=0.5, pch=21, fill="red", ), data=list(points.layer=points.layer))
+  kg.map <- kg.map + latticeExtra::layer(sp::sp.points(points.layer, cex=0.7, col="black", lwd=0.5, pch=21, fill="red", ), data=list(points.layer=points.layer))
 }
 
 # add layer including protected zones (TEST - NOT IMPLEMENTED IN THIS VERSION)
@@ -104,7 +105,7 @@ if(i.gis=="yes")
 # print map in html if report required
 if(i.report=="yes")
 {
-  noquote("Printing html report")
+  #noquote("Printing html report")
   print(kg.map)
 }
 

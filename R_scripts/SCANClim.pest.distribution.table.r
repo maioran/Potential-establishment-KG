@@ -97,7 +97,7 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
       # save table including list of filtered distribution
       write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, "\\Distribution\\Filtered.distribution.table_",actual.date,".csv", sep=""))
       # remove not needed variables
-      rm(path.eppo.code, response, eppo.pest.distr.url, tables, record.remove)
+      rm(path.eppo.code, response, tables, record.remove)
       distr.table <- TRUE
     }else
     {
