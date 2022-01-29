@@ -26,7 +26,7 @@ if(any !(pest.hosts$Type %in% i.host.status))
 {
   pest.hosts <- pest.hosts[which(pest.hosts$Type %in% i.host.status),]
 }
-write.csv(pest.hosts, row.names = FALSE, paste(output.dir, pest.name, "\\Hosts\\Host.table_",actual.date,".csv", sep=""))
+write.csv(pest.hosts, row.names = FALSE, paste(output.dir, pest.name, "\\Hosts\\Host.table_",current.date,".csv", sep=""))
 rm(eppo.pest.host.url, tables.host)
   
 

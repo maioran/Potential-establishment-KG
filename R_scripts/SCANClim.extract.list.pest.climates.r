@@ -35,7 +35,7 @@ if(length(list.files(paste(review.dir, "\\REVIEW.Climates",sep="")))==0)
   # put data in table to save csv file
   climates.list.print           <- as.data.frame(pest.climates.list)
   colnames(climates.list.print) <- c("climates")
-  write.csv(climates.list.print, paste(output.dir, "Koppen-Geiger\\climate.list.table_",actual.date,".csv", sep=""), row.names=FALSE)
+  write.csv(climates.list.print, paste(output.dir, "Koppen-Geiger\\climate.list.table_",current.date,".csv", sep=""), row.names=FALSE)
   rm(climates.list.print)
   
 }else

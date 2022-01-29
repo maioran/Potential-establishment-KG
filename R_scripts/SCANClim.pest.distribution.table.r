@@ -55,7 +55,7 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
       #   pest.kg.table$State[which(pest.kg.table$State == "Islas Canárias")] <- "Islas Canarias"
       # }
       # save full table from EPPO
-      write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, "\\Distribution\\Full.distribution.table_",actual.date,".csv", sep=""))
+      write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, "\\Distribution\\Full.distribution.table_",current.date,".csv", sep=""))
       
       # In the case of big countries (e.g. US, Canada, Australia, China...), if many entries exist 
       # with further indication of states (e.g. Alabama in US) remove the first record
@@ -95,7 +95,7 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
       pest.kg.table$long         <- NA
       
       # save table including list of filtered distribution
-      write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, "\\Distribution\\Filtered.distribution.table_",actual.date,".csv", sep=""))
+      write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, "\\Distribution\\Filtered.distribution.table_",current.date,".csv", sep=""))
       # remove not needed variables
       rm(path.eppo.code, response, tables, record.remove)
       distr.table <- TRUE

@@ -15,12 +15,6 @@ rm(list=ls())
 gc()
 # Install needed packages if not already installed
 source("R_scripts\\SCANClim.install.required.packages.r")
-
-# current date including time (format: YYYYMMDD h_m_s)
-actual.date <- format(Sys.time(), "%Y%m%d %H_%M_%S")
-# load raster and sp packages
-#library(raster)
-#library(sp)
 # set main directories
 source("R_scripts\\SCANClim.main.directories.r")
 # load inputs from configuration file 

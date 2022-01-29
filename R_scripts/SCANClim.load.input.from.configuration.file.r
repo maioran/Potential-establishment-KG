@@ -4,6 +4,8 @@
 ####################################################################################################
 noquote("Loading inputs from configuration file")
 ####################################################################################################
+# current date including time (format: YYYYMMDD h_m_s)
+current.date <- format(Sys.time(), "%Y%m%d %H_%M_%S")
 # CONFIGURATION FILE
 config.file <- paste0(config.dir,list.files(config.dir))
 # list of authors

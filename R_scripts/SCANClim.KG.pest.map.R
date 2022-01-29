@@ -31,7 +31,7 @@ yat          <- coordinate.table.sub$yat
 legend.pos   <- coordinate.table.sub$legend.pos
 
 # setup file
-jpeg(paste0(output.dir,"\\Koppen-Geiger\\",i.region.to.plot,"_",pest.name,"_KG_",period,"_", actual.date, ".jpg"),width = print.width, height = print.heigth, units="cm", res=800)
+jpeg(paste0(output.dir,"\\Koppen-Geiger\\",i.region.to.plot,"_",pest.name,"_KG_",period,"_", current.date, ".jpg"),width = print.width, height = print.heigth, units="cm", res=800)
 
 # create map inlcuding KG raster and EPPO Admin layer as background
 kg.map <- rasterVis::levelplot(r.pest, col.regions=raster::levels(r.pest)[[1]]$colors, 
