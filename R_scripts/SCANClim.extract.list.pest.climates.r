@@ -7,7 +7,7 @@
 # generate layers for observed distribution according to admin source and level present in the distribution table
 # Admin source can be: EPPO (only level 0), EU.NUTS (levels 0,2,3), FAO.GAUL (levels 0, 1 ,2), location (in this case the coordinates should be indicated)
 # extract climates only if climate review is not available
-print("Extracting relevant climates based on pest distribution or \npredefined list of climates")
+noquote("Extracting relevant climates based on pest distribution or on user defined list of climates")
 if(length(list.files(paste(review.dir, "\\REVIEW.Climates",sep="")))==0)
 {
   if(!exists("observed.layer.list"))

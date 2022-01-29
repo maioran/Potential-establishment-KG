@@ -4,7 +4,7 @@
 # If a file is present in the REVIEW.Distribution folder, then this file is used 
 ####################################################################################################
 # test if any file is present in the REVIEW.Climates folder
-print("Creating pest distribution table")
+noquote("Creating pest distribution table")
 
 if(length(list.files(paste(review.dir,"REVIEW.Climate\\",sep="")))!=0)
 {

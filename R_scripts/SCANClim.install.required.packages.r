@@ -4,7 +4,7 @@
 ####################################################################################################
 
 #options("install.lock"=FALSE)
-
+noquote("installing required packages")
 pkg <- c(#"cellranger",
          "httr",
          #"jpeg",

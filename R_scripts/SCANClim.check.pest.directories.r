@@ -3,7 +3,7 @@
 # This script create needed folder directory for input/output related to specific organism
 # Note: if the folder already exists it does not overwrite it
 ####################################################################################################
-print("Creating/checking pest specific directories")
+noquote("Creating/checking pest specific directories")
 # create pest main folder
 suppressWarnings(dir.create(file.path(pest.dir, pest.name)))
 # create subfolder Output and Review
