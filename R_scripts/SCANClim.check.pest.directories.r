@@ -14,6 +14,8 @@ suppressWarnings(output.dir    <- paste0(pest.dir, pest.name, "\\Output\\"))
 suppressWarnings(review.dir    <- paste0(pest.dir, pest.name, "\\Review\\"))
 # create subfolder Distribution
 suppressWarnings(dir.create(file.path(paste0(output.dir, "Distribution"))))
+# create subfolder Host
+suppressWarnings(dir.create(file.path(paste0(output.dir, "Hosts"))))
 # create subfolder Koppen-Geiger
 suppressWarnings(dir.create(file.path(paste0(output.dir, "Koppen-Geiger"))))
 # create subfolder including GIS layers

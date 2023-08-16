@@ -49,11 +49,7 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
       # keep only records including only relevant EPPO pest status 
       pest.kg.table     <- tables$dttable[which(tables$dttable$Status %in% i.pest.status),]
       pest.kg.table     <- pest.kg.table[order(pest.kg.table$Country),]
-      # correction for accent for Islas Canarias
-      # if("Islas Canárias" %in% pest.kg.table$State)
-      # {
-      #   pest.kg.table$State[which(pest.kg.table$State == "Islas Canárias")] <- "Islas Canarias"
-      # }
+      
       # save full table from EPPO
       write.csv(pest.kg.table, row.names = FALSE, paste(output.dir, "\\Distribution\\Full.distribution.table_",current.date,".csv", sep=""))
       
@@ -61,15 +57,19 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
       # with further indication of states (e.g. Alabama in US) remove the first record
       # which includes only the name of the country 
       record.remove <- c()
-      for(i in 2:nrow(pest.kg.table))
-      {#i=8
-        if(pest.kg.table$Country[i] == pest.kg.table$Country[i-1] &
-           pest.kg.table$State[i-1]=="")
-        {
-          record.remove <- c(record.remove, i-1)
+      if(nrow(pest.kg.table)>1)
+      {
+        for(i in 2:nrow(pest.kg.table))
+        {#i=8
+          if(pest.kg.table$Country[i] == pest.kg.table$Country[i-1] &
+             pest.kg.table$State[i-1]=="")
+            {
+              record.remove <- c(record.remove, i-1)
+            }
+          
         }
-        
       }
+      
       # remove records (see above)
       if(!is.null(record.remove))
       {
@@ -77,9 +77,6 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
       }
       # make sure that columns are type "character"
       pest.kg.table     <- data.frame(lapply(pest.kg.table, as.character), stringsAsFactors=FALSE)[,1:4]
-      # df <- pest.kg.table
-      # data.table::fwrite(df,"temp.csv")
-      # pest.kg.table <- data.table::fread("temp.csv",encoding = "UTF-8")
       pest.kg.table$Observation <- NA
       pest.kg.table[which(pest.kg.table$State!=""),"Observation"] <- paste(pest.kg.table$Country[which(pest.kg.table$State!="")],
                                                                             pest.kg.table$State[which(pest.kg.table$State!="")],
@@ -118,7 +115,7 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
   
   if("Uncertain" %in% colnames(pest.kg.table))
   {
-    if(any(pest.kg.table$Uncertain == "x"))
+    if(any(!is.na(pest.kg.table$Uncertain)))
     {
       uncertain.records <- which(pest.kg.table$Uncertain == "x")
       uncertain.table   <- pest.kg.table[uncertain.records,]
@@ -133,10 +130,10 @@ if(length(list.files(paste(review.dir,"\\REVIEW.Distribution\\",sep="")))==0)
   }
   distr.table <- TRUE
    
-  pest.kg.table$admin.level <- NA
   
   
- 
+  #pest.kg.table$admin.level <- NA
+  
   if(any(pest.kg.table$admin.source == "EPPO", na.rm=TRUE))
   {
     eppo.records <- which(pest.kg.table$admin.source == "EPPO")

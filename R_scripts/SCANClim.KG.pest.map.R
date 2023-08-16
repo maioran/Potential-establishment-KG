@@ -105,7 +105,6 @@ if(i.gis=="yes")
 # print map in html if report required
 if(i.report=="yes")
 {
-  #noquote("Printing html report")
   print(kg.map)
 }
 

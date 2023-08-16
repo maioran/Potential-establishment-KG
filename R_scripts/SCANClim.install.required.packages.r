@@ -1,5 +1,5 @@
 ####################################################################################################
-# SCANClim
+# SCAN-Clim
 # Check if needed R packages are already installed and install them if needed
 ####################################################################################################
 
@@ -12,6 +12,7 @@ pkg <- c(#"cellranger",
          "lattice",
          "latticeExtra",
          "markdown",
+         "terra",
          "raster",
          "rasterVis",
          "rgdal",
@@ -24,13 +25,17 @@ pkg <- c(#"cellranger",
          #"stringr",
          #"utf8",
          #"viridisLite",
+         "xfun",
          "XML")
 
 for(current.pkg in pkg)
 {
   if (!current.pkg %in% installed.packages())    
   {
+    
     install.packages(current.pkg,   dependencies = TRUE) #, INSTALL_opts = '--no-lock')
+    
+    
   }
 }
 

@@ -36,10 +36,19 @@ for(pest.name in i.pest.list)
   source("R_scripts\\SCANClim.check.pest.directories.r", local = knitr::knit_global())
   # download EPPO distribution tables or load reviewed distribution table
   source("R_scripts\\SCANClim.pest.distribution.table.r", local = knitr::knit_global())
+  # download EPPO host table if available
+  # if(i.eppo.host.table=="yes")
+  #    {
+  #      source("R_scripts\\SCANClim.web.EPPO.host.table.r", local = knitr::knit_global())
+  #    }
+  # 
   # correction for accent for Islas Canarias
-  if("Spain-Islas Canárias" %in% pest.kg.table$Observation)
+  if(exists("pest.kg.table"))
   {
-    pest.kg.table$Observation[which(pest.kg.table$Observation == "Spain-Islas Canárias")] <- "Spain-Islas Canarias"
+    if("Spain-Islas Canárias" %in% pest.kg.table$Observation)
+    {
+      pest.kg.table$Observation[which(pest.kg.table$Observation == "Spain-Islas Canárias")] <- "Spain-Islas Canarias"
+    }
     
   }
   # check if distribution table or climate list are available
